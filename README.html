@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>TYPESCRIPT ALIAS</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="typescript-alias">TYPESCRIPT ALIAS</h1>
+<blockquote>
+<p>This pkg includes extremely agressive alias of typescripts definitions.</p>
+</blockquote>
+<p>An ultra-concise, ergonomic collection of global TypeScript type aliases, shorthand primitives, and advanced utility helpers designed to speed up type-safe development.</p>
+<p>An ultra-concise, ergonomic collection of global TypeScript type aliases, shorthand primitives, and advanced utility helpers designed to speed up type-safe development.</p>
+<h2 id="-installation">📦 Installation</h2>
+<pre><code class="language-bash">npm install ts-global-shorthands
+<span class="hljs-comment"># or</span>
+yarn add ts-global-shorthands
+<span class="hljs-comment"># or</span>
+pnpm add ts-global-shorthands
+</code></pre>
+<h1 id="quick-reference--all-defined-types">Quick Reference — All Defined Types</h1>
+<h2 id="primitives--basics">Primitives &amp; basics</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>any</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>B&lt;T = A&gt;</code></td>
+<td><code>boolean</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>N&lt;T = A&gt;</code></td>
+<td><code>number</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>S&lt;T = A&gt;</code></td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>BI&lt;T = A&gt;</code></td>
+<td><code>bigint</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>SY&lt;T = A&gt;</code></td>
+<td><code>symbol</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>UD&lt;T = A&gt;</code> / <code>UN&lt;T = A&gt;</code></td>
+<td><code>undefined</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>NU&lt;T = A&gt;</code></td>
+<td><code>null</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>V&lt;T = A&gt;</code></td>
+<td><code>void</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>U&lt;T = A&gt;</code></td>
+<td><code>unknown</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>NE&lt;T = A&gt;</code></td>
+<td><code>never</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>W</code></td>
+<td><code>&quot;*&quot;</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td><code>keyof any</code></td>
+<td>= <code>string | number | symbol</code></td>
+</tr>
+<tr>
+<td><code>PK&lt;T = A&gt;</code></td>
+<td><code>PropertyKey</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="wrappers--containers">Wrappers &amp; containers</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AR&lt;T = A&gt;</code></td>
+<td><code>Array&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ROARR&lt;T&gt;</code></td>
+<td><code>readonly T[]</code></td>
+</tr>
+<tr>
+<td><code>TUP&lt;T extends any[] = any[]&gt;</code></td>
+<td><code>[...T]</code></td>
+</tr>
+<tr>
+<td><code>NONEMPTY&lt;T&gt;</code></td>
+<td><code>readonly [T, ...T[]]</code></td>
+</tr>
+<tr>
+<td><code>ST&lt;T = A&gt;</code> / <code>SETOF&lt;T = A&gt;</code></td>
+<td><code>Set&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>MP&lt;K,V&gt;</code> / <code>MAP&lt;K,V&gt;</code> / <code>M&lt;K,V&gt;</code></td>
+<td><code>Map&lt;K,V&gt;</code></td>
+</tr>
+<tr>
+<td><code>RM&lt;K,V&gt;</code></td>
+<td><code>ReadonlyMap&lt;K,V&gt;</code></td>
+</tr>
+<tr>
+<td><code>RS&lt;T&gt;</code></td>
+<td><code>ReadonlySet&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>WS&lt;T extends Object&gt;</code> / <code>WEAKSET&lt;T&gt;</code></td>
+<td><code>WeakSet&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>WM&lt;K,V&gt;</code> / <code>WEAKMAP&lt;K,V&gt;</code></td>
+<td><code>WeakMap&lt;K,V&gt;</code></td>
+</tr>
+<tr>
+<td><code>WREF&lt;T extends Object&gt;</code></td>
+<td><code>WeakRef&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>FREG&lt;T extends Object&gt;</code></td>
+<td><code>FinalizationRegistry&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>OB&lt;T = A&gt;</code> / <code>OBJ&lt;T = A&gt;</code></td>
+<td><code>{ [key: string]: T }</code></td>
+</tr>
+<tr>
+<td><code>DICT&lt;T = A&gt;</code></td>
+<td><code>{ [key: string]: T | undefined }</code></td>
+</tr>
+<tr>
+<td><code>DC&lt;T = A&gt;</code></td>
+<td><code>Record&lt;string, T&gt;</code></td>
+</tr>
+<tr>
+<td><code>R&lt;K,V&gt;</code></td>
+<td><code>Record&lt;K,V&gt;</code></td>
+</tr>
+<tr>
+<td><code>D&lt;T = A&gt;</code></td>
+<td><code>Date</code></td>
+</tr>
+<tr>
+<td><code>REG&lt;T = A&gt;</code></td>
+<td><code>RegExp</code></td>
+</tr>
+<tr>
+<td><code>O&lt;T = A&gt;</code></td>
+<td><code>Object</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="promises--async">Promises / async</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>P&lt;T = A&gt;</code> / <code>PROM&lt;T = A&gt;</code></td>
+<td><code>Promise&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>PL&lt;T = A&gt;</code></td>
+<td><code>PromiseLike&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>AW&lt;T = A&gt;</code></td>
+<td><code>Awaited&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>AWAIT&lt;T&gt;</code></td>
+<td>recursive unwrap of <code>PromiseLike</code></td>
+</tr>
+<tr>
+<td><code>ASF&lt;T&gt;</code></td>
+<td>async version of a function type</td>
+</tr>
+<tr>
+<td><code>PSR&lt;T&gt;</code></td>
+<td><code>PromiseSettledResult&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>PFR&lt;T&gt;</code></td>
+<td><code>PromiseFulfilledResult&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>PRR</code></td>
+<td><code>PromiseRejectedResult</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="iterables--generators">Iterables &amp; generators</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I&lt;T = A&gt;</code></td>
+<td><code>Iterable&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ITR&lt;T = A&gt;</code></td>
+<td><code>IterableIterator&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ITOR&lt;T = A&gt;</code></td>
+<td><code>Iterator&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ITOBJ&lt;T,R,N&gt;</code></td>
+<td><code>IteratorObject&lt;T,R,N&gt;</code></td>
+</tr>
+<tr>
+<td><code>AI&lt;T = A&gt;</code> / <code>ASYNCIT&lt;T&gt;</code></td>
+<td><code>AsyncIterable&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ASYNCITR&lt;T&gt;</code></td>
+<td><code>AsyncIterableIterator&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>AITOBJ&lt;T,R,N&gt;</code></td>
+<td><code>AsyncIteratorObject&lt;T,R,N&gt;</code></td>
+</tr>
+<tr>
+<td><code>GEN&lt;T,R,N&gt;</code></td>
+<td><code>Generator&lt;T,R,N&gt;</code></td>
+</tr>
+<tr>
+<td><code>AG&lt;T,R,N&gt;</code> / <code>ASYNCGEN&lt;T,R,N&gt;</code></td>
+<td><code>AsyncGenerator&lt;T,R,N&gt;</code></td>
+</tr>
+<tr>
+<td><code>FIRST&lt;T&gt;</code></td>
+<td>first element of tuple/array</td>
+</tr>
+<tr>
+<td><code>LAST&lt;T&gt;</code></td>
+<td>last element of tuple/array</td>
+</tr>
+<tr>
+<td><code>LENGTH&lt;T&gt;</code></td>
+<td><code>T['length']</code></td>
+</tr>
+<tr>
+<td><code>IDX&lt;T&gt;</code> / <code>EXT&lt;T&gt;</code></td>
+<td>element type of array</td>
+</tr>
+</tbody>
+</table>
+<h2 id="utility--object-manipulation">Utility — object manipulation</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>PA&lt;T&gt;</code></td>
+<td><code>Partial&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>RE&lt;T&gt;</code></td>
+<td><code>Required&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>RO&lt;T&gt;</code></td>
+<td><code>Readonly&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>ROOBJ&lt;T&gt;</code></td>
+<td><code>{ readonly [K in keyof T]: T[K] }</code></td>
+</tr>
+<tr>
+<td><code>MUT&lt;T&gt;</code></td>
+<td><code>{ -readonly [K in keyof T]: T[K] }</code></td>
+</tr>
+<tr>
+<td><code>MUTOBJ&lt;T&gt;</code></td>
+<td>same as <code>MUT&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>OM&lt;T,K&gt;</code></td>
+<td><code>Omit&lt;T,K&gt;</code></td>
+</tr>
+<tr>
+<td><code>PI&lt;T,K&gt;</code></td>
+<td><code>Pick&lt;T,K&gt;</code></td>
+</tr>
+<tr>
+<td><code>OV&lt;T,U&gt;</code></td>
+<td><code>Omit&lt;T, keyof U&gt; &amp; U</code></td>
+</tr>
+<tr>
+<td><code>XOR&lt;T,U&gt;</code></td>
+<td>exclusive union</td>
+</tr>
+<tr>
+<td><code>DEEP&lt;T&gt;</code></td>
+<td>deep readonly-ish recursion</td>
+</tr>
+<tr>
+<td><code>DEEPP&lt;T&gt;</code></td>
+<td>deep partial recursion</td>
+</tr>
+<tr>
+<td><code>DPR&lt;T&gt;</code></td>
+<td>deep readonly recursion</td>
+</tr>
+<tr>
+<td><code>KEYS&lt;T&gt;</code> / <code>KOF&lt;T&gt;</code></td>
+<td><code>keyof T</code></td>
+</tr>
+<tr>
+<td><code>SK&lt;T&gt;</code></td>
+<td><code>keyof T &amp; string</code></td>
+</tr>
+<tr>
+<td><code>VAL&lt;T&gt;</code> / <code>VALOF&lt;T&gt;</code></td>
+<td><code>T[keyof T]</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="utility--unions--conditionals">Utility — unions &amp; conditionals</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EX&lt;T,U&gt;</code></td>
+<td><code>Exclude&lt;T,U&gt;</code></td>
+</tr>
+<tr>
+<td><code>IN&lt;T,U&gt;</code></td>
+<td><code>Extract&lt;T,U&gt;</code></td>
+</tr>
+<tr>
+<td><code>NR&lt;T&gt;</code></td>
+<td><code>NonNullable&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>MAY&lt;T&gt;</code></td>
+<td><code>T | null | undefined</code></td>
+</tr>
+<tr>
+<td><code>OPT&lt;T&gt;</code></td>
+<td><code>T | undefined</code></td>
+</tr>
+<tr>
+<td><code>NIL&lt;T&gt;</code></td>
+<td><code>T | null</code></td>
+</tr>
+<tr>
+<td><code>DIFF&lt;T,U&gt;</code></td>
+<td><code>T extends U ? never : T</code></td>
+</tr>
+<tr>
+<td><code>GUARD&lt;T,U&gt;</code></td>
+<td><code>T extends U ? T : never</code></td>
+</tr>
+<tr>
+<td><code>UNION&lt;T&gt;</code></td>
+<td><code>T extends any ? T : never</code></td>
+</tr>
+<tr>
+<td><code>NOI&lt;T&gt;</code></td>
+<td><code>NoInfer&lt;T&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="utility--type-predicates">Utility — type predicates</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>EQ&lt;X,Y&gt;</code></td>
+<td><code>true</code> if <code>X</code> and <code>Y</code> are identical</td>
+</tr>
+<tr>
+<td><code>ISNEVER&lt;T&gt;</code></td>
+<td><code>true</code> if <code>T</code> is <code>never</code></td>
+</tr>
+<tr>
+<td><code>ISANY&lt;T&gt;</code></td>
+<td><code>true</code> if <code>T</code> is <code>any</code></td>
+</tr>
+<tr>
+<td><code>ISUNKNOWN&lt;T&gt;</code></td>
+<td><code>true</code> if <code>T</code> is <code>unknown</code></td>
+</tr>
+<tr>
+<td><code>ISUNION&lt;T,C&gt;</code></td>
+<td><code>true</code> if <code>T</code> is a union</td>
+</tr>
+<tr>
+<td><code>ASSERT&lt;T extends true&gt;</code></td>
+<td>compile-time assertion</td>
+</tr>
+</tbody>
+</table>
+<h2 id="utility--functions--constructors">Utility — functions &amp; constructors</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F&lt;T = A&gt;</code></td>
+<td><code>Function | (() =&gt; T)</code></td>
+</tr>
+<tr>
+<td><code>FN&lt;T&gt;</code></td>
+<td>identity alias for a function type</td>
+</tr>
+<tr>
+<td><code>ARGS&lt;T&gt;</code> / <code>PARAMS&lt;T&gt;</code></td>
+<td><code>Parameters&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>RET&lt;T&gt;</code> / <code>RT&lt;T&gt;</code></td>
+<td><code>ReturnType&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>CON&lt;T&gt;</code></td>
+<td><code>ConstructorParameters&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>INST&lt;T&gt;</code></td>
+<td><code>InstanceType&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>IT&lt;T&gt;</code></td>
+<td>instance type from abstract constructor</td>
+</tr>
+<tr>
+<td><code>THIS&lt;T&gt;</code></td>
+<td><code>ThisParameterType&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>CTX&lt;T&gt;</code> / <code>OTHIS&lt;T&gt;</code></td>
+<td><code>OmitThisParameter&lt;T&gt;</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="string-manipulation">String manipulation</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CAP&lt;T&gt;</code></td>
+<td><code>Capitalize&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>UNCAP&lt;T&gt;</code></td>
+<td><code>Uncapitalize&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>UPPER&lt;T&gt;</code></td>
+<td><code>Uppercase&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>LOWER&lt;T&gt;</code></td>
+<td><code>Lowercase&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>STR&lt;T&gt;</code></td>
+<td><code>T extends string ? T : never</code></td>
+</tr>
+<tr>
+<td><code>REPLACE&lt;S0,F,T&gt;</code></td>
+<td>string replace (one occurrence)</td>
+</tr>
+<tr>
+<td><code>SPLIT&lt;S0,D&gt;</code></td>
+<td>string split into tuple</td>
+</tr>
+<tr>
+<td><code>JOIN&lt;T,D&gt;</code></td>
+<td>tuple of strings joined</td>
+</tr>
+<tr>
+<td><code>TL&lt;T&gt;</code></td>
+<td><code>T['length']</code> (string literal)</td>
+</tr>
+<tr>
+<td><code>BRAND&lt;T,N&gt;</code></td>
+<td>branded type <code>T &amp; { __brand: N }</code></td>
+</tr>
+<tr>
+<td><code>STRNUM&lt;T&gt;</code></td>
+<td><code>${number}</code></td>
+</tr>
+<tr>
+<td><code>STRBIG&lt;T&gt;</code></td>
+<td><code>${bigint}</code></td>
+</tr>
+<tr>
+<td><code>STRBOOL&lt;T&gt;</code></td>
+<td><code>${boolean}</code></td>
+</tr>
+<tr>
+<td><code>STRKEY&lt;T&gt;</code></td>
+<td><code>${string}</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="buffer--binary--typed-arrays">Buffer / binary / typed arrays</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AB&lt;T = A&gt;</code></td>
+<td><code>ArrayBuffer</code></td>
+</tr>
+<tr>
+<td><code>DV&lt;T = A&gt;</code></td>
+<td><code>DataView</code></td>
+</tr>
+<tr>
+<td><code>BL&lt;T = A&gt;</code></td>
+<td><code>Blob</code></td>
+</tr>
+<tr>
+<td><code>BU&lt;T = A&gt;</code></td>
+<td><code>Buffer</code></td>
+</tr>
+<tr>
+<td><code>I8</code></td>
+<td><code>Int8Array</code></td>
+</tr>
+<tr>
+<td><code>I16</code></td>
+<td><code>Int16Array</code></td>
+</tr>
+<tr>
+<td><code>I32&lt;T = A&gt;</code></td>
+<td><code>Int32Array</code></td>
+</tr>
+<tr>
+<td><code>U8&lt;T = A&gt;</code></td>
+<td><code>Uint8Array</code></td>
+</tr>
+<tr>
+<td><code>U8C</code></td>
+<td><code>Uint8ClampedArray</code></td>
+</tr>
+<tr>
+<td><code>U16</code></td>
+<td><code>Uint16Array</code></td>
+</tr>
+<tr>
+<td><code>U32&lt;T = A&gt;</code></td>
+<td><code>Uint32Array</code></td>
+</tr>
+<tr>
+<td><code>U32ARB&lt;T = A&gt;</code></td>
+<td><code>Uint32Array&lt;ArrayBufferLike&gt;</code></td>
+</tr>
+<tr>
+<td><code>F32</code></td>
+<td><code>Float32Array</code></td>
+</tr>
+<tr>
+<td><code>F64&lt;T = A&gt;</code></td>
+<td><code>Float64Array</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="dom--web-apis">DOM / Web APIs</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>DE&lt;T = A&gt;</code></td>
+<td><code>Document</code></td>
+</tr>
+<tr>
+<td><code>FR&lt;T = A&gt;</code></td>
+<td><code>DocumentFragment</code></td>
+</tr>
+<tr>
+<td><code>EL&lt;T = A&gt;</code></td>
+<td><code>Element</code></td>
+</tr>
+<tr>
+<td><code>HE&lt;T = A&gt;</code></td>
+<td><code>HTMLElement</code></td>
+</tr>
+<tr>
+<td><code>ND&lt;T = A&gt;</code></td>
+<td><code>Node</code></td>
+</tr>
+<tr>
+<td><code>NA&lt;T = A&gt;</code></td>
+<td><code>NodeListOf&lt;T&gt;</code></td>
+</tr>
+<tr>
+<td><code>NLE&lt;T = A&gt;</code></td>
+<td><code>NodeListOf&lt;Element&gt;</code></td>
+</tr>
+<tr>
+<td><code>EV&lt;T = A&gt;</code></td>
+<td><code>Event</code></td>
+</tr>
+<tr>
+<td><code>CE&lt;T = A&gt;</code></td>
+<td><code>CustomEvent</code></td>
+</tr>
+<tr>
+<td><code>KE&lt;T = A&gt;</code></td>
+<td><code>KeyboardEvent</code></td>
+</tr>
+<tr>
+<td><code>ME&lt;T = A&gt;</code></td>
+<td><code>MouseEvent</code></td>
+</tr>
+<tr>
+<td><code>PE&lt;T = A&gt;</code></td>
+<td><code>PointerEvent</code></td>
+</tr>
+<tr>
+<td><code>FD&lt;T = A&gt;</code></td>
+<td><code>FormData</code></td>
+</tr>
+<tr>
+<td><code>URI&lt;T&gt;</code> / <code>URLT&lt;T&gt;</code></td>
+<td><code>URL</code></td>
+</tr>
+<tr>
+<td><code>WIN&lt;T = A&gt;</code></td>
+<td><code>Window</code></td>
+</tr>
+<tr>
+<td><code>DOMX</code></td>
+<td><code>DOMException</code></td>
+</tr>
+<tr>
+<td><code>ABC</code></td>
+<td><code>AbortController</code></td>
+</tr>
+<tr>
+<td><code>ABS</code></td>
+<td><code>AbortSignal</code></td>
+</tr>
+<tr>
+<td><code>AGE</code></td>
+<td><code>AggregateError</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="misc--errors">Misc / errors</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Expands to</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>E&lt;T = A&gt;</code> / <code>ERR&lt;T = A&gt;</code></td>
+<td><code>Error</code></td>
+</tr>
+<tr>
+<td><code>ERRCAUSE&lt;T&gt;</code></td>
+<td><code>Error &amp; { cause?: T }</code></td>
+</tr>
+<tr>
+<td><code>DISP</code></td>
+<td><code>Disposable</code></td>
+</tr>
+<tr>
+<td><code>ADISP</code></td>
+<td><code>AsyncDisposable</code></td>
+</tr>
+<tr>
+<td><code>J&lt;T = A&gt;</code></td>
+<td><code>JSON</code></td>
+</tr>
+<tr>
+<td><code>BIG&lt;T = A&gt;</code></td>
+<td><code>BigInt</code></td>
+</tr>
+<tr>
+<td><code>SYM&lt;T = A&gt;</code></td>
+<td><code>Symbol</code></td>
+</tr>
+<tr>
+<td><code>BYTEOP_MAP_TYPE&lt;K,V&gt;</code> / <code>BM&lt;K,V&gt;</code></td>
+<td>custom Map-like shape with <code>pidToSlot</code></td>
+</tr>
+<tr>
+<td><code>MaybePromise&lt;R = any&gt;</code></td>
+<td><code>R</code> (type) + runtime function from <code>./index</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>💡 Example Usage</p>
+<pre><code class="language-tsx"><span class="hljs-comment">// Using short primitives and record structures</span>
+<span class="hljs-keyword">const</span> <span class="hljs-attr">user</span>: R&lt;S, A&gt; = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alice&quot;</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>
+};
+</code></pre>
+<pre><code class="language-tsx"><span class="hljs-comment">// Using utility helpers like Deep Partial and Awaited Promises</span>
+type <span class="hljs-title class_">Config</span> = <span class="hljs-variable constant_">DEEPP</span>&lt;{
+    <span class="hljs-attr">server</span>: {
+        <span class="hljs-attr">host</span>: S;
+        <span class="hljs-attr">port</span>: N;
+    };
+}&gt;;
+</code></pre>
+<pre><code class="language-tsx"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchData</span>(<span class="hljs-params"></span>): P&lt;<span class="hljs-variable constant_">AR</span>&lt;S&gt;&gt; {
+    <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;item1&quot;</span>, <span class="hljs-string">&quot;item2&quot;</span>];
+}
+</code></pre>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

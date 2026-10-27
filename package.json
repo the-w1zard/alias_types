@@ -1,0 +1,25 @@
+{
+  "name": "@the-w1zard/alias_types",
+  "version": "1.0.0",
+  "sideEffects": false,
+  "devDependencies": {
+    "@tsconfig/node-lts": "^24.0.0",
+    "@types/node": "^24.0.0",
+    "typescript": "^6.0.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "license": "MIT",
+  "private": false,
+  "types": "./src/global.d.ts",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/global.d.ts",
+      "default": "./src/index.ts"
+    }
+  },
+  "files": ["src"]
+}
