@@ -14,8 +14,6 @@
     "skipLibCheck": true,
     "verbatimModuleSyntax": true,
       "types":[
-        "Bun",
-			 "node",
        "./src/global.d.ts", 
       ]
     },
