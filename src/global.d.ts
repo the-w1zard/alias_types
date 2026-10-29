@@ -32,6 +32,7 @@ declare global {
     type S = string
     // T
     type U = unknown
+    type UF<T = A> = T | (() => T);
     type V = void
     type W = "*";
     // X
