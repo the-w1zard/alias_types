@@ -1,6 +1,6 @@
 {
   "name": "@the-w1zard/alias_types",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "type": "module",
   "sideEffects": false,
   "devDependencies": {
@@ -22,5 +22,7 @@
       "default": "./src/index.ts"
     }
   },
-  "files": ["src"]
+  "files": [
+    "src"
+  ]
 }
