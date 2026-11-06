@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<pre><code class="language-tsx"><span class="hljs-comment">// HADORON COLLIDER IS CALLED ONCE IN ITS OWN FILE IN ORDER TO CREATE A SINGLE USABLE INSTANCE, WHERE EACH OF THE UNDERLYING PARTS ARE ONLY EVER CREATED WITHIN THE HADRON COLLIDER ITSELF AND THEN EACH PART ITS GIVEN ITS REQUIREMENTS THROUGH DRILL PROPING. THIS MAKES IT SO THAT THERE ISNT ANY PART THAT BECOMES A SHARED PART BETWEEN 2 CONTEXT INSTANCES OR DB INSTANCES AND SO ON. VALUES / DATA COMES IN THROUGH THE REACTIVE HOOK SYSTEM WHERE THEY GET PLACED INTO A QUEUE. FROM THERE THEY GO INTO BINARY, WHERE THERE JS ARRAY OBJS FIRST GET CONVERTED IN ORDER TO ACTUALLY GET SAVED IN THE HADRON COLLIDER AND THEN BINARY ENCODED BEFORE GETTING PUSHED THE ENGINE WHO SAVES IT. THIS PUTS AN ESSENTIAL BAERRIER BETWEEN THE JS HOOKS, AND THEN ENGINE SO AS TO NOT KICK OFF A BUNCH OF TYPE SCRIPT ERRORS DUE TO THE ENGINE REQUIRE Uint8Array Float32Array</span>
+<span class="hljs-comment">// CURRENTLY WE HAVE SOME NOOPS TO FILL, NOT USED TO EVALUATE TO SEE IF WE EVEN NEED THEM, AND FIX THE QUEUE CLASS BEFORE WE CAN START ADDING ANY MORE PARTS, BECAUSE OF RIGHT NOW WE HAVE THE MEANS TO PLACE THINGS INTO THE COLLIDER, ALBEIT BROKEN... BUT WE CURRENTLY DO NOT SEND ANYTHING OUT, NOTIFY SUBS AND SO ON... SINCE YOU HAVE BEEN HAVING SUCH A HARD TIME... HERE IS A COMPELTE LAYOUT OF WHAT CONSIST IN EACH CLASS EVERYWHERE</span>
+├── hadron_collider/
+│   ├── <span class="hljs-attr">engine</span>: <span class="hljs-variable constant_">HADRON_COLLIDER_SOA_ENGINE</span>
+│   ├── <span class="hljs-attr">binary</span>: <span class="hljs-variable constant_">HADRON_COLLIDER_BINARY_QUEUE_BOUNDARY</span>
+│   ├── <span class="hljs-attr">governor</span>: <span class="hljs-title class_">GranularHadronGovernor</span>
+│   ├── <span class="hljs-attr">notifications</span>: <span class="hljs-title class_">HadronNotificationHub</span>
+│   ├── <span class="hljs-attr">queue</span>: <span class="hljs-variable constant_">HADRON_QUEUE</span>
+│   ├── start
+│   ├── stop
+│   ├── admit
+│   ├── edit
+│   ├── <span class="hljs-keyword">delete</span>
+│   ├── <span class="hljs-comment">/* EVERYTHING BEYOND, IS DEFINED OUTSIDE ITS CLASS IN THE FILE */</span>
+│   ├── <span class="hljs-variable constant_">THE_HADRON_COLLIDER_STATE</span>
+│   ├── pullGet
+│   ├── pullGetAsync
+│   ├── pullGetMany
+│   ├── placeSubscription
+│   ├── placeWaitFor
+│   ├── pushSetMany
+│   ├── pushEdit
+│   ├── pushDelete
+│   ├── pushDeleteMany
+│   ├── pullHas
+│   └── pushSet
+├── reactive_system/
+│   ├── _root
+│   ├── _components
+│   ├── _currentHookState
+│   ├── _subscribers
+│   ├── _pendingNotifications not used
+│   ├── _flushScheduled not used
+│   ├── _currentComponent
+│   ├── _devRecord
+│   ├── devRecord
+│   ├── enqueueNotification
+│   ├── notifyHook
+│   ├── flushNotificationQueue
+│   ├── getCurrentComponent
+│   ├── subscribeToHook
+│   ├── _notifyCache
+│   ├── scheduleNotify not used
+│   ├── tripleTieredScope
+│   ├── <span class="hljs-title class_">HadronHookSlot</span>
+│   │   ├── get value
+│   │   ├── set value
+│   │   ├── setMany/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── getByPrefix/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── getMany/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── getAll/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── <span class="hljs-keyword">delete</span>
+│   │   ├── sub
+│   │   ├── deleteMany/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── subAll/<span class="hljs-variable constant_">NOOP</span>
+│   │   ├── waitFor
+│   │   ├── clear/<span class="hljs-variable constant_">NOOP</span>
+│   │   └── has/<span class="hljs-variable constant_">NOOP</span>
+│   ├── beginHookDependencyCapture
+│   ├── endHookDependencyCapture
+│   └── createHook
+├── engine/
+│   ├── editDirect
+│   ├── admitDirect
+│   ├── deleteDirect
+│   ├── public
+│   ├── pass
+│   ├── reclaimPid
+│   └── getLoadFactor
+├── governer/
+│   ├── start
+│   ├── stop
+│   ├── tick/P
+│   ├── tunePerformance/P
+│   └── scheduleNextTick/P
+├── notifications/
+│   ├── hashComponent
+│   ├── getScopeHash
+│   ├── parseScopeKey
+│   ├── allocateScopePid
+│   ├── subscribe
+│   ├── markDirty
+│   └── flushNotifications
+├── queue/
+│   ├──
+│   └── 
+├── binary_encoder/
+│   ├── flushMutations
+│   ├── flush
+│   ├── private advanceTail
+│   ├── enqueueGet
+│   ├── enqueueGetAsync
+│   ├── enqueueWaitFor
+│   ├── enqueueHas
+│   ├── enqueueAdmit
+│   ├── enqueueSetMany
+│   ├── enqueueEdit
+│   ├── enqueueDelete
+│   ├── enqueueDeleteMany
+│   ├── get
+│   ├── clear
+│   ├── private readUint
+│   ├── private encodeUint64
+│   ├── private encode
+│   ├── private encodeValue
+│   ├── private encodeUint
+│   ├── private decode
+│   ├── private decodeValue
+│   ├── encode_msg
+│   └── decode_msg
+├── control_plane_bootstrapper/
+│   ├── announceDepot
+│   ├── listenForControlEvents
+│   └── promoteRouteToDataPlane
+├── depot/
+│   ├── initBufferView
+│   ├── write
+│   └── read
+├── dispatch/
+│   ├── send
+│   ├── writeToLayer2Buffer
+│   ├── evictDeadLayer2Buffer
+│   ├── tap
+│   └── registerDepot
+├── post_office/
+│   ├── 
+│   └── 
+├── ring_buffer/
+│   ├── acquireLock
+│   ├── releaseLock
+│   ├── getAvailableWriteSpace
+│   ├── getAvailableReadBytes
+│   ├── write
+│   ├── read
+│   └── waitForData
+├── tap/
+│   ├── tap
+│   ├── untap
+│   └── inject
+└── transformer/
+    ├── registerTier
+    ├── _enqueue
+    ├── drain
+    └── pending
+</code></pre>
+<pre><code class="language-tsx">┌─────────────────────────────────────────────────────────────┐
+│                    <span class="hljs-variable constant_">THE</span> <span class="hljs-variable constant_">WIZARD</span> (platform)                     │
+│                                                              │
+│   ┌─────────────────┐        ┌────────────────────────────┐ │
+│   │  <span class="hljs-variable constant_">PLATFORM</span>       │  used  │        <span class="hljs-variable constant_">THE_CLOUD</span>           │ │
+│   │  <span class="hljs-variable constant_">PRIMITIVES</span>     │◄───────│  hooks, forms, context,    │ │
+│   │  signals/chains │  by    │  portals, the <span class="hljs-variable constant_">UX</span> surface   │ │
+│   └────────┬────────┘        └──────────────┬─────────────┘ │
+│            │                                │               │
+│            └────────────┬───────────────────┘               │
+│                         ▼                                   │
+│              ┌──────────────────────┐                       │
+│              │        <span class="hljs-variable constant_">STAFF</span>         │                       │
+│              │  the bus + the <span class="hljs-title class_">DBs</span>   │                       │
+│              │  everything moves    │                       │
+│              │  through here        │                       │
+│              └──────────────────────┘                       │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<pre><code class="language-tsx">/<span class="hljs-variable constant_">THE_WIZARD</span>
+├── <span class="hljs-attr">STAFF</span>: <span class="hljs-variable constant_">THE</span> <span class="hljs-variable constant_">DATA</span> <span class="hljs-variable constant_">GOOD</span> <span class="hljs-variable constant_">SOLUTION</span>/
+│   ├── <span class="hljs-variable constant_">STAFF</span>/
+│   │   ├── <span class="hljs-variable constant_">ADAPTERS</span>/
+│   │   ├── <span class="hljs-variable constant_">BDB</span>/
+│   │   ├── <span class="hljs-variable constant_">COLAB</span>/
+│   │   ├── <span class="hljs-variable constant_">DB</span>/
+│   │   ├── <span class="hljs-variable constant_">GDB</span>/
+│   │   ├── <span class="hljs-variable constant_">HC</span>/
+│   │   ├── <span class="hljs-variable constant_">KVDB</span>/
+│   │   ├── <span class="hljs-variable constant_">PROTOCOLS</span>/
+│   │   ├── <span class="hljs-variable constant_">RDB</span>/
+│   │   ├── <span class="hljs-title class_">PRxCDB</span>/
+│   │   ├── <span class="hljs-variable constant_">SIGNALS</span>/
+│   │   ├── <span class="hljs-variable constant_">SOLUTIONS</span>/
+│   │   ├── <span class="hljs-variable constant_">SSE</span>/
+│   │   ├── <span class="hljs-variable constant_">STREAMS</span>/
+│   │   ├── <span class="hljs-variable constant_">TDB</span>/
+│   │   ├── <span class="hljs-variable constant_">UTILS</span>/
+│   │   ├── <span class="hljs-variable constant_">VDB</span>/
+│   │   ├── init.<span class="hljs-property">ts</span>
+│   │   ├── staff.<span class="hljs-property">ts</span>
+│   │   └── types.<span class="hljs-property">ts</span>
+│   ├── binary.<span class="hljs-property">ts</span>
+│   ├── distributed.<span class="hljs-property">ts</span>
+│   ├── drs.<span class="hljs-property">ts</span>
+│   ├── duplex.<span class="hljs-property">ts</span>
+│   ├── einstein.<span class="hljs-property">ts</span>
+│   ├── emitter.<span class="hljs-property">ts</span>
+│   ├── exe.<span class="hljs-property">ts</span>
+│   ├── logic_gates.<span class="hljs-property">ts</span>
+│   ├── sends.<span class="hljs-property">ts</span>
+│   ├── shared_memory.<span class="hljs-property">ts</span>
+│   ├── signals.<span class="hljs-property">ts</span>
+│   └── streams.<span class="hljs-property">ts</span>
+├── <span class="hljs-attr">THE_CLOUD</span>: <span class="hljs-variable constant_">THE</span> <span class="hljs-string">&#x27;APP&#x27;</span>/
+│   ├── <span class="hljs-variable constant_">DEV</span>-<span class="hljs-variable constant_">SERVER</span>/
+│   ├── <span class="hljs-variable constant_">ERR_IGNORE</span>/
+│   ├── <span class="hljs-variable constant_">FORM</span>/
+│   ├── <span class="hljs-variable constant_">HOOKS</span>/
+│   ├── <span class="hljs-variable constant_">HOOKS</span>-<span class="hljs-variable constant_">THE_FINAL_FORM</span>/
+│   ├── <span class="hljs-variable constant_">NON</span>-<span class="hljs-variable constant_">SAURON</span>-<span class="hljs-variable constant_">HOOKS</span>/
+│   ├── <span class="hljs-variable constant_">THE_ESSENTIALS</span>/
+│   ├── <span class="hljs-variable constant_">THE</span>-<span class="hljs-variable constant_">CLOUD</span>/
+│   ├── <span class="hljs-variable constant_">UTILS</span>/
+│   └── <span class="hljs-variable constant_">WARD</span>/
+└── <span class="hljs-variable constant_">PLATFORM</span> <span class="hljs-variable constant_">PRIMITIVES</span>/
+    ├── <span class="hljs-variable constant_">ARCANE_INSTRUMENTS</span>/
+    │    └── type_errors.<span class="hljs-property">md</span>
+    ├── <span class="hljs-variable constant_">ARCHETYPES</span>/
+    │    ├── archetypes.<span class="hljs-property">ts</span>
+    │    ├── archetypes_lvl2.<span class="hljs-property">ts</span>
+    │    └── archetypes_lvl3.<span class="hljs-property">md</span>
+    ├── <span class="hljs-variable constant_">ARTIFACTS</span>/
+    │    ├── <span class="hljs-variable constant_">TW</span>/
+    │    │   ├── <span class="hljs-keyword">class</span>-group-utils.<span class="hljs-property">ts</span>
+    │    │   ├── config-utils.<span class="hljs-property">ts</span>
+    │    │   ├── create-tailwind-merge.<span class="hljs-property">ts</span>
+    │    │   ├── <span class="hljs-keyword">default</span>-config.<span class="hljs-property">ts</span>
+    │    │   ├── extend-tailwind-merge.<span class="hljs-property">ts</span>
+    │    │   ├── <span class="hljs-keyword">from</span>-theme.<span class="hljs-property">ts</span>
+    │    │   ├── lru-cache.<span class="hljs-property">ts</span>
+    │    │   ├── merge-classics.<span class="hljs-property">ts</span>
+    │    │   ├── merge-configs.<span class="hljs-property">ts</span>
+    │    │   ├── parse-<span class="hljs-keyword">class</span>-name.<span class="hljs-property">ts</span>
+    │    │   ├── sort-modifires.<span class="hljs-property">ts</span>
+    │    │   ├── tw-join.<span class="hljs-property">ts</span>
+    │    │   ├── tw-merge.<span class="hljs-property">ts</span>
+    │    │   ├── types.<span class="hljs-property">ts</span>
+    │    │   ├── utils.<span class="hljs-property">ts</span>
+    │    │   └── validators.<span class="hljs-property">md</span>
+    │    ├── clsx.<span class="hljs-property">ts</span>
+    │    ├── cn.<span class="hljs-property">ts</span>
+    │    ├── code.<span class="hljs-property">ts</span>
+    │    ├── cva.<span class="hljs-property">ts</span>
+    │    ├── draggable-list.<span class="hljs-property">tsx</span>
+    │    ├── init_auto.<span class="hljs-property">ts</span>
+    │    ├── me-renderer.<span class="hljs-property">ts</span>
+    │    ├── tw.<span class="hljs-property">ts</span>
+    │    └── utils.<span class="hljs-property">md</span>
+    ├── <span class="hljs-variable constant_">ASTRAL</span>/
+    │    ├── helpers.<span class="hljs-property">ts</span>
+    │    ├── realm_config.<span class="hljs-property">ts</span>
+    │    ├── realm_grimoire.<span class="hljs-property">ts</span>
+    │    ├── rune_template.<span class="hljs-property">ts</span>
+    │    ├── temporal_velocity.<span class="hljs-property">tsx</span>
+    │    └── type_template.<span class="hljs-property">md</span>
+    ├── <span class="hljs-variable constant_">ASTRAL_ARTIFACTS</span>/
+    ├── <span class="hljs-variable constant_">CHRONOMANCY</span>/
+    ├── <span class="hljs-variable constant_">CONDUITS</span>/
+    ├── <span class="hljs-variable constant_">CONJURATION</span>/
+    ├── <span class="hljs-variable constant_">DEV</span>-<span class="hljs-variable constant_">ENGINE</span>/
+    ├── <span class="hljs-variable constant_">DEV</span>-<span class="hljs-variable constant_">SUITE</span>/
+    ├── <span class="hljs-variable constant_">DIVINATION</span>/
+    ├── <span class="hljs-variable constant_">ENCHANTMENT</span>/
+    ├── <span class="hljs-variable constant_">GRAND_MASTERS</span>/
+    ├── <span class="hljs-variable constant_">INCANTATIONS</span>/
+    ├── <span class="hljs-variable constant_">MACHINES</span>/
+    ├── <span class="hljs-variable constant_">NECROMANCY</span>/
+    ├── <span class="hljs-variable constant_">RUNES</span>/
+    ├── <span class="hljs-variable constant_">SCROLLS</span>/
+    ├── <span class="hljs-variable constant_">SIMULACRA</span>/
+    ├── <span class="hljs-variable constant_">THE</span>-<span class="hljs-variable constant_">CLOUD</span>/
+    ├── <span class="hljs-variable constant_">TRANSMUTATION</span>/
+    ├── <span class="hljs-variable constant_">VAULTS</span>/
+    ├── <span class="hljs-variable constant_">VENOM</span>/
+    ├── <span class="hljs-variable constant_">WARDS</span>/
+    ├── <span class="hljs-variable constant_">WIZARD_KEEP</span>/
+    ├── <span class="hljs-variable constant_">WIZARD_VAULT</span>/
+    └── <span class="hljs-variable constant_">WORK</span>/
+</code></pre>
+<pre><code class="language-tsx">/<span class="hljs-variable constant_">THE_WARLOCK</span>
+├── <span class="hljs-attr">STAFF</span>: <span class="hljs-variable constant_">THE</span> <span class="hljs-variable constant_">DATA</span> <span class="hljs-variable constant_">GOOD</span> <span class="hljs-variable constant_">SOLUTION</span>/
+│   ├── <span class="hljs-number">00</span>-architecture-map.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">01</span>-platform-inventory.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">02</span>-sauron.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">03</span>-chains-and-gates.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">04</span>-the-bus.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">05</span>-<span class="hljs-variable constant_">DB</span>-division.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">06</span>-warlock-mode.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">07</span>-ppk.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">08</span>-kernel-nexus-houdini-ninja.<span class="hljs-property">md</span>
+│   └── <span class="hljs-number">09</span>-glossary.<span class="hljs-property">md</span>
+├── <span class="hljs-attr">THE_CLOUD</span>: <span class="hljs-variable constant_">THE</span> <span class="hljs-string">&#x27;APP&#x27;</span>/
+│   ├── <span class="hljs-number">00</span>-primitive-shape-lvl1-to-<span class="hljs-number">4.</span>md
+│   ├── <span class="hljs-number">01</span>-signals.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">02</span>-streams.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">03</span>-persistence.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">04</span>-distributed.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">05</span>-storage-adapters.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">06</span>-chains-api.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">07</span>-fused-operators.<span class="hljs-property">md</span>
+│   ├── <span class="hljs-number">08</span>-plugins.<span class="hljs-property">md</span>
+│   └── <span class="hljs-number">09</span>-migration-notes.<span class="hljs-property">md</span>
+└── <span class="hljs-variable constant_">PLATFORM</span> <span class="hljs-variable constant_">PRIMITIVES</span>/
+    ├── <span class="hljs-variable constant_">ARCANE_INSTRUMENTS</span>
+    ├── <span class="hljs-number">01</span>-ux-dx-additive.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">02</span>-time-to-mastery.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">03</span>-user-pays-the-tax.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">04</span>-docs-<span class="hljs-keyword">as</span>-editor.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">05</span>-golden-standard.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">06</span>-crm-<span class="hljs-keyword">case</span>-study.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">07</span>-first-<span class="hljs-keyword">in</span>-<span class="hljs-keyword">class</span>.<span class="hljs-property">md</span>
+    ├── <span class="hljs-number">08</span>-coding-due-to-pain.<span class="hljs-property">md</span>
+    └── <span class="hljs-number">09</span>-once-built-what-now.<span class="hljs-property">md</span>
+</code></pre>
+
+            
+            
+        </body>
+        </html>

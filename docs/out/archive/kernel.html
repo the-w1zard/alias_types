@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title></title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<p>// at the min needs baseline defaults no a zero config start
+// dev dashboard ui that updates the config in real time
+// The Processor: Create a loader that runs during the build/initialization phase. It should normalize the configuration, resolve relative paths, and inject environmental overrides immediately.
+// include:
+// - cli flags
+// - overwrites for pkg.json - essentially becoming the pkg.json but a .ts file
+// - local over rides
+// - env specific files for deployments
+// -
+// The Configuration Service (Injection vs. Access) - Do not pass config objects manually through your component tree. Instead, use an Accessor Engine. Global Provider: Use a singleton pattern (or a scoped context if working within the Remix/SolidJS adapter you've been building) that holds the resolved configuration. The Hook: Expose a single hook (e.g., useConfig()) that provides read-only access. The Dispatcher: To prevent state-desync, use an internal event bus (like your custom CSE) to notify modules when a configuration value changes (hot-reloading config during dev).
+//
+// Progressive/Adaptive ConfigurationThe &quot;absolute best&quot; developer experience involves not overwhelming the user. Implement Layered Configuration:LayerResponsibilityKernel LayerHardcoded defaults; the absolute requirements for the engine.Environment Layer.env or machine-specific overrides (like your Windows local overrides).Project LayerThe user's config.ts; defines application-specific behavior.Session LayerDynamic, ephemeral changes (e.g., toggling a debug flag via your CLI).
+//
+// versioning? allow versions to be saved in the db where the user can reference old versions
+// obviously there would be some kinda of script to initialize everything like kernel init once the config has been created or sxet or whenever the user wants to set everything
+// in respect to the pkg.json and its contents, we need to figure out a way where we can update this configs contents without user interaction... if the user uses the extensions terminal, we could have the terminal auto inject a command where when the user for exmaple npm i libname, once completed the terminal could then trigger an update script to take the newly installed pkg info and drop it in the config... MEANWHILE, npm i, with no pkg name the terminal could inject a update script for pkg.json PRIOR to actually installing everything so that when npm i does run it runs off of the newly updated pkg.json file that has alrady been synced to the config
+// everything defined in kernelVariabls will be accessible from within any kernel function exactly like how it is above</p>
+<p>// kernel - the first stopping stone of functions where it is most useful when couple with a single compnent. For example a simple ui comp
+// CONTROLS A SINGUALR DEFINED OBJ INSIDE KERNEL
+// stateMachine
+// logicMachine
+// Incantations_lvl2 - is the next stop up in functionality and complexity. The best way to think about it is, at the functions root level where you define objs... it is as we took kernel and placed it into kernel function for each and every single defined obj. In addition to that Incantations_lvl2 now gets 'self', a self referencing helper feature where you can... reference anything within itself if it needs that value and does not produce and errors or runs perfectly
+// variantMachine - replaces a defined objs variant obj. the end result making it so that, each and every single variant now acts as if it is instead a Incantations_lvl2... literally.
+// kernelStateMachine - kernelStateMachine and kernelLogicMachine, instead of control a single defined obj within Incantations_lvl2 or kernel... this can control an ENTIRE kernelFunctions worth of defined objs essentially giving you global control over that entire Incantations_lvl2
+// kernelLogicMachine
+// kernelVector - this continues the obviously set trend that you are witnessing... at this point kernelVector can control... everything, everywhere. With this dictatorship like control thre are some benefits that come with it that have never before been witnessed in front end dev
+// with the obvious other items that will be avaialbe to kernelVector, it will also get the following kv db, relational db, forms, sauron/the clouds ( hooks, router, navigation, etc ), data fetching, jobs, cron, sesion mgmt, auth and auth mgmt, realtime, htmx, loaders, actions, state machines logic machines, reflect, fetcher and so much more... because all control is under one roof, that one roof is literally like that dictatorship can see everything that it can dictate... for example, forms in the traditional sense no longer exist... same with the state mgmt required for modern forms, useeffects, callbacks, interactions with the database and so much more. the following example already has a form defined, there are no use states, the action already knows what form is triggered, because of that it already knows what fields are assigned to that specific form and which button that triggers it... by defining it ONCE, it also already knows what values it is supposed to load into each field while at the same time which db fields need to be over written when the form is triggered...
+// another massive benefit not before seen is with the integratino with the bus, and already proving just how powerful it can be when coupled in never before seen ways... this will allow things like useState, useAtom, useConfig... amother other hooks... to not be contstricted to the boundaries of your apps walled garden. The hooks... already do not conform to reacts hooks on rules... this removes the last set of walls of that walled garden making it so that... two totally different applications... could literally share the same useState value despite the fact that they are acccessing and setting that value.... from two different applicatoins... aand if done right... this type of freedom could be applied to a lot of features within kernel
+// htmx is the platforms renderer, we need to updated the dev server accordingly but this essentials gives us... the most unique and hopefully... the most fastest and powerfeul platform to exist for the next 10 years because that is how long it will take for another company to start and finish a platform that could match it
+// kernel vector and all the features that will go into the platform... simply put, removes all artificially constructed boundaries as we know them today... while at the same time requireing...what, 10% of the boiler plate it took before... some cases 1%. No glue to patch together libraries and how they work together, a lot less boiler plate per file since... everything knows what everything is doing at all times. A unintiontal, but rather nice perk... is that this entirely decouple practically EVERYTHING from the ui as there is no providers... no need to place form boundaries up to define a set of compnents to ensure that the form triggers correctly with the desired inputs and their values</p>
+<pre><code class="language-tsx"><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> ward = <span class="hljs-title class_">Ward</span>(<span class="hljs-string">&#x27;admin_settings&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">{ self, staff }: any</span>) =&gt;</span> ({
+    <span class="hljs-attr">path</span>: <span class="hljs-string">&quot;/admin/settings&quot;</span>,
+    <span class="hljs-attr">links</span>: <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-keyword">return</span> [
+            {
+            <span class="hljs-attr">rel</span>: <span class="hljs-string">&quot;icon&quot;</span>,
+            <span class="hljs-attr">href</span>: <span class="hljs-string">&quot;/favicon.png&quot;</span>,
+            <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;image/png&quot;</span>,
+            },
+            {
+            <span class="hljs-attr">rel</span>: <span class="hljs-string">&quot;stylesheet&quot;</span>,
+            <span class="hljs-attr">href</span>: <span class="hljs-string">&quot;https://example.com/some/styles.css&quot;</span>,
+            },
+            { <span class="hljs-attr">page</span>: <span class="hljs-string">&quot;/users/123&quot;</span> },
+            {
+            <span class="hljs-attr">rel</span>: <span class="hljs-string">&quot;preload&quot;</span>,
+            <span class="hljs-attr">href</span>: <span class="hljs-string">&quot;/images/banner.jpg&quot;</span>,
+            <span class="hljs-attr">as</span>: <span class="hljs-string">&quot;image&quot;</span>,
+            },
+        ];
+    }, 
+    <span class="hljs-attr">headers</span>: <span class="hljs-function">(<span class="hljs-params">{
+        errorHeaders,
+    }</span>) =&gt;</span> {{
+        <span class="hljs-string">&quot;X-Stretchy-Pants&quot;</span>: <span class="hljs-string">&quot;its for fun&quot;</span>,
+        <span class="hljs-string">&quot;Cache-Control&quot;</span>: <span class="hljs-string">&quot;max-age=300, s-maxage=3600&quot;</span>,
+    }},
+    <span class="hljs-attr">handle</span>: {<span class="hljs-comment">// to be used in conjuction with useMatches</span>
+        <span class="hljs-attr">its</span>: <span class="hljs-string">&quot;all yours&quot;</span>,
+    },
+    <span class="hljs-attr">meta</span>: <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-keyword">return</span> [
+            { <span class="hljs-attr">title</span>: <span class="hljs-string">&quot;Very cool app | Remix&quot;</span> },
+            {
+            <span class="hljs-attr">property</span>: <span class="hljs-string">&quot;og:title&quot;</span>,
+            <span class="hljs-attr">content</span>: <span class="hljs-string">&quot;Very cool app&quot;</span>,
+            },
+            {
+            <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;description&quot;</span>,
+            <span class="hljs-attr">content</span>: <span class="hljs-string">&quot;This app is the best&quot;</span>,
+            },
+        ];
+    },
+    <span class="hljs-comment">// obviously there wont be 2 metas, but more of an exmaple of showing a second version of it</span>
+    <span class="hljs-attr">meta</span>: <span class="hljs-function">(<span class="hljs-params">{ location }</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> searchQuery = <span class="hljs-keyword">new</span> <span class="hljs-title class_">URLSearchParams</span>(
+            location.<span class="hljs-property">search</span>
+        ).<span class="hljs-title function_">get</span>(<span class="hljs-string">&quot;q&quot;</span>);
+        <span class="hljs-keyword">return</span> [{ <span class="hljs-attr">title</span>: <span class="hljs-string">`Search results for &quot;<span class="hljs-subst">${searchQuery}</span>&quot;`</span> }];
+    },
+    <span class="hljs-attr">meta</span>: <span class="hljs-function">(<span class="hljs-params">{ error }</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> [{ <span class="hljs-attr">title</span>: error ? <span class="hljs-string">&quot;oops!&quot;</span> : <span class="hljs-string">&quot;Actual title&quot;</span> }];
+    },
+    <span class="hljs-attr">button</span>: {
+        <span class="hljs-attr">base</span>: <span class="hljs-string">&quot;inline-flex items-center justify-center font-medium rounded-md&quot;</span>,
+        <span class="hljs-attr">variants</span>: {
+            <span class="hljs-attr">variant</span>: {
+                <span class="hljs-attr">default</span>: <span class="hljs-string">&quot;bg-foreground text-background hover:bg-foreground/90 font-medium tracking-tight shadow-sm&quot;</span>,
+                <span class="hljs-attr">destructive</span>: <span class="hljs-string">&quot;bg-destructive/10 border border-destructive/20 text-destructive hover:bg-destructive hover:text-white transition-colors&quot;</span>,
+                <span class="hljs-attr">outline</span>: <span class="hljs-string">&quot;text-muted-foreground hover:text-foreground bg-transparent border-0 transition-colors&quot;</span>,
+            },
+            <span class="hljs-attr">size</span>: {
+                <span class="hljs-attr">xs</span>: <span class="hljs-string">&quot;h-6 gap-1 px-2 text-[11px] [&amp;_svg]:size-3&quot;</span>,
+                <span class="hljs-attr">sm</span>: <span class="hljs-string">&quot;h-8 gap-1.5 px-3 text-xs&quot;</span>,
+                <span class="hljs-attr">default</span>: <span class="hljs-string">&quot;h-10 px-4 gap-2 text-sm rounded-full&quot;</span>,
+            },
+        },
+        <span class="hljs-attr">types</span>: {} <span class="hljs-keyword">as</span> {
+            icon?: any
+            iconPlacement?: <span class="hljs-string">&#x27;left&#x27;</span> | <span class="hljs-string">&#x27;right&#x27;</span>
+            to?: string
+            prefetch?: <span class="hljs-string">&quot;intent&quot;</span> | <span class="hljs-string">&quot;render&quot;</span> | <span class="hljs-string">&quot;viewport&quot;</span> | <span class="hljs-string">&quot;none&quot;</span>
+            nav?: <span class="hljs-string">&quot;navlink&quot;</span> | <span class="hljs-string">&#x27;anchor&#x27;</span> | <span class="hljs-literal">null</span>
+            type?: <span class="hljs-string">&quot;button&quot;</span> | <span class="hljs-string">&quot;submit&quot;</span> | <span class="hljs-string">&quot;reset&quot;</span>
+            newTab?: boolean
+            onClick?: any
+        },
+        <span class="hljs-attr">defaultVariants</span>: {
+            <span class="hljs-attr">variant</span>: <span class="hljs-string">&quot;default&quot;</span>,
+            <span class="hljs-attr">size</span>: <span class="hljs-string">&quot;default&quot;</span>,
+            <span class="hljs-attr">align</span>: <span class="hljs-string">&quot;middle&quot;</span>,
+        },
+        <span class="hljs-attr">onClick</span>: self.<span class="hljs-property">user_form</span>.<span class="hljs-title function_">submit</span>(),
+        <span class="hljs-attr">value</span>: self.<span class="hljs-property">user_form</span>, <span class="hljs-comment">// the same as setting a forms button value so that one single action can handle 10 forms on that single page</span>
+    },
+    <span class="hljs-attr">page</span>: {
+        <span class="hljs-attr">loader</span>: {
+            <span class="hljs-attr">authenticated</span>: {
+                <span class="hljs-attr">user</span>: <span class="hljs-string">&#x27;&#x27;</span>,
+            },
+        },
+        <span class="hljs-attr">action</span>: {
+            <span class="hljs-attr">user_form</span>: <span class="hljs-function">() =&gt;</span>  {
+                <span class="hljs-comment">// NOT REQUIRED - so even though by default we would handle the 98% of use cases of every forms / routes use of a form</span>
+                <span class="hljs-keyword">const</span> name = self.<span class="hljs-property">action</span>.<span class="hljs-property">user_form</span>.<span class="hljs-property">name</span>
+            }
+        }
+    },
+
+    <span class="hljs-attr">form</span>: {
+        <span class="hljs-attr">user</span>: {
+            <span class="hljs-attr">name</span>: {
+                <span class="hljs-attr">value</span>: staff.<span class="hljs-property">rdb</span>.<span class="hljs-property">table</span>.<span class="hljs-property">users</span>.<span class="hljs-property">user</span>.<span class="hljs-property">name</span>,
+                <span class="hljs-attr">rule</span>: <span class="hljs-string">&#x27;not-empty&#x27;</span>, <span class="hljs-comment">// and because  not jsut handles the form, and action but also the state... the error value would be instant, in real time, on the page as the user makes an error</span>
+                <span class="hljs-attr">onSuccess</span>: staff.<span class="hljs-property">rdb</span>.<span class="hljs-property">table</span>.<span class="hljs-property">users</span>.<span class="hljs-property">user</span>.<span class="hljs-property">name</span>,
+            },
+            <span class="hljs-attr">phone</span>: {
+                <span class="hljs-attr">value</span>: staff.<span class="hljs-property">rdb</span>.<span class="hljs-property">table</span>.<span class="hljs-property">users</span>.<span class="hljs-property">user</span>.<span class="hljs-property">phone</span>,
+                <span class="hljs-attr">rule</span>: <span class="hljs-string">&#x27;cdn-phone&#x27;</span>, <span class="hljs-comment">// us-phone</span>
+                <span class="hljs-attr">onSuccess</span>: staff.<span class="hljs-property">rdb</span>.<span class="hljs-property">table</span>.<span class="hljs-property">users</span>.<span class="hljs-property">user</span>.<span class="hljs-property">phone</span>,
+            },
+        },
+            <span class="hljs-attr">user_settings</span>: {
+
+        },
+        <span class="hljs-attr">email_blast_signup</span>: {
+
+        },
+    },
+<span class="hljs-comment">// while in a form obj, it handles almost everything virtually behind the scenes, states, error handling, useffects, etc which would take a shit ton of schaffolding where the user always has to lign up perfectly for it to work... instead you just define fields in that form... you do not need to define use state and value, setValue bullshit... or any of its error handling as we can have pre defined rules the user can opt into with a default of field cannot be umpty which can allso be turned off </span>
+        <span class="hljs-comment">// submit = KERNEL.user_form.submit() for a button to trigger the form... but no wrapper, as it is not needed... since we already know what is going to be defining the form an evrything</span>
+        <span class="hljs-comment">// fields value = KERNEL.user_form.name</span>
+        <span class="hljs-comment">// fields set value = KERNEL.user_form.name.set() || KERNEL.user_form.name.set(e.currentValue.target)</span>
+    <span class="hljs-attr">getRelatedPath</span>: <span class="hljs-function">() =&gt;</span> routes.<span class="hljs-property">UserProfileRoute</span>?.[<span class="hljs-number">0</span>]?.<span class="hljs-property">path</span> ?? <span class="hljs-string">&quot;/profile&quot;</span>,
+    <span class="hljs-attr">guard</span>: <span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-keyword">const</span> auth = tw.<span class="hljs-property">AuthService</span>?.[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">return</span> auth ? auth.<span class="hljs-property">isAdmin</span> : <span class="hljs-literal">false</span>;
+    },
+    <span class="hljs-attr">render</span>: <span class="hljs-function">() =&gt;</span> {
+        <span class="hljs-keyword">const</span> theme = tw.<span class="hljs-property">DesignSystem</span>?.[<span class="hljs-number">0</span>]?.<span class="hljs-property">currentTheme</span> ?? <span class="hljs-string">&quot;dark&quot;</span>;
+
+        <span class="hljs-keyword">return</span> (
+                <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">admin-panel</span> ${<span class="hljs-attr">theme</span>}`}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Admin Configuration<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Linked user profile route: {self.getRelatedPath()}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        );
+    },
+}));
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">AdminSettingsRoute</span> = <span class="hljs-title class_">Ward</span>(<span class="hljs-string">&quot;/admin/settings&quot;</span>,<span class="hljs-function">(<span class="hljs-params">{ self, tw, routes, admin_settings_i_lvl4 }</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-comment">// Dynamic route guard checking global services without imports</span>
+       
+
+        <span class="hljs-comment">// Access other routes if needed! E.g., checking sibling route paths or metas</span>
+
+        <span class="hljs-comment">// The JSX return p</span>
+        <span class="hljs-attr">render</span>: <span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-keyword">const</span> theme = tw.<span class="hljs-property">DesignSystem</span>?.[<span class="hljs-number">0</span>]?.<span class="hljs-property">currentTheme</span> ?? <span class="hljs-string">&quot;dark&quot;</span>;
+
+            <span class="hljs-keyword">return</span> (
+                <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{</span>`<span class="hljs-attr">admin-panel</span> ${<span class="hljs-attr">theme</span>}`}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Admin Configuration<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Linked user profile route: {self.getRelatedPath()}<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+            );
+        }
+    };
+});
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> <span class="hljs-title class_">AdminSettingsRoute</span> = <span class="hljs-title class_">APIWard</span>(<span class="hljs-function">(<span class="hljs-params">{ self, tw, routes, admin_settings_i_lvl4 }</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> {
+        <span class="hljs-attr">path</span>: <span class="hljs-string">&quot;/api/admin/settings&quot;</span>,
+        <span class="hljs-attr">guard</span>: <span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-keyword">const</span> auth = tw.<span class="hljs-property">AuthService</span>?.[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">return</span> auth ? auth.<span class="hljs-property">isAdmin</span> : <span class="hljs-literal">false</span>;
+        },
+        <span class="hljs-attr">return</span>: <span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-keyword">const</span> auth = tw.<span class="hljs-property">AuthService</span>?.[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">return</span> auth ? auth.<span class="hljs-property">isAdmin</span> : <span class="hljs-literal">false</span>;
+        }
+    };
+});
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">RuntimeRouter</span>(<span class="hljs-params"></span>) {
+    <span class="hljs-comment">// Pulls all route components registered across your entire application graph</span>
+    <span class="hljs-keyword">const</span> registeredRoutes = <span class="hljs-variable constant_">KERNEL_REGISTRY</span>[<span class="hljs-string">&#x27;routes&#x27;</span>] || [];
+
+    <span class="hljs-keyword">return</span> (
+        <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">RouterEngine</span>&gt;</span>
+            {registeredRoutes.map((routeNode, index) =&gt; (
+                <span class="hljs-tag">&lt;<span class="hljs-name">Route</span>
+                    <span class="hljs-attr">key</span>=<span class="hljs-string">{index}</span>
+                    <span class="hljs-attr">path</span>=<span class="hljs-string">{routeNode.path}</span>
+                    <span class="hljs-attr">canEnter</span>=<span class="hljs-string">{routeNode.guard}</span>
+                    <span class="hljs-attr">component</span>=<span class="hljs-string">{routeNode.render}</span>
+                /&gt;</span>
+            ))}
+        <span class="hljs-tag">&lt;/<span class="hljs-name">RouterEngine</span>&gt;</span></span>
+    );
+}
+</code></pre>
+<p>// staff and ngin already have perfect usages but the name would change when obsorbed to
+// checklist kernel. will be at the start of each of these in the implemnetaion ie kernel.db
+// - [ ] db - ngin
+// - [ ] bus - staff
+// - [ ] form
+// - [ ] sauron
+// - [ ] cloud - the cloud does routing when inside our own platform...
+// - [ ] fetch - swr data fetching
+// - [ ] rdb - relational db - rdb
+// - [ ] signals
+// - [ ] jobs
+// - [ ] cron
+// - [ ] session_mgmt
+// - [ ] auth - for the tyr auth suite
+// - [ ] realtime
+// - [ ] htmx
+// - [ ] loader
+// - [ ] action
+// - [ ] the kv essentially becomes state and simple data storing and accessing.... while rdb becomes the relational db every app needs when dealing with, users, complex storage needs like a stores inventory and so on. This takes... 7-12 solutions and combines into one... single mental model and api
+// - [ ] The Logic Machine (permissions, user roles, tenant settings, entity relationships) lives in the relational DB. Because rules are tabular—users, roles, permissions, machine_access.
+// - [ ] State machines (with all their nested contexts, histories, and actors) are perfect for KV—they're hierarchical, unpredictable shapes. ngin eats them raw.
+// - [ ] secrets
+// - [ ] reflect - since kernel vector... literally controls everything, this would be easy as this is a Real-time function value inspector
+// - [ ] fetcher - meh this is already in the cloud... so dont really need this
+// - [ ] hook names... lets get fucking rid of use... because fuck that noise... this IS going to have to make devs think differently... so lets help them with that
+// - [ ] kState
+// - [ ] kEffect
+// - [ ] kCallback
+// we wont entirely get rid of all the underlying pieces... but stil expose them for the edge cases where they are actually needed... we dont want to take away from the user we want to empower them
+// while adding staff to kernel we need to add the following functionality to staff
+// Another mad scientist moment... kernel... is happening, that much is already decided and I'm... TRYING... to finish this ext version before moving on to that... meanwhile, useLive which is a function already implemented in staff has proved to be incredibly strong. We are going to take this idea... to say I'm going to run with it is an understatement. When merged with kernel it will essentially, take everything that kernal has to offer and will offer when everything comes together... and distribute it in a sense that has never before been seen... for example, useAtom will be added to staff making it so that the states value can be accesses and mutated... where it is declared... even across applications... the same will be done for state machines... not only will xstates mouth drop to the floor, but this would grant access to the same machine where ever you need access to it. Whether it is within the same app, but in an entirely different comp that typically could NOT access it in any traditional sense... or even in an entirely different application. A function on your phone could mutate the machine... and on the partnering app on their computer, it would immediatly change due to sharing the same state machine. Not to mention, we also have logic machine to utilize as well. Not to mention the countless other features... as of right now I know these features are already queued to be added to staff...
+// - [ ] worker
+// - [ ] enqueueJob
+// - [ ] crdt
+// - [ ] useCrdt
+// - [ ] signal
+// - [ ] useSignal
+// - [ ] session
+// - [ ] useSession
+// - [ ] notifications
+// - [ ] useNotifications
+// - [ ] config
+// - [ ] useConfig
+// - [ ] plus other like it</p>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

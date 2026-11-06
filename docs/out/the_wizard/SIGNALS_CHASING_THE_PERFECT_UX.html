@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>SIGNALS CHASING THE PERFECT UX</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex/dist/katex.min.css">
+<link href="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="signals-chasing-the-perfect-ux">SIGNALS CHASING THE PERFECT UX</h1>
+<div class="markdown-alert markdown-alert-caution"><p class="markdown-alert-title"><svg class="octicon octicon-stop mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M4.47.22A.749.749 0 0 1 5 0h6c.199 0 .389.079.53.22l4.25 4.25c.141.14.22.331.22.53v6a.749.749 0 0 1-.22.53l-4.25 4.25A.749.749 0 0 1 11 16H5a.749.749 0 0 1-.53-.22L.22 11.53A.749.749 0 0 1 0 11V5c0-.199.079-.389.22-.53Zm.84 1.28L1.5 5.31v5.38l3.81 3.81h5.38l3.81-3.81V5.31L10.69 1.5ZM8 4a.75.75 0 0 1 .75.75v3.5a.75.75 0 0 1-1.5 0v-3.5A.75.75 0 0 1 8 4Zm0 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Caution</p><p></p>
+<p><strong><span style="font-size: 16px; font-family: monospace">you have to look at a lot of what is written here... from a completely different angle...</span></strong></p>
+<p>What I mean by that is, IF you look at it strictly from a... technical aspect, it won't make sense. It will look wrong, well... technically if we really want to break it down all the way to brass tax... it is wrong, lol.</p>
+<p>bbbbbuuttt at the the same time... it is actually, correct IF you look at it from the viewpoint of a users usage instead of just from a technical aspect. I know, it sounds weird.</p>
+</div>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p></p>
+<p>I just staretd working on finalizing the usage for my rewactive streams solution... let me rep[rgase that, i hate it currently iso i am redeisnging it....] i want the fns to be contained within a single class, use pops into a fn, zero restrictions on what they can use when, and when they are ready to polace the next fn on the chain it is as if it, simply poped them backj up intop the same class so that the suer can infintely nest what or in how ever much quantity
+they need</p>
+<ul>
+<li>infinite fn nesting</li>
+<li>easiest usage bar none... no creepy stupid looking fucking... off worlder usages or apis</li>
+<li>no restrictions, user can go for what they want when they want</li>
+<li>we need ot save thier values as it goes, wnhe it ends it gets return to them, or the can acces sit in the glboal context OR if its a streamed value it just cointoiusly streams to them...</li>
+<li>live env for values</li>
+<li>would be better described, in terms of consuming and updating of its values... a speadsheet, but instead of cols and rows... its replaced with lines of code</li>
+<li>Stream values in real-time, backed by CRDTs</li>
+<li>Subscribe to changes at any point, with automatic propagation</li>
+<li>Combine the reactive data flow with your existing streams/signals infrastructure</li>
+<li>Enable seamless integration into your live chains, dev tools, and reactive logic</li>
+</ul>
+<ol>
+<li>Make each chain node a reactive signal/stream</li>
+</ol>
+<ul>
+<li>Instead of a static function, each node could be a signal or reactive stream that emits values and listens for updates.</li>
+<li>When a node processes a value, it updates its signal, which automatically propagates downstream.</li>
+</ul>
+<ol start="2">
+<li>Utilize your existing DRS infrastructure</li>
+</ol>
+<ul>
+<li>Use your store or DRS functions to persist state, subscribe to changes, and stream data.</li>
+<li>Each node can register with the DRS, subscribe to the previous node, and emit its output to the next node.</li>
+</ul>
+<ol start="3">
+<li>Implement a live, propagating chain</li>
+</ol>
+<ul>
+<li>The entire chain becomes a reactive graph.</li>
+<li>When you inject new nodes, they subscribe to upstream signals.</li>
+<li>When you pop or modify nodes, the graph reacts instantly.</li>
+</ul>
+<ol start="5">
+<li>Create a chain dynamically</li>
+</ol>
+<ul>
+<li>Build nodes on-the-fly, subscribing each to the previous</li>
+<li>The entire graph is reactive, updating live as states change</li>
+</ul>
+<ol start="6">
+<li>Benefits</li>
+</ol>
+<ul>
+<li>Always live: streaming updates flow through the graph</li>
+<li>Inspectable: you can observe each node’s current value</li>
+<li>Control: push new nodes, modify existing ones, or pause/resume streams</li>
+<li>Dev tools: visualize the graph, track data flow, inspect values at each node</li>
+</ul>
+<ol start="7">
+<li>Next steps</li>
+</ol>
+<ul>
+<li>Implement your existing store/DRS functions to create reactive nodes connected dynamically</li>
+<li>Build an API to add/remove nodes, pause/resume, and inspect state in real time</li>
+<li>Integrate with your dev tools UI to visualize and control the live chain</li>
+</ul>
+<p>Summary</p>
+<p>Taking advantage of distributed reactive functions by building each chain node as a reactive, stream-based component that reacts to state changes and streams data automatically. This creates a robust, live, inspectable, and infinitely nestable chain system that leverages existing infrastructure for maximum power.</p>
+<p>I already have a platform primitive where it takes what we currently view as reactive streams usage, an enirely new form to create and use reactive streams. It fits the use case more of the times that require more complex, carefully thought builds. As it lets you build them in a much more free, declarative manner. Far easier to use and understand, actually makes sense, not as restrictive and far more forgiving while also not pinning you down with... you must use this, now and that then...</p>
+<p>WHERE DOES THIS NEW USAGE FIT IT, IF WE ALREADY FIXED RXJS/MOST.JS?</p>
+<p>The platform primtive is great... honestly... but some of the trade offs that come with the new usage is that... if you want a quick and dirty methord or a smash and grab... just a usage that is not only performance, but easy to reach out to, fast... extremly fast to flesh out and continue coding...</p>
+<p><strong><span style="font-size: 16px; font-family: monospace">CONTEXT OF WHAT IS AVAILABLE TO POSSIBLY UTILIZE</span></strong></p>
+<p>we have lots of tools, and an entire surface area of fns to do whatever we want with, as I create a carbon copy of the solution so that this can fuck with the fns in any way that we need to in order to get it working, while at the same time... LEAVING THE ORIGINALS UNTOUCHED and intact.</p>
+<p>it isnt your regular signals implmentation...</p>
+<ol>
+<li>as of now there is already a chache solution set up in the file, just for this...</li>
+<li>the signals solution is actually gonig to end up being the performance dividsion of the bus where the original bus... is going to hoist up and provide the needed infastructure it needs to do, for the goals i have set out for it. meaning we have an entire unrelated bus, with an even larger api avialable with such features such as:</li>
+</ol>
+<ul>
+<li>distributed reactive state, where we can access the values of what is going on in real time  as they happen when we go tfrom chain to chain...</li>
+<li>duplex streams</li>
+<li>50+ regular streams... well not regular but ya</li>
+<li>50+ different send fns</li>
+<li>a massive host of distributed logic gates</li>
+<li>and even larger hosting of distrbuted execetuables</li>
+<li>a massive comprehencise reacctive signals solution</li>
+<li>signals as a state, signals as a storage medium, and signals as a transport</li>
+<li>reactive stream observables, reimagined... splitting the ocnerns more properly of a consumer and producer... and actually lettering the consumer REACT TO THE FUCKING DATA COMING IN... it is all based off of reactive streams so i dont know why devs skip this part...</li>
+<li>fused observables</li>
+<li>alreadyt have a platform primtive built but that is designe dwith a diff goal in mind and is out of schope for this</li>
+<li>full back pressure, dead letter</li>
+<li>a already in place rxjs, most.js usage style in terms of reactive streams</li>
+<li>an entire branch devoted to testing creating all manner of things, but focusing on things that should not work</li>
+<li>very nice, complex, time saving features built in already... such as...
+<ul>
+<li>reacts entire hook stack, but distrbuted even use effect</li>
+<li>RADAR The ultimate bidirectional sweeping mechanism. Both sides actively scan, ping, and maintain lock using a shared state matrix powered by useDRS. If either side drops out of sweep range, the lock dissolves gracefully.</li>
+<li>CONVOY Maintains a DRS cluster registry of participating active nodes.</li>
+<li>AUTO FEDERATE Auto-federate channels based on traffic patterns</li>
+<li>fuseSignal — one declarative entry point wiring persistence, hydration, and SWR cache bridging together.</li>
+<li>StreamLab — programmable stream-processing assembly. syncStream × streamRelay × pipeline × mesh × plinko × switchboard</li>
+<li>ONE public class method. Paste <code>streamLab</code> inside your bus class, next to your existing sync/syncSub, relay, pipeline, mesh, switchboard and plinko methods. It wires the six primitives over ONE shared rt space and returns a handle you can process() payloads through:</li>
+<li>Entity Component System for complex state management with DRS cluster component sync and reactive queries.</li>
+<li>Event-driven reactor with declarative state machine and DRS distributed state synchronization.</li>
+<li>CRDT Last-Write-Wins (LWW) Conflict-Free Replicated Data Type (CRDT) Map</li>
+<li>NOTIFICATIONS Cross-node notification stream publisher / listener</li>
+<li>MESH Creates a self-organizing peer mesh with automatic discovery P2P mesh network manager providing peer discovery, low-latency routing, gossip broadcast, and DRS cluster state.</li>
+<li>conditional type component, where typically something would need to trigger it to start it so it can then run, send off the first command, the response comes back and based off of that response that would determine the next gate to open. Instead... what if we just never had that first triggering event... and have the conditional gate master standing at the ready for it to receive obj and based on what it received, it would then trigger the gates that were satisfied due to that obj...</li>
+<li>Combines useDRS with gateMaster2 to create data-driven flood gates. The DRS data feeds into the gate master, which evaluates conditions and opens the appropriate flood gates concurrently.</li>
+<li>PLINKO Just like a plinko gambling machine, or better yet the opposite of gate master, where its more wider then deeper... plinko is deeper than wider, the more traditional type conditional functionality</li>
+<li>🎰 PLINKO - The Ultimate Conditional Tree Engine Think of it like a real plinko machine crossed with a state machine, workflow engine, and decision tree - all running on your bus.</li>
+<li>all in all, 384... user usable fns... that does not include... things and feautres that are not user facing...</li>
+</ul>
+</li>
+</ul>
+<p><strong><span style="font-size: 16px; font-family: monospace">FULL FLEDGED SOLUTIONS</span></strong></p>
+<ul>
+<li>full custom buiilt server side solutions for
+<ul>
+<li>batch</li>
+<li>full yjs replacing, 100% ssr no heart beat, no deps</li>
+<li>yjs - wareness</li>
+<li>collab map</li>
+<li>comments</li>
+<li>doc</li>
+<li>presence</li>
+<li>sesion authority</li>
+<li>text</li>
+<li>then moving on to a concurrent lib</li>
+<li>cherrio</li>
+<li>circuit braek</li>
+<li>compression</li>
+<li>concurrent</li>
+<li>cqrs</li>
+<li>crdt lww register</li>
+<li>crdt mv register</li>
+<li>crdt or set</li>
+<li>crdt pn counter</li>
+<li>debounce</li>
+<li>diff patch</li>
+<li>full text search</li>
+<li>full, massive really great axios replacment</li>
+<li>gdb</li>
+<li>hgybrid logical clock</li>
+<li>long poll</li>
+<li>optimistic</li>
+<li>performance clocks and timers to measure an apps performance both on the seerver and off</li>
+<li>plink</li>
+<li>queued tiered concurerntly executed batching</li>
+<li>queue</li>
+<li>raft, but mine works on 1 and 2 nodes, again no heart beat and ssr</li>
+<li>rdb</li>
+<li>reverse heart beat monitor</li>
+<li>semaphore</li>
+<li>sse</li>
+<li>swr</li>
+<li>tdb</li>
+<li>kvdb</li>
+<li>throttle</li>
+<li>vdb</li>
+<li>ws</li>
+<li>yimir</li>
+<li>binary encoder</li>
+<li>ill jsut leave it at that..
+in addition to all that, i jsut finished a custom... solution where it uses signals as a db, transport medium and state. where the performace i was getting the following numbers</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="benchmark-highlights">Benchmark Highlights</h3>
+<p>All tests were executed on a continuous 1,024-slot Structure of Arrays buffer:</p>
+<table>
+<thead>
+<tr>
+<th>Benchmark Phase</th>
+<th>Operations Executed</th>
+<th>Total Duration</th>
+<th>Sustained Throughput</th>
+<th>Avg Latency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Governor Sleep Threshold</strong></td>
+<td>40 idle ticks</td>
+<td>—</td>
+<td>Engine Sleeping</td>
+<td>0 CPU usage</td>
+</tr>
+<tr>
+<td><strong>Governor Moderate Load (50%)</strong></td>
+<td>32 ticks</td>
+<td>510.58 ms</td>
+<td>63 passes/sec</td>
+<td>Controlled rate</td>
+</tr>
+<tr>
+<td><strong>3-Second Burst (Governor Active)</strong></td>
+<td>660,657 passes</td>
+<td>3.012 s</td>
+<td><strong>219,355 passes/sec</strong></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.5588</mn><mtext> </mtext><mi>μ</mi><mtext>s</mtext></mrow><annotation encoding="application/x-tex">4.5588\ \mu\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4.5588</span><span class="mspace"> </span><span class="mord mathnormal">μ</span><span class="mord text"><span class="mord">s</span></span></span></span></span></td>
+</tr>
+<tr>
+<td><strong>10-Second Stress Test</strong></td>
+<td>2,306,301 passes</td>
+<td>10.012 s</td>
+<td><strong>230,344 passes/sec</strong></td>
+<td><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>4.3413</mn><mtext> </mtext><mi>μ</mi><mtext>s</mtext></mrow><annotation encoding="application/x-tex">4.3413\ \mu\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">4.3413</span><span class="mspace"> </span><span class="mord mathnormal">μ</span><span class="mord text"><span class="mord">s</span></span></span></span></span></td>
+</tr>
+<tr>
+<td><strong>Unthrottled Raw SoA (100M Runs)</strong></td>
+<td>100,000,000 passes</td>
+<td>1.138 s</td>
+<td><strong>87,842,254 passes/sec</strong></td>
+<td><strong><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML"><semantics><mrow><mn>0.0113</mn><mtext> </mtext><mi>μ</mi><mtext>s</mtext></mrow><annotation encoding="application/x-tex">0.0113\ \mu\text{s}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8389em;vertical-align:-0.1944em;"></span><span class="mord">0.0113</span><span class="mspace"> </span><span class="mord mathnormal">μ</span><span class="mord text"><span class="mord">s</span></span></span></span></span></strong></td>
+</tr>
+</tbody>
+</table>
+<h4 id="warm-up--execution-curve">Warm-Up &amp; Execution Curve</h4>
+<p>Under continuous execution, the unthrottled SoA engine demonstrates a progressive acceleration curve as JIT optimizations settle:</p>
+<pre><code>[1M Passes]   73,802,917 pass/sec  (0.0135 μs)
+[10M Passes]  67,049,070 pass/sec  (0.0149 μs)
+[50M Passes]  82,785,802 pass/sec  (0.0120 μs)
+[100M Passes] 85,382,273 pass/sec  (0.0117 μs)
+</code></pre>
+<p>PS LET ME KNOWWHAT U NEED FOR CODE......</p>
+<blockquote>
+<pre><code class="language-tsx"><span class="hljs-keyword">function</span> <span class="hljs-title class_">Chaining</span>&lt;T&gt;(<span class="hljs-attr">chain</span>: <span class="hljs-title class_">Chains</span>&lt;T&gt;) {
+    <span class="hljs-comment">/**
+     * USAGE
+     * 
+     * public get&lt;T = any&gt;(label: string, sl_reg?: any, ms_reg?: any, globalKey?: any) {
+     *   const v = Chaining(new Chains(this.state.get&lt;T&gt;(label, { sl_reg, ms_reg, globalKey })))
+     *   if (v.value !== undefined) return v.value
+     *   else return chain(v);
+     * }
+     * 
+     * // sync read — works today
+     * const v = get(&#x27;foo&#x27;)
+     * 
+     * // async read — should work, doesn&#x27;t today
+     * const v = await get(&#x27;foo&#x27;)
+     * 
+     * // sync write — works today
+     * set(&#x27;foo&#x27;, 5)
+     * 
+     * // write-and-receive — should work, doesn&#x27;t today
+     * const v = await set(&#x27;foo&#x27;, 5)
+     * 
+     * // sync peek at subscription state — works today
+     * const current = get(&#x27;foo&#x27;)
+     * 
+     * // wait for next value — works via waitFor today, but reads differently
+     * const next = await sub(&#x27;foo&#x27;)
+     */</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(chain, {
+        <span class="hljs-title function_">get</span>(<span class="hljs-params">target, prop, receiver</span>) {
+            <span class="hljs-comment">// 1. .value — sync peek, no wrapping</span>
+            <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#x27;value&#x27;</span>) { <span class="hljs-keyword">return</span> target.<span class="hljs-property">value</span> <span class="hljs-keyword">as</span> any }
+
+            <span class="hljs-comment">// 2. .then — the await path</span>
+            <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#x27;then&#x27;</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">onFulfilled?: (v: T) =&gt; any, onRejected?: (e: any) =&gt; any</span>) =&gt;</span> {
+                    <span class="hljs-keyword">const</span> v = target.<span class="hljs-property">value</span>
+                    <span class="hljs-comment">// sync path — value is here, resolve immediately</span>
+                    <span class="hljs-keyword">if</span> (v !== <span class="hljs-literal">undefined</span>) { <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(onFulfilled ? <span class="hljs-title function_">onFulfilled</span>(<span class="hljs-title class_">MaybeFn</span>(v)) <span class="hljs-keyword">as</span> any : v <span class="hljs-keyword">as</span> any) }
+                    <span class="hljs-comment">// async path — poll until it shows up</span>
+                    <span class="hljs-keyword">return</span> target.<span class="hljs-title function_">retry</span>(<span class="hljs-number">20</span>).<span class="hljs-title function_">then</span>(onFulfilled, onRejected)
+                }
+            }
+
+            <span class="hljs-comment">// 3. .retry — re-wrap the result so chaining stays wrapped</span>
+            <span class="hljs-keyword">if</span> (prop === <span class="hljs-string">&#x27;retry&#x27;</span>) { <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">n: number, delayMs?: number</span>) =&gt;</span> <span class="hljs-title class_">Chaining</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Chains</span>(<span class="hljs-function">() =&gt;</span> target.<span class="hljs-title function_">retry</span>(n, delayMs) <span class="hljs-keyword">as</span> any)) }
+
+            <span class="hljs-comment">// 4. .then-style transform — .chain(fn) or any other method</span>
+            <span class="hljs-comment">//    re-wrap so downstream accesses also get this treatment</span>
+            <span class="hljs-keyword">const</span> orig = <span class="hljs-title class_">Reflect</span>.<span class="hljs-title function_">get</span>(target, prop, receiver)
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> orig === <span class="hljs-string">&#x27;function&#x27;</span>) {
+                <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">...args: any[]</span>) =&gt;</span> {
+                    <span class="hljs-keyword">const</span> result = orig.<span class="hljs-title function_">apply</span>(target, args); <span class="hljs-keyword">return</span> result <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Chains</span> ? <span class="hljs-title class_">Chaining</span>(result) : result;
+                }
+            }
+            <span class="hljs-keyword">return</span> orig
+        }
+    })
+}
+
+<span class="hljs-keyword">class</span> <span class="hljs-title class_">Chains</span>&lt;T = any&gt; {
+    private <span class="hljs-attr">thunk</span>: <span class="hljs-title class_">MaybeFn</span>&lt;T&gt;
+    <span class="hljs-title function_">constructor</span>(<span class="hljs-params">thunkOrValue: MaybeFn&lt;T&gt;</span>) { <span class="hljs-variable language_">this</span>.<span class="hljs-property">thunk</span> = <span class="hljs-title class_">MaybeFn</span>(thunkOrValue) }
+    <span class="hljs-keyword">get</span> <span class="hljs-title function_">value</span>(): <span class="hljs-title class_">MaybeFn</span>&lt;T&gt; { <span class="hljs-keyword">return</span> <span class="hljs-variable language_">this</span>.<span class="hljs-property">thunk</span> <span class="hljs-keyword">as</span> any }
+    then&lt;R = any&gt;(<span class="hljs-attr">resolve</span>: <span class="hljs-function">(<span class="hljs-params">value: T</span>) =&gt;</span> R) {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Chains</span>&lt;R&gt;(<span class="hljs-function">() =&gt;</span> {
+            <span class="hljs-keyword">const</span> v = <span class="hljs-variable language_">this</span>.<span class="hljs-property">thunk</span>;
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;function&#x27;</span> ? <span class="hljs-title class_">MaybeFn</span>(v) <span class="hljs-keyword">as</span> any : <span class="hljs-title function_">resolve</span>(v) <span class="hljs-keyword">as</span> any;
+        }) <span class="hljs-keyword">as</span> any;
+    }
+
+    <span class="hljs-title function_">retry</span>(<span class="hljs-attr">attempts</span>: number, delayMs = <span class="hljs-number">10000</span>): <span class="hljs-title class_">Promise</span>&lt;T&gt; {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve, reject</span>) =&gt;</span> {
+            <span class="hljs-keyword">let</span> n = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">const</span> <span class="hljs-title function_">attempt</span> = (<span class="hljs-params"></span>) =&gt; {
+                <span class="hljs-keyword">const</span> v = <span class="hljs-variable language_">this</span>.<span class="hljs-property">thunk</span>;
+                <span class="hljs-keyword">if</span> (v !== <span class="hljs-literal">undefined</span> &amp;&amp; v !== <span class="hljs-literal">null</span>) { <span class="hljs-title function_">resolve</span>(<span class="hljs-title class_">MaybeFn</span>(v)) <span class="hljs-keyword">as</span> any; <span class="hljs-keyword">return</span>; }
+                <span class="hljs-keyword">if</span> (n++ &gt;= attempts) { <span class="hljs-title function_">reject</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Error</span>(<span class="hljs-string">&#x27;retry exhausted&#x27;</span>)); <span class="hljs-keyword">return</span>; }
+                <span class="hljs-built_in">setTimeout</span>(attempt, delayMs);
+            };
+            <span class="hljs-title function_">attempt</span>();
+        }) <span class="hljs-keyword">as</span> any;
+    }
+}
+
+<span class="hljs-keyword">function</span> chain&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybePromise</span>&lt;T&gt;) {
+    <span class="hljs-keyword">return</span> <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(value);
+}
+
+type V&lt;T = any&gt; = T;
+type S = string;
+type F&lt;T = any&gt; = <span class="hljs-function">() =&gt;</span> T;
+type P&lt;T = any&gt; = <span class="hljs-title class_">Promise</span>&lt;T&gt;;
+type A&lt;T = any&gt; = T[];
+type I&lt;T = any&gt; = <span class="hljs-title class_">Iterable</span>&lt;T&gt;;
+type M&lt;K = any, V = any&gt; = <span class="hljs-title class_">Map</span>&lt;K, V&gt;;
+type R&lt;V = any&gt; = <span class="hljs-title class_">Record</span>&lt;string, V&gt;;
+type N = <span class="hljs-title class_">Node</span>;
+
+type <span class="hljs-variable constant_">M3</span>&lt;T = any&gt; = V&lt;T&gt; | F&lt;T&gt;;
+type <span class="hljs-title class_">MaybeFn</span>&lt;T = any&gt; = <span class="hljs-variable constant_">M3</span>&lt;T&gt;;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeFn</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybeFn</span>&lt;T&gt;) { 
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">&#x27;function&#x27;</span> ? value <span class="hljs-keyword">as</span> V : <span class="hljs-function">() =&gt;</span> value <span class="hljs-keyword">as</span> F
+}
+
+type <span class="hljs-title class_">MV2</span>&lt;T = any&gt; = (<span class="hljs-function">() =&gt;</span> T);
+type <span class="hljs-title class_">MV3</span>&lt;T = any&gt; = <span class="hljs-title class_">MV2</span>&lt;T&gt; | V&lt;T&gt;;
+type <span class="hljs-title class_">MaybeValue</span>&lt;T = any&gt; = <span class="hljs-title class_">MV3</span>&lt;T&gt;;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeValue</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybeValue</span>&lt;T&gt;) { 
+  <span class="hljs-keyword">return</span> <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">&#x27;function&#x27;</span> ? (value <span class="hljs-keyword">as</span> <span class="hljs-title class_">MV2</span>)() : value <span class="hljs-keyword">as</span> V
+}
+
+type <span class="hljs-title class_">MP3</span>&lt;T = any&gt; = V&lt;T&gt; | P&lt;T&gt;;
+type <span class="hljs-title class_">MaybePromise</span>&lt;T = any&gt; = <span class="hljs-title class_">MP3</span>&lt;T&gt;;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybePromise</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybePromise</span>&lt;T&gt;) { 
+  <span class="hljs-keyword">return</span> value !== <span class="hljs-literal">undefined</span> ? value <span class="hljs-keyword">as</span> V : <span class="hljs-title class_">Promise</span>.<span class="hljs-title function_">resolve</span>(value) <span class="hljs-keyword">as</span> P 
+}
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeAwait</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybePromise</span>&lt;T&gt;) { 
+  <span class="hljs-keyword">return</span> value <span class="hljs-keyword">as</span> V
+}
+ 
+type <span class="hljs-title class_">MI2</span>&lt;T = any&gt; = V&lt;T&gt; | I&lt;T&gt;
+type <span class="hljs-title class_">MaybeIterable</span>&lt;T = any&gt; = <span class="hljs-title class_">MI2</span>&lt;T&gt;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeIterable</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybeIterable</span>&lt;T&gt;) {
+    <span class="hljs-keyword">if</span> (value != <span class="hljs-literal">null</span> &amp;&amp; <span class="hljs-keyword">typeof</span> (value <span class="hljs-keyword">as</span> any)[<span class="hljs-title class_">Symbol</span>.<span class="hljs-property">iterator</span>] === <span class="hljs-string">&#x27;function&#x27;</span>) <span class="hljs-keyword">return</span> value <span class="hljs-keyword">as</span> I&lt;T&gt;;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> [value <span class="hljs-keyword">as</span> V&lt;T&gt;];
+}
+
+type <span class="hljs-title class_">MM2</span>&lt;K = any, V = any&gt; = M&lt;K, V&gt; | R&lt;V&gt;
+type <span class="hljs-title class_">MaybeMap</span>&lt;K = any, V = any&gt; = <span class="hljs-title class_">MM2</span>&lt;K, V&gt;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeMap</span>&lt;K = any, V = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybeMap</span>&lt;K, V&gt;) {
+    <span class="hljs-keyword">return</span> value <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">Map</span> ? value <span class="hljs-keyword">as</span> M&lt;K, V&gt; : <span class="hljs-keyword">new</span> <span class="hljs-title class_">Map</span>(<span class="hljs-title class_">Object</span>.<span class="hljs-title function_">entries</span>(value)) <span class="hljs-keyword">as</span> M&lt;K, V&gt;;
+}
+
+type <span class="hljs-title class_">MN1</span> = N[];
+type <span class="hljs-title class_">MN2</span> = S
+type <span class="hljs-title class_">MN3</span> = N | <span class="hljs-title class_">MN1</span> | <span class="hljs-title class_">MN2</span>;
+type <span class="hljs-title class_">MaybeNode</span> = <span class="hljs-title class_">MN3</span>;
+<span class="hljs-keyword">function</span> <span class="hljs-title function_">MaybeNode</span>(<span class="hljs-params">v: MaybeNode, root: ParentNode = <span class="hljs-variable language_">document</span></span>) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;string&#x27;</span>) <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(root.<span class="hljs-title function_">querySelectorAll</span>(v));
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(v)) <span class="hljs-keyword">return</span> [v];
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> v;
+}
+
+
+type <span class="hljs-title class_">AnySelfType</span> = { <span class="hljs-attr">self</span>: any;[<span class="hljs-attr">key</span>: string]: any };
+type <span class="hljs-title class_">AnyObject</span> = <span class="hljs-title class_">Record</span>&lt;string, any&gt;;
+type <span class="hljs-title class_">AnyFactory</span> = <span class="hljs-function">(<span class="hljs-params">ctx: AnySelfType</span>) =&gt;</span> <span class="hljs-title class_">AnyObject</span>;
+type <span class="hljs-title class_">AnyType</span> = <span class="hljs-title class_">AnyObject</span> | <span class="hljs-title class_">AnyFactory</span>;
+<span class="hljs-keyword">const</span> enum <span class="hljs-title class_">ReactiveFlags</span> {
+    <span class="hljs-title class_">None</span> = <span class="hljs-number">0</span>,
+    <span class="hljs-title class_">Mutable</span> = <span class="hljs-number">1</span>,
+    <span class="hljs-title class_">Watching</span> = <span class="hljs-number">2</span>,
+    <span class="hljs-title class_">RecursedCheck</span> = <span class="hljs-number">4</span>,
+    <span class="hljs-title class_">Recursed</span> = <span class="hljs-number">8</span>,
+    <span class="hljs-title class_">Dirty</span> = <span class="hljs-number">16</span>,
+    <span class="hljs-title class_">Pending</span> = <span class="hljs-number">32</span>,
+}
+type <span class="hljs-variable constant_">MF</span>&lt;T = any&gt; = <span class="hljs-function">(<span class="hljs-params">ctx: AnySelfType</span>) =&gt;</span> T;
+type <span class="hljs-title class_">MF2</span>&lt;T = any&gt; = M&lt;T&gt; | <span class="hljs-variable constant_">MF</span>&lt;T&gt;;
+type <span class="hljs-title class_">MaybeFactory</span>&lt;T = any&gt; = <span class="hljs-title class_">MF2</span>&lt;T&gt;;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeFactory</span>&lt;T = any&gt;(<span class="hljs-attr">v</span>: <span class="hljs-title class_">MaybeFactory</span>&lt;T&gt;) {
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> v === <span class="hljs-string">&#x27;function&#x27;</span>) <span class="hljs-keyword">return</span> v <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">MF</span>;
+    <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> (<span class="hljs-function">() =&gt;</span> v <span class="hljs-keyword">as</span> T) <span class="hljs-keyword">as</span> <span class="hljs-variable constant_">MF</span>;
+}
+
+type <span class="hljs-title class_">MA2</span>&lt;T = any&gt; = V&lt;T&gt; | A&lt;T&gt;
+type <span class="hljs-title class_">MaybeArray</span>&lt;T = any&gt; = <span class="hljs-title class_">MA2</span>&lt;T&gt;
+<span class="hljs-keyword">function</span> <span class="hljs-title class_">MaybeArray</span>&lt;T = any&gt;(<span class="hljs-attr">value</span>: <span class="hljs-title class_">MaybeArray</span>&lt;T&gt;) { 
+  <span class="hljs-keyword">return</span> <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">isArray</span>(value) ? [value] <span class="hljs-keyword">as</span> A : value <span class="hljs-keyword">as</span> V
+}
+
+</code></pre>
+<p>Which nets us the end result of</p>
+<pre><code class="language-tsx"> public get&lt;T = any&gt;(<span class="hljs-attr">label</span>: string, sl_reg?: any, ms_reg?: any, globalKey?: any) {
+     <span class="hljs-keyword">const</span> v = <span class="hljs-title class_">Chaining</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Chains</span>(<span class="hljs-variable language_">this</span>.<span class="hljs-property">state</span>.<span class="hljs-property">get</span>&lt;T&gt;(label, { sl_reg, ms_reg, globalKey })))
+     <span class="hljs-keyword">if</span> (v.<span class="hljs-property">value</span>) <span class="hljs-keyword">return</span> <span class="hljs-title class_">MaybeFn</span>(v.<span class="hljs-property">value</span>)
+     <span class="hljs-keyword">if</span> (v.<span class="hljs-property">value</span> !== <span class="hljs-literal">undefined</span>) <span class="hljs-keyword">return</span> v.<span class="hljs-property">value</span>
+     <span class="hljs-keyword">else</span> <span class="hljs-keyword">return</span> <span class="hljs-title class_">MaybeFn</span>(<span class="hljs-title function_">chain</span>(v));
+ }
+</code></pre>
+<p>Chaining Chains, acts as a boundary between the get and the promise that we need it to end with. So once it his the logic where it ends up becoming a promise... it ends up doing exactly that.</p>
+</blockquote>
+
+            <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
+            
+        </body>
+        </html>

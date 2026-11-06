@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&lt;span style&equals;&quot;font-size&colon; 20px&semi; font-family&colon; monospace&quot;&gt;&lbrack;TOC&rbrack;&lt;&sol;span&gt;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h2 id="toc"><span style="font-size: 20px; font-family: monospace">[TOC]</span></h2>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[DATABASES]</span> </strong></summary>
+<p><a href="../databases/BDB.html#BDB">BDB</a>
+<a href="../databases/BINARY.html#BINARY">BINARY</a>
+<a href="../databases/COOKIE.html#COOKIE">COOKIE</a>
+<a href="../databases/GDB.html#GDB">GDB</a>
+<a href="../databases/GT.html#GT">GT</a>
+<a href="../databases/HADRON_COLLIDER.html#HADRON_COLLIDER">HADRON_COLLIDER</a>
+<a href="../databases/IDB_HADRON_COLLIDER.html#IDB_HADRON_COLLIDER">IDB_HADRON_COLLIDER</a>
+<a href="../databases/IDB_HC_SINK.html#IDB_HC_SINK">IDB_HC_SINK</a>
+<a href="../databases/IDB_KVDB.html#IDB_KVDB">IDB_KVDB</a>
+<a href="../databases/IDB_RDB.html#IDB_RDB">IDB_RDB</a>
+<a href="../databases/KVDB.html#KVDB">KVDB</a>
+<a href="../databases/LS.html#LS">LS</a>
+<a href="../databases/MEMORY.html#MEMORY">MEMORY</a>
+<a href="../databases/RDB.html#RDB">RDB</a>
+<a href="../databases/REGISTRIES.html#REGISTRIES">REGISTRIES</a>
+<a href="../databases/SAURON.html#SAURON">SAURON</a>
+<a href="../databases/SECURE_COOKIE.html#SECURE_COOKIE">SECURE_COOKIE</a>
+<a href="../databases/SS.html#SS">SS</a>
+<a href="../databases/TDB.html#TDB">TDB</a>
+<a href="../databases/VDB.html#VDB">VDB</a></p>
+</details>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[DEVTOOLS]</span> </strong></summary>
+<p><a href="../platform/ATOM.html#ATOM">ATOM</a>
+<a href="../platform/CONVERGENCE.html#CONVERGENCE">CONVERGENCE</a>
+<a href="../platform/FORMS.html#FORMS">FORMS</a>
+<a href="../platform/GLOBAL_QUAD_KEY_CONTEXT.html#GLOBAL_QUAD_KEY_CONTEXT">GLOBAL_QUAD_KEY_CONTEXT</a>
+<a href="../platform/PERFORMANCE_DIVISION.html#PERFORMANCE_DIVISION">PERFORMANCE_DIVISION</a>
+<a href="../platform/REACTIVITY.html#REACTIVITY">REACTIVITY</a>
+<a href="../platform/ROUTE_COMPONENTS.html#ROUTE_COMPONENTS">ROUTE_COMPONENTS</a>
+<a href="../platform/SAURON.html#SAURON">SAURON</a>
+<a href="../platform/SIGNALS.html#SIGNALS">SIGNALS</a>
+<a href="../platform/STAFF.html#STAFF">STAFF</a>
+<a href="../platform/THE_WARLOCK_MODE.html#THE_WARLOCK_MODE">THE_WARLOCK_MODE</a>
+<a href="../platform/THE_WIZARD_MODE.html#THE_WIZARD_MODE">THE_WIZARD_MODE</a></p>
+</details>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[PLATFORM PRIMTIVES]</span> </strong></summary>
+<p><a href="../primitives/API_WARDS.html#API_WARDS">API_WARDS</a>
+<a href="../primitives/APPARATIONS_DQ,md#APPARATIONS_DQ">APPARATIONS_DQ</a>
+<a href="../primitives/ARCHETYPES.html#ARCHETYPES">ARCHETYPES</a>
+<a href="../primitives/BATCH.html#BATCH">BATCH</a>
+<a href="../primitives/BINARY.html#BINARY">BINARY</a>
+<a href="../primitives/CHAINS.html#CHAINS">CHAINS</a>
+<a href="../primitives/CHRONO_SHIFT.html#CHRONO_SHIFT">CHRONO_SHIFT</a>
+<a href="../primitives/CHRONOMANCER.html#CHRONOMANCER">CHRONOMANCER</a>
+<a href="../primitives/CONJURE_LIBRARIES.html#CONJURE_LIBRARIES">CONJURE_LIBRARIES</a>
+<a href="../primitives/CONJURE_MIMIC.html#CONJURE_MIMIC">CONJURE_MIMIC</a>
+<a href="../primitives/CRON.html#CRON">CRON</a>
+<a href="../primitives/DARK_PORTALS.html#DARK_PORTALS">DARK_PORTALS</a>
+<a href="../primitives/DUPLEX_STREAMS.html#DUPLEX_STREAMS">DUPLEX_STREAMS</a>
+<a href="../primitives/EMITTER.html#EMITTER">EMITTER</a>
+<a href="../primitives/EVOCATIONS.html#EVOCATIONS">EVOCATIONS</a>
+<a href="../primitives/EXECUTE_MASTER.html#EXECUTE_MASTER">EXECUTE_MASTER</a>
+<a href="../primitives/GATE_MASTER.html#GATE_MASTER">GATE_MASTER</a>
+<a href="../primitives/GATES.html#GATES">GATES</a>
+<a href="../primitives/GLYPH_BINDER.html#GLYPH_BINDER">GLYPH_BINDER</a>
+<a href="../primitives/GOLEMS.html#GOLEMS">GOLEMS</a>
+<a href="../primitives/GRIMOIRE.html#GRIMOIRE">GRIMOIRE</a>
+<a href="../primitives/ILLUSIONIST.html#ILLUSIONIST">ILLUSIONIST</a>
+<a href="../primitives/INCANTATIONS.html#INCANTATIONS">INCANTATIONS</a>
+<a href="../primitives/JOBS.html#JOBS">JOBS</a>
+<a href="../primitives/MACHINES_MACHINE.html#MACHINES_MACHINE">MACHINES_MACHINE</a>
+<a href="../primitives/MICROTASKS.html#MICROTASKS">MICROTASKS</a>
+<a href="../primitives/MSGS.html#MSGS">MSGS</a>
+<a href="../primitives/NO_NO_SQUARE_DQ.html#NO_NO_SQUARE_DQ">NO_NO_SQUARE_DQ</a>
+<a href="../primitives/PERFORMANCE_TIMER.html#PERFORMANCE_TIMER">PERFORMANCE_TIMER</a>
+<a href="../primitives/PLINKO_MASTER.html#PLINKO_MASTER">PLINKO_MASTER</a>
+<a href="../primitives/PRIORITY.html#PRIORITY">PRIORITY</a>
+<a href="../primitives/RDB.html#RDB">RDB</a>
+<a href="../primitives/RENDERIVITY_DQ.html#RENDERIVITY_DQ">RENDERIVITY_DQ</a>
+<a href="../primitives/RETRY_MASTER.html#RETRY_MASTER">RETRY_MASTER</a>
+<a href="../primitives/RUNE_HTTP.html#RUNE_HTTP">RUNE_HTTP</a>
+<a href="../primitives/S_CLASS.html#S_CLASS">S_CLASS</a>
+<a href="../primitives/SCHEDULER.html#SCHEDULER">SCHEDULER</a>
+<a href="../primitives/SENTINELmd#SENTINELmd">SENTINELmd</a>
+<a href="../primitives/SESSION_SIGIL.html#SESSION_SIGIL">SESSION_SIGIL</a>
+<a href="../primitives/SPEELBOOK.html#SPEELBOOK">SPEELBOOK</a>
+<a href="../primitives/TIERED_QUEUE.html#TIERED_QUEUE">TIERED_QUEUE</a>
+<a href="../primitives/TIME_MACHINE.html#TIME_MACHINE">TIME_MACHINE</a>
+<a href="../primitives/TOME_OF_SECRETS.html#TOME_OF_SECRETS">TOME_OF_SECRETS</a>
+<a href="../primitives/TRANSMOGRIFY.html#TRANSMOGRIFY">TRANSMOGRIFY</a>
+<a href="../primitives/TYPES_MACHINE.html#TYPES_MACHINE">TYPES_MACHINE</a>
+<a href="../primitives/TYR.html#TYR">TYR</a>
+<a href="../primitives/VAULTS.html#VAULTS">VAULTS</a>
+<a href="../primitives/VENOM.html#VENOM">VENOM</a>
+<a href="../primitives/WARDS.html#WARDS">WARDS</a>
+<a href="../primitives/WIZARD_KEEP.html#WIZARD_KEEP">WIZARD_KEEP</a>
+<a href="../primitives/WORKERS.html#WORKERS">WORKERS</a>
+<a href="../primitives/WORKFLOW.html#WORKFLOW">WORKFLOW</a></p>
+</details>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[THE_WIZARDS_STAFF]</span> </strong></summary>
+<p><a href="../solutions/BATCH.html#BATCH">BATCH</a>
+<a href="../solutions/CELLS.html#CELLS">CELLS</a>
+<a href="../solutions/CHEERIO.html#CHEERIO">CHEERIO</a>
+<a href="../solutions/CIRCUIT_BREAKER.html#CIRCUIT_BREAKER">CIRCUIT_BREAKER</a>
+<a href="../solutions/COMPRESSION.html#COMPRESSION">COMPRESSION</a>
+<a href="../solutions/CONCURRENT.html#CONCURRENT">CONCURRENT</a>
+<a href="../solutions/CQRS.html#CQRS">CQRS</a>
+<a href="../solutions/DEBOUNCE.html#DEBOUNCE">DEBOUNCE</a>
+<a href="../solutions/DEFER.html#DEFER">DEFER</a>
+<a href="../solutions/DEV_TOOLS.html#DEV_TOOLS">DEV_TOOLS</a>
+<a href="../solutions/DIFFPATCH.html#DIFFPATCH">DIFFPATCH</a>
+<a href="../solutions/DISTRBUTED_EXE.html#DISTRBUTED_EXE">DISTRBUTED_EXE</a>
+<a href="../solutions/DISTRIBUTED_LOGIC_GATES.html#DISTRIBUTED_LOGIC_GATES">DISTRIBUTED_LOGIC_GATES</a>
+<a href="../solutions/DISTRIBUTED_PORTAL.html#DISTRIBUTED_PORTAL">DISTRIBUTED_PORTAL</a>
+<a href="../solutions/DISTRIBUTED_REACTIVE_STATE.html#DISTRIBUTED_REACTIVE_STATE">DISTRIBUTED_REACTIVE_STATE</a>
+<a href="../solutions/DRS.html#DRS">DRS</a>
+<a href="../solutions/EMPHEMRAL_STATE.html#EMPHEMRAL_STATE">EMPHEMRAL_STATE</a>
+<a href="../solutions/FULL_TEXT_SEARCH.html#FULL_TEXT_SEARCH">FULL_TEXT_SEARCH</a>
+<a href="../solutions/HTTP_CLIENT.html#HTTP_CLIENT">HTTP_CLIENT</a>
+<a href="../solutions/LOGIC_GATES.html#LOGIC_GATES">LOGIC_GATES</a>
+<a href="../solutions/LONGPOLL.html#LONGPOLL">LONGPOLL</a>
+<a href="../solutions/LWW.html#LWW">LWW</a>
+<a href="../solutions/MV.html#MV">MV</a>
+<a href="../solutions/OPTIMISTIC.html#OPTIMISTIC">OPTIMISTIC</a>
+<a href="../solutions/OR.html#OR">OR</a>
+<a href="../solutions/PERFORMANCE_TIMER.html#PERFORMANCE_TIMER">PERFORMANCE_TIMER</a>
+<a href="../solutions/PN.html#PN">PN</a>
+<a href="../solutions/QUEUE_TIERED.html#QUEUE_TIERED">QUEUE_TIERED</a>
+<a href="../solutions/RAFT.html#RAFT">RAFT</a>
+<a href="../solutions/RATE_LIMIT.html#RATE_LIMIT">RATE_LIMIT</a>
+<a href="../solutions/REACTIVE_CHAINS.html#REACTIVE_CHAINS">REACTIVE_CHAINS</a>
+<a href="../solutions/REVERSE_HEART_BEAT_MGR.html#REVERSE_HEART_BEAT_MGR">REVERSE_HEART_BEAT_MGR</a>
+<a href="../solutions/RIFTS.html#RIFTS">RIFTS</a>
+<a href="../solutions/SEMAPHORE.html#SEMAPHORE">SEMAPHORE</a>
+<a href="../solutions/SEND_SUB.html#SEND_SUB">SEND_SUB</a>
+<a href="../solutions/SIGNALS.html#SIGNALS">SIGNALS</a>
+<a href="../solutions/SPREADSHEET.html#SPREADSHEET">SPREADSHEET</a>
+<a href="../solutions/SSE.html#SSE">SSE</a>
+<a href="../solutions/STAFF.html#STAFF">STAFF</a>
+<a href="../solutions/STREAMS.html#STREAMS">STREAMS</a>
+<a href="../solutions/SWR.html#SWR">SWR</a>
+<a href="../solutions/TEMPORAL_SHIFT.html#TEMPORAL_SHIFT">TEMPORAL_SHIFT</a>
+<a href="../solutions/THROTTLE.html#THROTTLE">THROTTLE</a>
+<a href="../solutions/WIRE_TAPS.html#WIRE_TAPS">WIRE_TAPS</a>
+<a href="../solutions/WORKSPACE_GLOBAL.html#WORKSPACE_GLOBAL">WORKSPACE_GLOBAL</a>
+<a href="../solutions/WS.html#WS">WS</a>
+<a href="../solutions/XXSR.html#XXSR">XXSR</a>
+<a href="../solutions/YATA.html#YATA">YATA</a>
+<a href="../solutions/YIMIR.html#YIMIR">YIMIR</a></p>
+</details>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[BAG OF TRICKS]</span> </strong></summary>
+<ul>
+<li><a href="../bag_of_tricks/BARRIER.html#BARRIER">BARRIER</a></li>
+<li><a href="../bag_of_tricks/CALL_IF.html#CALL_IF">CALL_IF</a></li>
+<li><a href="../bag_of_tricks/CHAIN_RECHAIN.html#CHAIN_RECHAIN">CHAIN_RECHAIN</a></li>
+<li><a href="../bag_of_tricks/chain.html#chain">chain</a></li>
+<li><a href="../bag_of_tricks/clamp.html#clamp">clamp</a></li>
+<li><a href="../bag_of_tricks/deferred.html#deferred">deferred</a></li>
+<li><a href="../bag_of_tricks/evaluator.html#evaluator">evaluator</a></li>
+<li><a href="../bag_of_tricks/finally.html#finally">finally</a></li>
+<li><a href="../bag_of_tricks/gate.html#gate">gate</a></li>
+<li><a href="../bag_of_tricks/ignore_arg.html#ignore_arg">ignore_arg</a></li>
+<li><a href="../bag_of_tricks/invoke.html#invoke">invoke</a></li>
+<li><a href="../bag_of_tricks/is_defined.html#is_defined">is_defined</a></li>
+<li><a href="../bag_of_tricks/is_not_defined.html#is_not_defined">is_not_defined</a></li>
+<li><a href="../bag_of_tricks/LAZY.html#LAZY">LAZY</a></li>
+<li><a href="../bag_of_tricks/MAYBE_PROMISE.html#MAYBE_PROMISE">MAYBE_PROMISE</a></li>
+<li><a href="../bag_of_tricks/maybe.html#maybe">maybe</a></li>
+<li><a href="../bag_of_tricks/mcr_combo.html#mcr_combo">mcr_combo</a></li>
+<li><a href="../bag_of_tricks/ONCE.html#ONCE">ONCE</a></li>
+<li><a href="../bag_of_tricks/or_default.html#or_default">or_default</a></li>
+<li><a href="../bag_of_tricks/patch_state.html#patch_state">patch_state</a></li>
+<li><a href="../bag_of_tricks/retry_with_backoff.html#retry_with_backoff">retry_with_backoff</a></li>
+<li><a href="../bag_of_tricks/run_with_retry.html#run_with_retry">run_with_retry</a></li>
+<li><a href="../bag_of_tricks/SERIAL_EXECUTOR.html#SERIAL_EXECUTOR">SERIAL_EXECUTOR</a></li>
+<li><a href="../bag_of_tricks/set_keys.html#set_keys">set_keys</a></li>
+<li><a href="../bag_of_tricks/set_prev.html#set_prev">set_prev</a></li>
+<li><a href="../bag_of_tricks/sleep.html#sleep">sleep</a></li>
+<li><a href="../bag_of_tricks/tap.html#tap">tap</a></li>
+<li><a href="../bag_of_tricks/thenable.html#thenable">thenable</a></li>
+<li><a href="../bag_of_tricks/TIMED_PROMISE.html#TIMED_PROMISE">TIMED_PROMISE</a></li>
+<li><a href="../bag_of_tricks/to_promise.html#to_promise">to_promise</a></li>
+<li><a href="../bag_of_tricks/try_catch.html#try_catch">try_catch</a></li>
+<li><a href="../bag_of_tricks/unreachable.html#unreachable">unreachable</a></li>
+<li><a href="../bag_of_tricks/WAIT_AND_PROMISE.html#WAIT_AND_PROMISE">WAIT_AND_PROMISE</a></li>
+</ul>
+</details>
+<details><summary><strong><span style="font-size: 16px; font-family: monospace">[TODO & IDEAS]</span> </strong></summary>
+<ul>
+<li><a href="TO_DO_AND_IDEAS.html#todo--ideas">TODO &amp; IDEAS</a>
+<ul>
+<li><a href="TO_DO_AND_IDEAS.html#the_wizard">[THE_WIZARD]</a> 🧙  <a href="TO_DO_AND_IDEAS.html#primitives">[PRIMITIVES]</a> 🧙  <a href="TO_DO_AND_IDEAS.html#next_level_ideas">[NEXT_LEVEL_IDEAS]</a> 🧙  <a href="TO_DO_AND_IDEAS.html#kvdb">KVDB</a> 🧙  <a href="TO_DO_AND_IDEAS.html#prxcdb">PRxCDB</a> 🧙  <a href="TO_DO_AND_IDEAS.html#staff">STAFF</a> 🧙 <a href="TO_DO_AND_IDEAS.html#--e--mc2--">❗ ──── E = mc^2 ──── ❗</a> 🧙 <a href="TO_DO_AND_IDEAS.html#native-custom-built-solutions">NATIVE, CUSTOM BUILT SOLUTIONS</a> 🧙 <a href="TO_DO_AND_IDEAS.html#storage-context">STORAGE CONTEXT</a> 🧙 <a href="TO_DO_AND_IDEAS.html#other">OTHER</a></li>
+</ul>
+</li>
+</ul>
+</details>
+<h1 id="platform-primtives-">PLATFORM PRIMTIVES ✔</h1>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p></p>
+<p><span style="font-size: 24px; font-family: monospace">3 tiered/layered globally accessibled scoped context system</span></p>
+<ul>
+<li>While it is fresh in my head, since I just hammered out the final touches on the system. Deceptively trivial, but thats only because of the usage... no one has, zustand and redux WISHES they had this, but don't. We will go over the basic usage first... then scale and go over ALL the differnt scoping capabilties, and finally explain it as a whole, will use each section of code to go over each part... THEN, finally bring it all in and go over the code react wishes the originally created the platform with.
+<ul>
+<li>createContext, useContext || createSauronContext, useSauronContext</li>
+<li>basically, everyone knows reacts context... so it is the same here, one of the few things they got right</li>
+</ul>
+</li>
+</ul>
+<pre><code>const defaultValue = 'dark'
+const themeContext = createSauronContext(defaultValue)
+const theme = useSauronContext(ThemeContext)
+</code></pre>
+<p>There are NO wrappers... like at all, even for scoped contexts...</p>
+<p>User defined label contexts, this is where things get pretty wizardry...</p>
+<pre><code>- const defaultValue = 'dark'
+- const userDefinedLabel = 'theme'
+- const themeContext = createSauronContext(defaultValue, userDefinedLabel)
+- const theme = useSauronContext(ThemeContext)
+</code></pre>
+<p>This allows us, without props drilling, without exporting and importing and blah, blah, fucking horse shit coding acrabatics... Like fuck off Instead, for example... lets say you have 2 scoped contexts or 2 boundary defined contexts... in 2 different files, that define 2 entirely different groups of functions/comps that you want to be able to access that SINGLE context... well, by providing a user defined label, it allows you to do just that. Typically, behind the scenes, react and other solutions auto apply an id for you with no option for you to override... this platform is different, if you do not provide name, that's ok as a name/unique identifier is auto supplied making it so that each context is unique to its own &quot;defined&quot; area/s</p>
+<ul>
+<li>Component / Instance scoped globally accessible contexts</li>
+<li>Still... no wrapper, but yet you gain access to a unique context system that you can use how ever, whenever, or where ever you need to. There are 3 levels of abstraction</li>
+</ul>
+<ol>
+<li>'component' or 'instance' defined scope</li>
+<li>'group' or 'category' defined scope</li>
+<li>'app'  or 'umbrella' defined scope</li>
+</ol>
+<p>The best part is the usage was created, BACKWARDS so as to allow for a much more easier, more userfriendly ux. Only want to scope it by comp or instance... great you just supply one value. Need to take it a step further? Great, supply 2. If you need or desire to decouple your newly created context from the global context entirely, you simply just supply 3 values. Thats it...</p>
+<pre><code>- const defaultValue = 'dark'
+- const userDefinedLabel = 'theme'
+- const component_defined_scope = 'hover_card'
+- const themeContext = createSauronContext(defaultValue, userDefinedLabel, component_defined_scope)
+- const theme = useSauronContext(ThemeContext)
+
+- const group_defined_scope = 'ui_components'
+- const umbrella_defined_scope = 'my_cool_ui_comps_library'
+
+- const themeContext = createSauronContext(defaultValue, userDefinedLabel, component_defined_scope, group_defined_scope, umbrella_defined_scope)
+</code></pre>
+<p>before moving on to the next item, createContext and useContext and every data storage type function discussed here is already accessible via staff through one of the 5 data storage solution. Only makes sense that, it supplied not just through the hook system... where everyone expects but also via the data solution, despite having a 'special' name... 'context' it is still, just a means of storing data in some form in some place. Seperation of concerns... :P</p>
+<p>Before moving on to other non data storing related needs... WE HAVE MORE CONTEXTS!!!</p>
+<p>You didn't think thats the only thing I put together for ya, did ya? pffft... this isn't react...</p>
+<p>In addition to that we also have:</p>
+<ol>
+<li>saurons api</li>
+<li>hyper focused scoped global registries</li>
+<li>decoupled scoped global registries</li>
+<li>global this</li>
+</ol>
+<p>In total there are 5 different system at your disposal when it comes to 'context' like data storage needs</p>
+<ol>
+<li>
+<p>saurons api: This grants access to the context system just like how createContext and useContext consume the platforms registries. Allowing you to do, whatever it is that you need to do.</p>
+<ul>
+<li>publish</li>
+<li>subscribe</li>
+<li>getAllSauron</li>
+<li>setSauron</li>
+<li>getSauron</li>
+<li>subSauron</li>
+<li>deleteSauron</li>
+<li>subAllSauron</li>
+</ul>
+</li>
+<li>
+<p>hyper focused scoped global registries: this allows you to create, a very, surgically defined scoped context that is only available via that constant that you assigned it to, just like reacts context</p>
+<ul>
+<li>const reg = createScopedReg(registry_name)</li>
+<li>reg.get()</li>
+<li>reg.set()</li>
+<li>reg.delete()</li>
+<li>reg.getByPrefix()</li>
+<li>reg.getAll()</li>
+<li>reg.subscribe()</li>
+<li>reg.subscribeAll()</li>
+<li>reg.batch()</li>
+<li>reg.clear()</li>
+<li>reg.destroy()</li>
+</ul>
+</li>
+<li>
+<p>decoupled scoped global registries: instead of having to provide 3 different values this creates a decoupled registry very similar to how the first context system was with the platform, a global registry. This registry is yours and yours alone, as it has zero relation to do with any data of any part of the platform.</p>
+<ul>
+<li>const reg = createScopedReg(registry_name)
+<ul>
+<li>reg.get()</li>
+<li>reg.set()</li>
+<li>reg.delete()</li>
+<li>reg.getByPrefix()</li>
+<li>reg.getAll()</li>
+<li>reg.subscribe()</li>
+<li>reg.subscribeAll()</li>
+<li>reg.batch()</li>
+<li>reg.clear()</li>
+<li>reg.destroy()</li>
+</ul>
+</li>
+<li>getRegistry()</li>
+<li>getAllRegistries()</li>
+<li>getGR()</li>
+</ul>
+</li>
+<li>
+<p>global this context: if whenever you need or prefer to use global this as your preffered context data storage solution, this api makes working with it simple and easy...</p>
+<ul>
+<li>setGT</li>
+<li>setManyGT</li>
+<li>getGT</li>
+<li>getManyGT</li>
+<li>deleteGT</li>
+<li>deleteManyGT</li>
+</ul>
+</li>
+</ol>
+<p>Again, all of this is available from each of the db solutions. Each also provides binary, memory/cache, cookies, local storage and session storage in addition to their defined db type roles.</p>
+<p>Also... just added one more, session storage context. A complete mirror or sauron / sauronContext's api but instead of mostly in memory... it is instead persisted context and easily accessible via session storage.</p>
+<p>No no, dont touch me there, that is my no no square...</p>
+<p>lol... hahaha... I just had to, because it just fucking fit so perfectly...</p>
+<p>As great as global contexts systems I currently can think of 3 instances where... I have needed the wrapper part of it... and when I say that, I am talking in regards to the wrapper letting a user take a marker and outline an area so they can state, 'this is my no no square...' and everything in that square, belongs to that context and that context only.</p>
+<p>Now, 2 of the use cases I have for this... are extreme cases and I do not see the average dev coding themselves into a position like I have... Actually, ya there is only 2 that come to mind... Because both instances require a hard set, big black marker of a boundary or fence or wall... whatever you want to call it, so as you can stamp out sections for this and that.</p>
+<p>The first is the quad sidebar and its use of infinitely nested sidebars. In order to define the boundary, from one sidebar... to the next... this boundary is required... I have tried to do it without...and I have spent HOURS, and HOURS... trying to find a way where a boundary was not needed... but it is the way it is... Now, if you do not needed nested sidebars, then you do not need to concern yourself with this</p>
+<p>the second use is with transmogrify_lvl2 aka freyr in app styles makeover. Again, stylistically speaking a hard boundary is required UNLESS... you want to use it on an entire route, entire file, entire sectioned off by component... etc</p>
+<pre><code class="language-tsx">   &lt;<span class="hljs-title class_">NoNoSquare</span>&gt;
+       <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">Things</span> /&gt;</span></span>
+   &lt;/<span class="hljs-title class_">NoNoSquare</span>&gt;
+</code></pre>
+<p>there are four props to NoNoSquare</p>
+<ol>
+<li>scope: allowing us to assign a unique id if we choose to define it ourselves... again, if not one is automatically assigned for you so in most cases, you have nothing to do here</li>
+<li>style: this allows us passthrough of css defined styles that are injected with the use of direct inject, using &lt; style &gt; comopnent</li>
+<li>inlinestyles: grants us the ability to pass through inline styles</li>
+<li>className: and ofcourse class or className, which allows us to pass through tailwind opinionated styles</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>[CONTEXT, STATE, ACCESSBILITY AND REMOVING PLATFORM IMPOSED LIMITATIONS OF ALL KINDS]: THE PLATFORM WILL HAVE TWO MODES AND IN THE SPIRIT OF THE ON GOING THEME... YOUR PLATFORM CAN EITHER BE A MAGE OR A WARLOCK</p>
+<ol>
+<li>
+<p>MAGE MODE: OR JUST MAGE, THIS IS THE REGULAR BASIC MORE OF WHAT YOU WOULD EXPECT FROM A PLATFORM SOLUTION. IT HAS REGULAR CONTEXT AND ALL THAT BUT BECAUSE HES A MAGE, HES GOT SOME THINGS THAT NO OTHER PLATFORM DOES</p>
+</li>
+<li>
+<p>WARLOCK MODE: OR SIMPLY WARLOCK, THIS IS WHERE WE FUSE OUR FEL MAGIC INTO THE PLATFORM AND EMBED CHARACTERISTICS THAT SIMPLY JUST HAVE NOT BEEN SEEN IN THIS REALM, WE HAVE NO CONTEXT... IN TERMS OF WHAT YOU CURRENTLY THINK OF IT AS OF NOW. ALL SEMANTIC BARRIERS IN TERMS OF FILES AND FOLDERS AND ANY OTHER BARRIR YOU COULD THINK... IS SIMPLY GONE. YOU RIFTS AND PORTALS HAVE ALSO GAINED INCREASED CAPABILIITIES...</p>
+<ul>
+<li>
+<p>HOLD MUAH FUCKING BEER BITCH!!!!!@!@!
+<em>gets ready with game face</em>
+OK MOTHER FUCKERS...
+this platform... leaps ahead of the front end industry by 50 years...</p>
+<p>lets just fucking doing it again...</p>
+<p>either:</p>
+<ol>
+<li>call site value to swap on a per primitve basis on activating it
+AND OR</li>
+<li>platform global boolean on off switch</li>
+</ol>
+<h5 id="when-the-user-sets-to-true">when the user sets to true...</h5>
+<p>essentially the user is saying... OK... FUCK this caveman REACT platform like bullshit static type apps where it feels like im still a dev in the 1970... lets make each platform prititive, the global registry...</p>
+<p>basically replacing the entire registry... with distrbuted reactive state primitives... no imports, no having to CALL some fucking site in god knows fucking code file no FUCK that... each user defined site... will feel as if that module... that function... is fucking getting beamed into every single fucking file u defined it in... it mutates, we do things to it, we update it....LIFE IS FUCKING GOOD... and to the lil bitches who cry about mutation... LEARN TO FUCKING CODE BITCH!@!@</p>
+<p>Just to appease those fucking tit suckling vaginas... whenever a user creates aor defines something to be consumed by all manner of things in the nethier... we do not just beam the fucker for all to bask in its mutaatable glory, first before 'IT MUTATES' we create a copy of it... and expose both. We get the greatness of leaping 100 years past every front end platform in existence... and we shut those fucking pussies up at the same time...</p>
+<p>so instead of:
+3. define and create function
+4. create rift... HOPING the global registry is currently up so it saves... if not... whatever you just pushed out into the neither.. SEE YA FUCKER
+5. meanwhile the registry finally pops up
+6. in the file that you need said function, you call on it... just to have it returned as undefined... as far as those two files and its related code... its fucking dead in the water...</p>
+<p>INSTEAD:
+7. define and create function
+8. using a new paltform function that does all the boilerplate for the user as each times its consumed it does the following:
+- before anything, copy the function, obj, value...  whatever it is
+- place the user defined thing as the inital value (btw, this primtive function will be a combination of useEffectLive, useDRS... the use effect will allow the origninal user defined call site to UPDATE ITSELF AS TIME GOES ON, as soon as the useEffect gets trigger at the implementation, it sets the mutated or new version of it into the new rift system so it can be called upon from anywhere)
+- thats it! as far as set up is concerned... you do not need to worry about anything... don't need to even export it ffs the only other thing we need to do on this side, is create a central repositry... a mimic repository, where that original boring as mother fucker can go and sit and do nothing unless called upon, but all mimics just go sit in one drs basically</p>
+<p>to consume:
+9. user just calls it in, and it feels as if its been there the whole time in the source code file... if its state, functionality or whatever updates over time... it now has access to that current state of that functions life cycle... no matter where it was that it was coded</p>
+<p>SIMPLY PUT: The platform will have 3 modes...
+10. caveman: uses registeris like some fucking muggle born
+11. at each primitives call site, there will be a boolean value that you can define and update THAT call sites primitive and upgrading it into its future self where it is no longer bound by the registry
+12. user defined value that effects the entire app, when set to true... literally drops the caveman registry like 4th period french...</p>
+<h5 id="drs--use-drs">DRS &amp; USE DRS</h5>
+<p>useDRS acts exactly like reacts use state as it provides a set and a getter. The user can CHOOSE, instead of using drs where ever they need to consume X, they can use useDRS in its place... Take X, do whatever it is that needs to happen... but now X is different, somehow... who cares really how right now... BUT, through the use of useDRS, user can take the new and improved, hopefully, and UPDATE X's implementation as it sits in the app for all to use... OR... just use DRS instead and not update or mutate it...</p>
+<h5 id="the-end-result">THE END RESULT</h5>
+<p>Before, EVERY platform primitve... and how it was defined in the file... once the app starts... a snapshot of that primitive was taken and placed into the rift for the other platform primitives to use... instead of placing it into the registry as what happened before, each platform primitive instead exposes its own 'node' or useDRS at each and every single call site... essentially creating... a netowkr of lights... being light up throughout the app indicating that... I'm here, use me... or not... fuck you... I'll just do me. Entirely ripping all man made barriers of any kind when it comes to ANYTHING... in webapps... as there are literally are none anymore.</p>
+<p>Whether that function is created in the same file... or 15 folders away buried 2500 lines of code in... doesn't matter as there are no forms of psuedo barriers anymore when before they came in the form of... files, folders, routes, client, server, you name it... removing module boundaries as semantic barriers to platform primitives.</p>
+<h5 id="contexts">CONTEXTS</h5>
+<p>What happens to contexts... if... we simply tell the registry to fuck off?...</p>
+<p>We tell them to fuck off too, why not? Out with the fucking old and decrepeid... and in with the new and sexy, baby... but only in the way that you currently think of them. Instead of a context bound to a registry... its a distrbuted reactive state context... its just fucking data... it doesn't matter where it is stored exactly, as long as it GETS stored SOMEWHERE right?</p>
+<h5 id="how">HOW</h5>
+<p>Copies of the current drs primitives will be created with a sole focus on this new platform variant. Which will make each and every single call site, much more easier to deal with, not to mention less code each time whenever you use them because the original primitives require you to supply aboth a rt and ms, among other things. Since we are using them with laser focus intent, we can define some values and remove them the equation, for example: there is no point in having to supply a rt for these functions... since we know EXACTLY where they need to land in terms of that value.</p>
+<p>Each primtives use of props, will stay intact... when you call / define staff for example, instad of the primitive reaching out to the registry to grab it... it will instead... basically connect where you define it and line it up with the drs under the hood. You get the staff... just like before. All the wiring done under the hood, just as before.</p>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>[WARLOCK_MODE][RENDERING AND CODING STRATEGIES AND PROCESSES]</p>
+<ul>
+<li>NOT ONLY DO YOU UNLOCK THE OVERALL ACCESSSBILITY IN WARLOCK MADE, BUT A NEW RENDERING PROCESS AND CODING PARADIGM WILL ALSO BE UNLOCKED FOR YOU. THE PLATFORM PREVIOUSLY TOUCHES LIGHTLY ON 'RENDERIVITY'... MAINLY LEAVING YOU TO YOUR OWN DEVICES WITH THIS ONE AND TBH I DIDN'T GO INTO EXACTLY WHAT THAT GIVES YOU... TAKING THE SAME APPROACH AS WITH I DO WITH EVERYTHING ELSE I CODE I AM GOING TO BE SETTING UP A LOT OF THIS NEW TYPE OF CODING STRUCTURE FOR YOU, IN ADDITION TO ALSO CODING IN THINGS THAT WILL MAKE THIS EVEN MORE REDICOUSLY POWERFUL.</li>
+<li>RIGHT NOW, A USER CLICKS A LINK... SHIT HAPPENS, BUT FROM THAT CLIENT SHIT... IT SHOVES THE USER TO A NEW LOCATION ON THE SITE, AND IN EFFECT HAS TO PROVIDE AN ENTIRELY BRAND NEW UN RELATED PAGE EACH AND EVERY SINGLE FUCKING TIME... THIS... HONESTLY, ESPECIALLY WITH LARGER SITES... IT IS SO WASTEFUL, NOT TO MENTION JUST A HUGE WASTE OF RESOURCES FROM ALL ASPECTS. WE NOW HAVE THE POWER TO CONTROL THIS... AT VERY SURGICAL LEVEL... SO INSTEAD OF THINKING OF WEB APPS LIKE HOW WE DO NOW... INSTEAD...</li>
+</ul>
+<p>LETS PICTURE THE SITE AS A SERIES OF PORTALS, WHERE THE ARE ALL STACKED ONTOP OF EACHOTHER THAT WILL ALLOW US TO CONTROL, WHAT HAPPENS IN EACH PORTAL AT ALL TIMES...</p>
+<ol>
+<li>WE HAVE OUR APPS 'WRAPPER' ESSENTIALLY. THIS WILL BE THE QUAD SIDEBAR, WHERE IT WIL BE SET UP IN SUCH A WAY TH AT... IF SOMETHING CHANGES IN THE SIDEBARS... ONLY THE SIDEBARS WILL GET TRIGGERED FOR A NEW RENDER... NOT THE ENTIRE PAGE... JUST THE PARTS OF THE SIDEBAR THAT THE DATA STATE CHANGE TOOK PLACE. EACH SIDEBAR WILL HAVE ITS OWN CONTEXT IN ADDITION TO THE ENTIRE SIDEBAR SYSTEM, WILL ALSO HAVE A CONTEXT SYSTEM. WHICH MAKES IT SO THAT, IF THE TOP SIDEBAR HAS A COMP WHERE THE USER CAN CLICK ON... COUNTER, PUSHES THE BUTTON... NUMBER GOES UP... EACH RENDER, IS ONLY TRIGGERING IN THAT ONE SIDEBAR... NOTHING ELSE.</li>
+<li>NEXT WE WILL HAVE THE NAV BAR, THIS PORTAL LAYER WILL ON EFFECT THE NAV BAR ONLY</li>
+<li>THE PAGES FOOTER</li>
+<li>PAGE HEADER AKA CTA SECTION</li>
+<li>THE BODY OR REMAINDER OF THE PAGE WILL HAVE THE OPTION OF SPLITTING IT UP INTO ONE OF SEVERAL OPTIONS, FOR EXAMPLE: YOU MAY WANT A LAYOUT OF 1/5-W IS ALLOCATED FOR A ON PAGE SIDEBAR SO THAT THE USER CAN EASILY READ WHAT THE PAGE HAS FOR DATA BEING PRESENTED WHILE ALSO ACTING AS A MEANS FOR QUICK TRAVERSAL</li>
+<li>AND SO ON, BY NOW YOU SHOULD GET THE POINT</li>
+</ol>
+<ul>
+<li>WHAT HAPPENS WHEN THE USER CLICKS ON A LINK FOR ANOTHER PAGE... WELL, EVERYTHING CURRENTLY RENDERING IN THE USERS HTML WILL ALMOST ALL ENTIRELY STAY EXCEPT 'LAST' LAYER THAT DISPLAYS JUST THE PAGES BODY... AS NOTHING ELSE NEEDS TGO BE FETCHED, SINCE WE ARE ALREADY ON THE SERVER, WE DONT NEED TO RENDER EVERYTHING AGAIN... JUST THE PAGES BODY... THIS SAVES AN INCREDIBLE AMOUNT OF COMPUTATIONS THAT ARE REQUIRED TO GET A PAGE LOADED... IMAGINE HOW MUCH FUCKING FASTER... AMAZON WOULD BE, IF IT HAD THIS INSTEAD OF... AND I CAN ONLY ASSUME, AND WOULD NEVER WANT TO TOUCH THAT SITE WITH A MILLION FOOT POLL... BUT IMAGINE HOW MUCH FASTER IT WOULD BE... EVEN SMALLER SITES... LIKE GMAIL, DO YOU KNOW HOW MANY THINGS... ARE JUST ALWAYS KICKING OFF IN THE BACKGROUND... EVEN WHILE YOU ARE DOING NOTHING? SITES WOULD INCREASE IN PERFORMANCE IN SUCH A HUGE DEGREE. SERIOUSLY... YOUR NOW LOADING IN WHAT... A 10TH... ACTUALLY A LOT LESS THAN THAT EVEN... THE USER IS STILL ALREADY LOADED, SO WE DO NOT NEED TO HIT THE DB AGAIN... THE CONTEXT IS STILL... CURRENTLY IN THE STATE... EVERYTHING IS ALREADY DONE...</li>
+</ul>
+</li>
+<li>
+<p>✔ FORM</p>
+<ul>
+<li>rule: 'min-length:3' / rule: 'max-length:20'</li>
+</ul>
+</li>
+<li>
+<p>✔ PORTAL</p>
+</li>
+</ul>
+<pre><code class="language-tsx"><span class="hljs-attr">render</span>: <span class="hljs-function">() =&gt;</span> (
+    <span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Settings<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">hx-get</span>=<span class="hljs-string">&quot;/settings/drawer&quot;</span> <span class="hljs-attr">hx-target</span>=<span class="hljs-string">&quot;#drawer-root&quot;</span> <span class="hljs-attr">hx-swap</span>=<span class="hljs-string">&quot;outerHTML&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;px-4 py-2 bg-blue-600 text-white rounded&quot;</span>&gt;</span>
+            Open drawer
+        <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+
+        <span class="hljs-tag">&lt;<span class="hljs-name">Portal</span> <span class="hljs-attr">target</span>=<span class="hljs-string">&quot;root&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;drawer-root&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fixed top-0 right-0 h-screen w-80 bg-white shadow-lg p-6&quot;</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h2</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-lg font-semibold&quot;</span>&gt;</span>Settings drawer<span class="hljs-tag">&lt;/<span class="hljs-name">h2</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">p</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;text-sm text-gray-600&quot;</span>&gt;</span>This markup lives at the end of <span class="hljs-symbol">&amp;lt;</span>body<span class="hljs-symbol">&amp;gt;</span>, not inline where Portal was called.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/<span class="hljs-name">Portal</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+)
+
+</code></pre>
+<ul>
+<li>
+<p>✔ GLITCH BOUNDARY</p>
+<ul>
+<li>platform primitive error boundary</li>
+<li>built in with wards and api wards</li>
+</ul>
+</li>
+<li>
+<p>✔ CHRONO BOUNDARY</p>
+<ul>
+<li>platform primitive loading boundary</li>
+</ul>
+</li>
+</ul>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>Important</p><p></p>
+<ul>
+<li>STAFF: YOU MAY INCLUDE THE USE OF ANY OF THESE CUSTOM CREATED SOLUTIONS THAT ARE AVAILABLE</li>
+<li>YIMIR</li>
+<li>WS
+<ul>
+<li>despite there already being, a bus adapter... and an entire ws solution on the bus itself for when you need the entire solution intead of the adapter... I don't know how I'm going to do this exactly... but due to the idea of connecting everything, it only makes sense to include a platform primtive where it just makes it super fucking simple and fast. Like everything else.</li>
+<li>so there will be the server side, and then obviosuly the client side... I hope I can just create a dead simple usage where you don't have to worry about setting up all the little things in order to make it work.</li>
+</ul>
+</li>
+<li>HTTP CLIENT — a fetch-native Axios replacement with zero dependencies... EXTREMELY OVERPOWERED</li>
+<li>REVERSE HEART BEAT MANAGER
+<ul>
+<li>RAFT: NO POLLING OR AUTO AUTOMATION IMPLEMENTED, 100% REACTIVE AUTOMATION... ALSO WORKS ON 1 AND 2 NODES PERFECTLY 100% SSR</li>
+<li>YJS REPLACEMENT</li>
+<li>runs entirely on the server, no client code execution what... so... ever</li>
+<li>no outside deps of any kinda</li>
+<li>employs hybrid logical clock</li>
+<li>pre configured where no set up is needed to stand up a test instance locally to test to see if it is working, will also come pre configured with several production set ups</li>
+<li>multiple modes to fit your needs
+<ul>
+<li>docs, of various data types</li>
+<li>ui, cursor and such</li>
+<li>fields, including dropdowns, checkboxes, inputs, etc</li>
+<li>rte</li>
+<li>spreadsheets</li>
+</ul>
+</li>
+<li>no need really for any plugins... as it already comes with the following
+<ul>
+<li>bus: has 28+ adapters for all envs and protocols</li>
+<li>25+ different streaming primtives</li>
+<li>multiplexed by default so no overhead cost</li>
+<li>2 different types of databases... already ready to go</li>
+<li>and a lot more...</li>
+</ul>
+</li>
+<li>AWARENESS</li>
+<li>BENCHMARK</li>
+<li>BENCHMARK AGAINST YJS</li>
+<li>COLLAB MAP</li>
+<li>COMMENTS</li>
+<li>DOC</li>
+<li>PRESENCE</li>
+<li>SESSION AUTHORITY</li>
+<li>TEXT</li>
+<li>SIGNALS: we can not combine singals with anything very easily. speaking of which, I am not entirely opposed to create a class for hooks to place on here, as I have already made it so that, the largest requirement for them within the platform... does not exist. Before they had an import req specifically they have to be imported from only one place, and one place only... that is no longer a thing that needs to be abided by.</li>
+<li>ASYNC THROTTLE, THROTTLE, USE THROTTLE</li>
+<li>BATCH, ASYNC BATCH, USE BATCH</li>
+<li>BINARY</li>
+<li>DEBOUNCE, ASYNC DEBOUNCE USE DEBOUNCE</li>
+<li>FULL TEXT SEARCH</li>
+<li>QUEUE, USE QUEUE, ASYNC QUEUE, TIERED QUEUE CONCURRENT BATCHING</li>
+<li>RATE LIMIT, ASYNC RATE LIMIT, USE RATE LIMITR</li>
+<li>REVERSE HEART BEAT MGR</li>
+<li>THROTTLE, ASYNC THROTTLE, USE TROTTLE</li>
+<li>WS</li>
+<li>KVDB: same here, as a lot functions can benefit from this</li>
+<li>RDB: same as above</li>
+<li>TDB: TEMPORAL DB, PLANNED</li>
+<li>SWR: the hooks the final form... the useData hook... bruh...it should be place in here...</li>
+<li>SSE</li>
+<li>HTTP CLIENT - axios replacement ON MASSIVE STEROIDS THOUGH</li>
+<li>CQRS</li>
+<li>LONGPOLL</li>
+<li>WS</li>
+<li>OPTIMISTIC</li>
+<li>COMPRESSION</li>
+<li>DIFFPATCH</li>
+<li>CHERRIO</li>
+<li>BINARY_CORE</li>
+<li>HYBRID_LOGICAL_CLOCK</li>
+<li>METRICS_PORNSTAR</li>
+<li>YMIR</li>
+<li>CRDT - LWW_REGISTER</li>
+<li>CRDT - PN COUNTER</li>
+<li>CRDT - OR SET</li>
+<li>YMIR</li>
+<li>CIRCUIT BREAKER</li>
+<li>DEV TOOLS</li>
+<li>SEMAPHORE</li>
+<li>PERFORMANCE_TIMER</li>
+<li>TIERED_QUEUE</li>
+<li>PRIORITY_QUEUE</li>
+<li>DEPENDENCY_GRAPH</li>
+<li>AND THE MOST SOPHISTACTED, FEATURE DENSE, GOD-SMACKINGLY INSANELY BEAUTIFUL BUS IN THE ENTIRE INDUSTRY... SERIOUSLY...</li>
+<li>DISTRIBUTED REACTIVE STATE</li>
+<li>DISTRIBUTED REACTIVE STATE STREAMS</li>
+<li>A COMPLETE REMAKE OF REACTS ENTIRE HOOK STACK, BUT WORKS EVREYWHERE WITH NO RULES TO ABIDE BY, IN ADDITION TO MAKING EACH ONE DISTRBUTED BY DESIGN</li>
+<li>REAL TIME / DISTRIBUTED REACTIVE STATE DATABASES</li>
+<li>BI-DIRECTIONAL / DUPLEX ASYNC STREAMS</li>
+<li>PERFORMANCE TIMER
+<ul>
+<li>one of the few that just cannot be made into the platform shape due to its functionality and just how it is consumed at the call site by the user</li>
+<li>2 modes
+<ul>
+<li>when you do NOT provide and id, it provides one for you and is meant to be used with a SSR request boundary</li>
+<li>when you DO provide an id, the timer allows you to measure components and functions through their execution phase. With the addition of checkpoints, we can now place them through the function. Personally, I will be placing them before or after any function execution within the component of fn that I'm working with. As this will give the best insight into... exactly how each step is doing while giving you a real good look at areas that can be improved upon. So many time I have found spots where... I thought I was doing a good job coding wise, only to find out... that a single line slowed the entire function down by 5x or 10x, and fixing that one little thing... made a whole world of a difference.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TIERED QUEUE CONCURRENT BATCHES
+<ul>
+<li>that being the short name of it, but it should be tiered queue w/ concurrent execution.</li>
+<li>simply a queue system that can very easily be split into tier, where each tier executes everything within its self, concurrently / threaded / or more simply all at once like a batch instead one after another</li>
+<li>when you need to build a init process... ppppffttt... this is fucking gold...</li>
+<li>did not like how the usage ended up so I remade it into a platform primitive</li>
+<li>getting the same characteristics as a incantations lvl2, meaning your not just LOCKED into defining a bunch of queue objects... you also have at your disposal
+<ul>
+<li>'animation', 'preset', 'class', 'className',  'freyr', 'slots', 'styles', 'inlineStyles', 'freyrClasses', 'freyrIncantations', 'classNames', 'customTheme', 'customCSS', 'types', 'interfaces', 'enums', 'generics', 'constants', 'specs', 'source', 'cloud', 'as', 'variants', 'compoundVariants', 'defaultVariants', 'aliases', 'docs', 'variantMachine', 'transition', 'sync', 'master', 'context', 'createContext', 'sauronContext', 'global', 'stateMachine', 'logicMachine', '__machineRunner', '__logicMachineRunner', 'getMachineState', 'getLogicState', 'useMachine', 'extend',</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BATCH
+<ul>
+<li>I'm not a fan of slowing things down, when you can just make it faster, so this is using the same usage format for batching execution</li>
+<li>hated how the usage turned out, deleted and started over... JUST LIKE tiered queue, it can also define the objs listed above</li>
+</ul>
+</li>
+<li>RUNE HTTP
+<ul>
+<li>after making the axios replacement, I didn't make it myself tbh... well the first version of it anyways... my fucking god did that ai make the worlds worst fucking usage I have ever seen. It was made in such a way that you were REQUIRED to call a new class instance with a config each time... and that wasn't all either... but whatever IT IS MUCH BETTER NOW</li>
+<li>RuneHTTP
+<ul>
+<li>same pattern here as everywhere else, gives access to a basic... well, provides basic level http req, but has some pretty nice features that I have never seen else where if you want or need them</li>
+</ul>
+</li>
+<li>RuneHTTP_lvl2
+<ul>
+<li>allows you to create multiple http requests</li>
+</ul>
+</li>
+<li>in total for the first class bus primitives:
+<ul>
+<li>58+ streaming primitves</li>
+<li>real duplex streams</li>
+<li>rx state</li>
+<li>20+ rx distrbuted states prims</li>
+<li>rx distributed state streams</li>
+<li>8+ conditional prims</li>
+<li>54+ specialty prims</li>
+<li>all in all, 19,655+ lines of code, 432+ primtitves... and that's only counting the functions</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<ul>
+<li>
+<p>INCANTATIONS
+Think of this as your function or class replacement, where each of them can reference eachothers values without ever having to import them. Below you can find a list of the levels of abstractions, their uses and such</p>
+<ul>
+<li>✔ Incantations_config
+<ul>
+<li>formerly known as kernelConfig - The entire apps config, replecing every single config file you could think of</li>
+</ul>
+</li>
+<li>✔ Incantations_vars
+<ul>
+<li>App wide available client / server variables, so the opposite of what .senv or .env offers</li>
+</ul>
+</li>
+<li>✔ Incantations_init - types, enum, interface graphs for init time modules</li>
+<li>✔ Incantations_Generics_init - generics for init modules</li>
+<li>✔ Incantations_Generics
+<ul>
+<li>incantations but for specifcally defining generics</li>
+</ul>
+</li>
+<li>✔ Incantations
+<ul>
+<li>Gives you the ability to define a single obj, instance, function or what ever it is that you need, for example a single function ui component [SINGLE FILE]</li>
+<li>functions</li>
+<li>types</li>
+<li>classes</li>
+</ul>
+</li>
+<li>✔ Incantations_lvl2
+<ul>
+<li>This level basically allows you to create MANY Incantations within its single defined function [SINGLE FILE / MULTI FILE]</li>
+<li>multi function ui component</li>
+<li>large organized types graphs</li>
+</ul>
+</li>
+<li>✔ Incantations_lvl3
+<ul>
+<li>same as level 2 feature wise but also has component / function parasitic characteristics</li>
+<li>[MULTI FILE / APP WIDE]</li>
+<li>need to add auth section to lvl 3</li>
+</ul>
+</li>
+<li>✔ Incantations_lvl4
+<ul>
+<li>[APP WIDE / BEYOND THE APP]</li>
+<li>incan lvl 4 aka umbrella, this primitive connects apps to it from the outside in order to gain access to one another</li>
+<li>please see usage for details</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>ARCHETYPE
+- since this is almost identical to incantations, I've decided on changing these into... jacked steroid infused versions of the incantation versions. Meaning that while incantations has a very strict set of characteristics between each level and what they are supposed to do. While the levels and each of their purposes will stay the same, the actual functionality will differ greatly. As this will become more of a... lets give each level... everything... just to see what we can do with them. Due to this radical change, I would advise to only play with these if your comfortable and wanting to see how far you can push the primtives, like myself.</p>
+<ul>
+<li>✔ Archetype</li>
+<li>✔ Archetype_lvl2</li>
+<li>✔ Archetype_lvl3</li>
+<li>✔ Archetype_lvl4</li>
+</ul>
+</li>
+<li>
+<p>✔ VENOM
+// If you do not know who venom is, he is a character in marvel comics and is a alien symbiotic lifeform. At will, venom can consume whatever tickles his fancy and in effect obsorbs or gain all of its hosts abilities, strengths, etc of what it is that he is being a parasite of...
+// Quite LITERALLY, that is EXACTLY what the platform primitive named... 'Venom', does in terms of its capabilties. In its stock form... it can't really do much, BUT it can consume what it wants, when it wants and where ever it is that the original platform primtive was defined.
+// Now... once consumed, EVERYTHING that was defined in the host primitive... Venom now has the exact same functionlity and values as if he had coded them into the primitive himself.
+// The other unique characteristic about his feature set is that... once he HAS consumed something... at that point he can actually use the consumed values and function and build off of them and create other functions within himself.
+// For example, if you have venom consume... lets say 7 platform primitives, where it cherry picked out of ALL the defined functions within the app... so that he can create a specialized component required for use in some part of the app.
+// ... this allows for an ENTIRE new workflow... where it is SO much more organized. THINK ABOUT IT... If you planned your platform primitives, properly for the first time in our careers where... ANYTHING AND EVERYTHING USER RELATED... goes into a single fucking location and no where else... In another primitive, we have ALL THINGS AUTH... another primitive takes care of... idk, the user settings values and what it is that the do... you haven't made a route or anything yet for the user settings section of the app, but lets just say you have all the required needed for it, done and organized and put away neatly...
+// Well, instead of littering... user shit there... user settings here... more user things over yonder... venom comes into play... making it so that, each semantic grouping... STAYS EXACTLY WHERE THE FUCK IT BELONGS... While STILL gaining access to the required functions we would need to take care of this section of the app. Venom runs around... being an asshole parasite and takes what he gained and creates... more specialized functionality NEEDED AND REQUIRED FOR THAT SECTION OF THE APP... SO WE HAVE THE BEST OF ALL WORLDS...
+// 1. Semantic purity preserved — User logic stays in user group, auth stays in auth group, settings stays in settings group. None polluted.
+// 2. Section isolation maintained — The settings section gets exactly what it needs via Venom, without importing unrelated user/auth logic directly.
+// 3. Zero duplication — No copy-pasting functions across sections.
+// 4. Zero waste — Every line of code serves exactly one purpose, consumed exactly where needed, built upon precisely when required.
+//
+// Think about... what it is that just happened... WE DID NOT POISON, OUR SEMANTICALLY ORGANIZED ORDER OF GROUPS
+// WE ALSO DID NOT POISON THE SECTION OF THE APP WHERE EVERYTHING THAT WAS REQUIRED WAS GOTTEN, AND WE DID NOT HAVE DROP ONE TIME FUNCTIONS... IN OUR ORGANIZED SEMANTIC SECTION OR THE USER SETTINGS SECTION... EACH GOT WHAT IT NEEDS WHILE LEAVING THE OTHER... THE FUCK ALONE
+// WE DID NOT REPRODUCE A SHIT TON OF REQUIRED CODE, FOR ONE REASON OR ANOTHER
+// A LOT OF DEVS NEVER THINK OF THIS... BUT IF YOU LOOK AT THIS USE CASE... THERE IS ZERO WASTAGE... IN ANY APSECT YOU CAN THINK OF... WHAT SEEMED AT FIRST TO BE A CRAZY FUCKING STUPID... WHAT THE FUCK DID YOU SMOKE TODAY KIND OF IDEA... AND ENDED UP SOLVING... A PROBLEM NO ONE EVEN KNEW HOW TO SOLVE BEFORE NOW... IN A VERY FUCKING ELEGANT, BUT COOL WAY WITH SOME FUCK YOU FLAIR, LOL
+//
+// this isn't some thought experiment... this is an actual, in production platform primtive... it is not some 'layer' in the application, it is an actual platform primitive. It is deceptively simple looking, since it looks like every other platform primitive except for one small detail that can easily be over looked.
+// all of the... 'craziness' happens under the hood, this is done so as to give the user an extremely easy to use primitive that potentially has unlimited power.
+// it sounds so weird because it starts off... unable to do anything. Then ONLY through its parastic tendencies does it THEN finally able to acquire something in order to produce something. It is fucking halrious to see something like this in production... but it works... extremely fucking well, and solves a problem no one has been able to solve but does so in such a fucking elegant way that makes zero fucking sense because it TRULY fucking sounds like symbiotic piece of code... came here from another planet and started to wreak havoc on everything that it can consume.</p>
+</li>
+<li>
+<p>VAULT</p>
+<ul>
+<li>✔ Valut_lvl2</li>
+</ul>
+</li>
+<li>
+<p>WARD - Incantation like but specfically for routes</p>
+<ul>
+<li>✔ Ward_lvl2 - multi route</li>
+</ul>
+</li>
+<li>
+<p>API WARD - Incantation like but specfically for api routes</p>
+<ul>
+<li>✔ APIWard_lvl2 - multi api route</li>
+</ul>
+</li>
+<li>
+<p>GOLEM - Security Guards, Middleware &amp; Policies</p>
+<ul>
+<li>✔ Golem_lvl2</li>
+</ul>
+</li>
+<li>
+<p>ILLUSIONIST</p>
+<ul>
+<li>✔ Illusionist_init - for init time implementations, does not</li>
+<li>✔ Illusionist
+<ul>
+<li>allows the creation of user exposed layer of a library or many libraries put together. Or fixing a libraries shity usage, or the possiblites are endless</li>
+<li>now has reactive state for defined values</li>
+</ul>
+</li>
+<li>✔ Illusionist_lvl2
+<ul>
+<li>is the instantiator where as the first level being singleton type finished product</li>
+</ul>
+</li>
+<li>✔ Illusionist_boot
+<ul>
+<li>before the return checks the to see if another boot exist, if there already is one, return with console.log informing user of it...</li>
+<li>does not have a bus wired under the hood</li>
+<li>instead of simply exposing the bootstrapper as a globally accesible function to use, each defined function within it gets created as its own globally registered instance... Meaning if there are 4 functions defined within it lets say 3 dbs and a bus... whatever each function returns will be pushed as the 'result' for that registered item, using the functions name as the key for that registered item... no limit on amount of registries that can be registered. This way no matter what is bootstrapped, initialized or started within the boot... they automatically become globally accessible everywhere...</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>CONDITIONALS</p>
+<ul>
+<li>if, else if and switch in one with a very nice usage</li>
+</ul>
+</li>
+<li>
+<p>GRIMOIRE</p>
+<ul>
+<li>logic machines</li>
+<li>✔ GrimoireLvl2</li>
+</ul>
+</li>
+<li>
+<p>SPELLBOOK</p>
+<ul>
+<li>state amchines</li>
+<li>✔ Spellbook_lvl2</li>
+</ul>
+</li>
+<li>
+<p>TRANSMOGRIFY</p>
+<ul>
+<li>✔ Transmogrify_global -  replaces the apps tailwind usage</li>
+<li>✔ Transmogrify
+<ul>
+<li>brings tailwind into the app itself to be used with routes, or the entire app, or a defined area of ui comps... or whatever you want.</li>
+</ul>
+</li>
+<li>✔ Transmogrify_plugin
+<ul>
+<li>tailwind plug replacement but does a lot more, better usage and can define more then just simple classname strings, where you can define whole css injectables to inject straight into the jsx, does not need a compiler or anything can be used at all incantantoin callsites or in incantations themselves</li>
+</ul>
+</li>
+<li>✔ transmogrify_config</li>
+</ul>
+</li>
+<li>
+<p>REALM GRIMOIRE</p>
+<ul>
+<li>this is what makes the paltform truly swallow everything in automatically... assigning libraries per env it senses it self in</li>
+</ul>
+</li>
+<li>
+<p>✔ APPARATION</p>
+<ul>
+<li>creates ghosts of returns so whatever triggered itr gets exactly what it asked for</li>
+</ul>
+</li>
+<li>
+<p>GATE MASTER</p>
+<ul>
+<li>a condtional fucntion but instead of depth its width</li>
+<li>introducing a new locking mechanism where at first gate switch, no matter how many there are, lock that gate open. The second one is, once X gate gets tripped... stay locked</li>
+<li>✔ GateMaster_lvl2</li>
+<li>✔ GateMaster_Pipeline</li>
+<li>✔ GateMaster_AndThen</li>
+</ul>
+</li>
+<li>
+<p>✔ CONJURATION_LIBS<br>
+- dynamic importer that does not let you crash, creating a rift in the process unless set not to. checks what env it currently in allowing to you set differnt solutions per env</p>
+<ul>
+<li>CONJURE_LIB_RIFT</li>
+<li>CONJURE_NAMED_LIB_RIFT</li>
+</ul>
+</li>
+<li>
+<p>✔ CONJURATION_LIBS_INIT<br>
+- same as prevoius but does not create a rift, making it perfect for init modules</p>
+<ul>
+<li>CONJURE_LIB_INIT</li>
+<li>CONJURE_NAMED_LIB_INIT</li>
+</ul>
+</li>
+<li>
+<p>✔ RIFTS
+- rifts can be created or accessed, they can consit of node modules, internally sourced solutions, configs, functions... whatever. Also allows the program to continue while the item needing it waits for it to become available</p>
+<ul>
+<li>create_rift</li>
+<li>use_rift</li>
+</ul>
+</li>
+<li>
+<p>✔ CONJURY GATES</p>
+</li>
+<li>
+<p>✔ NO NO SQUARE</p>
+<ul>
+<li>FUCK YA I WENT THERE, THE HARD DEFINING BOUNDARY FOR ITEMS LIKE INFINITELY NESTED SIDEBARS</li>
+</ul>
+</li>
+<li>
+<p>✔ available utils: all code in the platform and not imported, name likeliness serves as a means of a reminder as to what module it replaces</p>
+<ul>
+<li>tw</li>
+<li>clsx</li>
+<li>cn</li>
+<li>cva</li>
+</ul>
+</li>
+<li>
+<p>✔ TRIGGER RENDER</p>
+<ul>
+<li>callable from literally anywhere server-side — a background job, a cron tick, a webhook handler, another fragment's render — same as pushSwap.  Forces the named fragment to re-render and push, independent of whether any tracked dependency actually changed.</li>
+</ul>
+</li>
+</ul>
+
+            
+            
+        </body>
+        </html>

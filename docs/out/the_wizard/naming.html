@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>WARLOCK</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="warlock">WARLOCK</h1>
+<h2 id="classes">CLASSES</h2>
+<ul>
+<li>[PETS]
+<ul>
+<li>imp</li>
+<li>voidwalker</li>
+<li>sayaad</li>
+<li>eye of sayaada</li>
+<li>felhunter</li>
+<li>felgaurd</li>
+<li>infernal</li>
+<li>doomgaurd</li>
+</ul>
+</li>
+<li>[BASE]
+<ul>
+<li>[Fel Domination]</li>
+<li>[Demonic Circle]</li>
+<li>[Burning Rush]</li>
+<li>[Fel Pact]</li>
+<li>[Demon Skin]</li>
+<li>[Fel Armor]</li>
+<li>[Fiendish Stride]</li>
+<li>[Curses of Enfeeblement]</li>
+<li>[Abyss Walker]</li>
+<li>[Howl of Terror]</li>
+<li>[Mortal Coil]</li>
+<li>[Amplify Curse]</li>
+<li>[Demonic Embrace]</li>
+<li>[Demonic Inspiration]</li>
+<li>[Wrathful Minion]</li>
+<li>[Demonic Fortitude]</li>
+<li>[Banish]</li>
+<li>[Teachings of the Satyr]</li>
+<li>[Accrued Vitality]</li>
+<li>[Sweet Souls]</li>
+<li>[Nightmare]</li>
+<li>[Horrify]</li>
+<li>[Demonic Gateway]</li>
+<li>[Lifeblood]</li>
+<li>[Dark Pact]</li>
+<li>[Strength of Will]</li>
+<li>[Dark Accord]</li>
+<li>[Shadowfury]</li>
+<li>[Ichor of Devils!!]</li>
+<li>[Frequent Donor]</li>
+<li>[Socrethar's Guile]</li>
+<li>[Sargerei Technique]</li>
+<li>[Darkfury]</li>
+<li>[Shadowflame]</li>
+<li>[Fel Synergy]</li>
+<li>[Soul Link]</li>
+<li>[Teachings of the Black Harvest]</li>
+<li>[Resolute Barrier]</li>
+<li>[Grimoire of Synergy]</li>
+<li>[Profane Bargain]</li>
+<li>[Soul Conduit]</li>
+<li>[Demonic Resilience]</li>
+<li>[Grim Feast]</li>
+<li>[Inquisitor's Gaze]</li>
+<li>[Summon Soulkeeper]</li>
+<li>[Soulburn]</li>
+</ul>
+</li>
+<li>[AFFLICTION]
+<ul>
+<li>[Malefic Rapture]</li>
+<li>[Unstable Affliction]</li>
+<li>[Seed of Corruption]</li>
+<li>[Nightfall]</li>
+<li>[Writhe in Agony]</li>
+<li>[Sow the Seeds]</li>
+<li>[Shadow Embrace]</li>
+<li>[Dark Virtuosity]</li>
+<li>[Kindled Malice]</li>
+<li>[Agonizing Corruption]</li>
+<li>[Drain Soul]</li>
+<li>[Absolute Corruption]</li>
+<li>[Siphon Life]</li>
+<li>[Phantom Singularity]</li>
+<li>[Vile Taint]</li>
+<li>[Pandemic Invocation]</li>
+<li>[Inevitable Demise]</li>
+<li>[Soul Swap]</li>
+<li>[Soul Flame]</li>
+<li>[Grimoire of Sacrifice]</li>
+<li>[Focused Malignancy]</li>
+<li>[Withering Bolt]</li>
+<li>[Sacrolash's Dark Strike]</li>
+<li>[Creeping Death]</li>
+<li>[Haunt]</li>
+<li>[Summon Darkglare]</li>
+<li>[Soul Rot]</li>
+<li>[Xavius' Gambit]</li>
+<li>[Tormented Crescendo]</li>
+<li>[Seized Vitality]</li>
+<li>[Malevolent Visionary]</li>
+<li>[Wrath of Consumption]</li>
+<li>[Soul-Eater's Gluttony]</li>
+<li>[Doom Blossom]</li>
+<li>[Dread Touch]</li>
+<li>[Haunted Soul]</li>
+<li>[Grand Warlock's Design]</li>
+<li>[Grim Reach]</li>
+<li>[Dark Harvest]</li>
+</ul>
+</li>
+<li>[DEMONOLOGY]
+<ul>
+<li>[Call Dreadstalkers]</li>
+<li>[Demonbolt]</li>
+<li>[Dreadlash]</li>
+<li>[Annihilan Training]</li>
+<li>[Demonic Knowledge]</li>
+<li>[Summon Vilefiend]/</li>
+<li>[Soul Strike]</li>
+<li>[Bilescourge Bombers]/</li>
+<li>[Demonic Strength]</li>
+<li>[The Houndmaster's Stratagem]</li>
+<li>[Implosion]</li>
+<li>[Shadow's Bite]</li>
+<li>[Carnivorous Stalkers]</li>
+<li>[Fel and Steel]</li>
+<li>[Heavy Handed]</li>
+<li>[Power Siphon]</li>
+<li>[Malefic Impact]</li>
+<li>[Imp-erator]</li>
+<li>[Grimoire: Felguard]</li>
+<li>[Bloodbound Imps]</li>
+<li>[Inner Demons]</li>
+<li>[Doom]</li>
+<li>[Demonic Calling]</li>
+<li>V [Fel Sunder]</li>
+<li>[Umbral Blaze]</li>
+<li>[Imp Gang Boss]</li>
+<li>[Kazaak's Final Curse]</li>
+<li>[Dread Calling]</li>
+<li>[Cavitation]</li>
+<li>[Nether Portal]</li>
+<li>[Summon Demonic Tyrant]</li>
+<li>[Antoran Armaments]</li>
+<li>[Ner'zhul's Volition]</li>
+<li>[Stolen Power]</li>
+<li>[Sacrificed Souls]</li>
+<li>[Soulbound Tyrant]</li>
+<li>[Pact of the Imp Mother]</li>
+<li>[The Expendables]</li>
+<li>[Infernal Command]</li>
+<li>[Gul'dan's Ambition]</li>
+<li>[Reign of Tyranny)</li>
+<li>[Grand Warlock's Design]</li>
+<li>[Immutable Hatred]</li>
+<li>[Guillotine]</li>
+</ul>
+</li>
+<li>[DESTRUCTION]
+<ul>
+<li>[Chaos Bolt]</li>
+<li>[Conflagrate]</li>
+<li>[Reverse Entropy]</li>
+<li>[Internal Combustion]</li>
+<li>[Rain of Fire]</li>
+<li>[Backdraft]</li>
+<li>[Mayhem]</li>
+<li>[Havoc]</li>
+<li>[Pyrogenics]</li>
+<li>[Roaring Blaze]</li>
+<li>[Improved Conflagrate]</li>
+<li>[Explosive Potential]</li>
+<li>[Channel Demonfire]</li>
+<li>[Pandemonium]</li>
+<li>[Cry Havoc]</li>
+<li>[Improved Immolate]</li>
+<li>[Inferno]</li>
+<li>[Cataclysm]</li>
+<li>[Soul Fire]</li>
+<li>[Shadowburn]</li>
+<li>[Raging Demonfire]</li>
+<li>[Rolling Havoc]</li>
+<li>[Backlash]</li>
+<li>[Fire and Brimstone]</li>
+<li>[Decimation]</li>
+<li>[Conflagration of Chaos</li>
+<li>[Flashpoint]</li>
+<li>[Scalding Flames]</li>
+<li>[Ruin]</li>
+<li>[Eradication]</li>
+<li>[Ashen Remains]</li>
+<li>[Grimoire of Sacrifice]</li>
+<li>[Summon Infernal]</li>
+<li>[Diabolic Embers]</li>
+<li>[Ritual of Ruin]</li>
+<li>[Crashing Chaos]</li>
+<li>[Infernal Brand]</li>
+<li>[Power Overwhelming]</li>
+<li>[Madness of the Azj'Aqir]</li>
+<li>[Master Ritualist]</li>
+<li>[Burn to Ashes]</li>
+<li>[Rain of Chaos]</li>
+<li>[Grand Warlock's Design]</li>
+<li>[Chaos Incarmate]</li>
+<li>[Dimensional Rift]</li>
+<li>[Avatar of Destruction]</li>
+</ul>
+</li>
+</ul>
+<h1 id="mage">MAGE</h1>
+<h2 id="orgs">ORGS</h2>
+<ul>
+<li>Kirin Tor</li>
+<li>Council of Six</li>
+<li>Violet Eye</li>
+<li>Mage Tirisgarde</li>
+<li>Horde Magisters</li>
+<li>Neutral Moon Guard</li>
+<li>Alliance Academy of Arcane Arts and Sciences</li>
+<li>Alliance Magical Preservation Society</li>
+<li>Mob Empyrean Society</li>
+<li>Neutral Sullied Banner</li>
+<li>Alliance Enlightened Assembly of Arcanology, Alchemy and Engineering Sciences</li>
+<li>Alliance Wizard's Sanctum mages</li>
+</ul>
+<h2 id="racials">RACIALS</h2>
+<ul>
+<li>Heroic Presence</li>
+<li>Expansive Mind</li>
+<li>Touch of Elune</li>
+<li>Viciousness</li>
+<li>Preternatural Calm</li>
+<li>Combat Analysis</li>
+<li>Arcane Torrent</li>
+<li>Time is Money</li>
+<li>Blood Fury</li>
+<li>Berserking</li>
+<li>Magical Affinity</li>
+<li>Ancestral Call</li>
+</ul>
+<h2 id="classses">CLASSSES</h2>
+<ul>
+<li>[BASE]
+<ul>
+<li>Frostbolt</li>
+<li>Fire Blast</li>
+<li>Frost Nova</li>
+<li>Blink</li>
+<li>Conjure Refreshment</li>
+<li>Arcane Explosion</li>
+<li>Counterspell</li>
+<li>Arcane Intellect</li>
+<li>Slow Fall</li>
+<li>Polymorph</li>
+<li>Invisibility</li>
+<li>Cone of Cold</li>
+<li>Teleport</li>
+<li>Portal</li>
+<li>Time Warp</li>
+</ul>
+</li>
+<li>[FIRE]
+<ul>
+<li>Fireball</li>
+<li>Ignite</li>
+<li>Flamestrike</li>
+<li>Hot Streak</li>
+<li>Cauterize</li>
+<li>Pyroblast</li>
+<li>Inferno Blast</li>
+<li>Scorch</li>
+<li>Fire Blast</li>
+<li>Pyrotechnics</li>
+<li>Scorch</li>
+<li>Phoenix Flames</li>
+<li>Surging Blaze</li>
+<li>Searing Touch</li>
+<li>Firestarter</li>
+<li>Fervent Flickering</li>
+<li>Fuel the Fire</li>
+<li>Critical Mass</li>
+<li>Intensifying Flame</li>
+<li>Flame On</li>
+<li>Flame Patch</li>
+<li>From the Ashes</li>
+<li>Alexstrasza's Fury</li>
+<li>Combustion</li>
+<li>Living Bomb</li>
+<li>Incendiary Eruptions</li>
+<li>Call of the Sun King</li>
+<li>Firemind</li>
+<li>Tempered Flames</li>
+<li>Feel the Burn</li>
+<li>Convection</li>
+<li>Phoenix Reborn</li>
+<li>Fevered Incantation</li>
+<li>Master of Flame</li>
+<li>Kindling</li>
+<li>Pyromaniac</li>
+<li>Inflame</li>
+<li>Conflagration</li>
+<li>Firefall</li>
+<li>Controlled Destruction</li>
+<li>Flame Accelerant</li>
+<li>Fiery Rush</li>
+<li>Wildfire</li>
+<li>Meteor</li>
+<li>Hyperthermia</li>
+<li>Sun King's Blessing</li>
+<li>Unleashed Inferno</li>
+<li>Deep Impact</li>
+</ul>
+</li>
+<li>[FROST]
+<ul>
+<li>Front Bolt</li>
+<li>Summon Water Elemental</li>
+<li>Frost Nova</li>
+<li>Mastery: Icicles</li>
+<li>Blizzard</li>
+<li>Cold Snap</li>
+<li>Ice Lance</li>
+<li>Frozen Orb</li>
+<li>Fingers of Frost</li>
+<li>Flurry</li>
+<li>Shatter</li>
+<li>Brain Freeze</li>
+<li>Everlasting Frost</li>
+<li>Winter's Blessing</li>
+<li>Frostbite</li>
+<li>Piercing Cold</li>
+<li>Perpetual Winter</li>
+<li>Lonely Winter</li>
+<li>Ice Caller</li>
+<li>Bone Chilling</li>
+<li>Comet Storm</li>
+<li>Frozen Touch</li>
+<li>Wintertide</li>
+<li>Snowstorm</li>
+<li>Flash Freeze</li>
+<li>Subzero</li>
+<li>Deep Shatter</li>
+<li>Icy Veins</li>
+<li>Splintering Cold</li>
+<li>Glacial Assault</li>
+<li>Freezing Rain</li>
+<li>Thermal Void</li>
+<li>Chain Reaction</li>
+<li>Splitting Ice</li>
+<li>Fractured Frost</li>
+<li>Freezing Winds</li>
+<li>Slick Ice</li>
+<li>Ray of Frost</li>
+<li>Hailstones</li>
+<li>Cold Front</li>
+<li>Coldest Snap</li>
+<li>Cryopathy</li>
+<li>Glacial Spike</li>
+</ul>
+</li>
+<li>[ARCANE]
+<ul>
+<li>Arcane Blast</li>
+<li>Slow</li>
+<li>Arcane Barrage</li>
+<li>Arcane Power</li>
+<li>Savant</li>
+<li>Clearcasting</li>
+<li>Arcane Missiles</li>
+<li>Arcane Orb</li>
+<li>Reverberate</li>
+<li>Concentrated Power</li>
+<li>Arcane Tempo</li>
+<li>Arcane Surge</li>
+<li>Crackling Energy</li>
+<li>Nether Precision</li>
+<li>Rule of Threes</li>
+<li>Arcane Familiar</li>
+<li>Charged Orb</li>
+<li>Resonance</li>
+<li>Mana Adept</li>
+<li>Slipstream</li>
+<li>Amplification</li>
+<li>Presence of Mind</li>
+<li>Foresight</li>
+<li>Arcing Cleave</li>
+<li>Nether Tempest</li>
+<li>Impetus</li>
+<li>Chrono Shift</li>
+<li>Touch of the Magi</li>
+<li>Supernova</li>
+<li>Evocation</li>
+<li>Enlightened</li>
+<li>Arcane Echo</li>
+<li>Arcane Bombardment</li>
+<li>Illuminated Thoughts</li>
+<li>Conjure Mana Gem</li>
+<li>Siphon Storm</li>
+<li>Prodigious Savant</li>
+<li>Radiant Spark</li>
+<li>Concentration</li>
+<li>Cascading Power</li>
+<li>Orb Barrage</li>
+<li>Harmonic Echo</li>
+<li>Arcane Harmony</li>
+</ul>
+</li>
+<li>[TALENTS]
+<ul>
+<li>Prismatic Barrier</li>
+<li>Blazing Barrier</li>
+<li>Ice Barrier</li>
+<li>Ice Block</li>
+<li>Overflowing Energy</li>
+<li>Incanter's Flow</li>
+<li>Winter's Protection</li>
+<li>Spellsteal</li>
+<li>Tempest</li>
+<li>Barrier</li>
+<li>Incantation of Swiftness</li>
+<li>Remove Curse</li>
+<li>Arcane Warding</li>
+<li>Mirror Image</li>
+<li>Shifting Power</li>
+<li>Alter Time</li>
+<li>Cryo-Freeze</li>
+<li>Reduplication</li>
+<li>Reabsorption</li>
+<li>Quick Witted</li>
+<li>Mass Polymorph</li>
+<li>Slow</li>
+<li>Master of Time</li>
+<li>Diverted Energy</li>
+<li>Ring of Frost</li>
+<li>Ice Nova</li>
+<li>Shimmer</li>
+<li>Ice Floes</li>
+<li>Mass Slow</li>
+<li>Blast Wave</li>
+<li>Rigid Ice</li>
+<li>Tome of Rhonin</li>
+<li>Tome of Antonidas</li>
+<li>Volatile Detonation</li>
+<li>Energized Barriers</li>
+<li>Frigid Winds</li>
+<li>Flow of Time</li>
+<li>Temporal Velocity</li>
+<li>Ice Ward</li>
+<li>Freezing Cold</li>
+<li>Time Manipulation</li>
+<li>Displacement</li>
+<li>Accumulative Shielding</li>
+<li>Greater Invisibility</li>
+<li>Dragon's Breath</li>
+<li>Ice Cold</li>
+<li>Time Anomaly</li>
+<li>Temporal Warp</li>
+<li>Mass Barrier</li>
+<li>Mass Invisibility</li>
+<li>Counterspell</li>
+<li>Spellsteal</li>
+<li>Evocation</li>
+</ul>
+</li>
+</ul>
+<h2 id="stats">STATS</h2>
+<ul>
+<li>intellect</li>
+<li>spell power</li>
+<li>spell critical chance</li>
+<li>haste</li>
+</ul>
+<h2 id="trivia">TRIVIA</h2>
+<ul>
+<li>Mages who developed their powers outside of conventional Dalaran-approved teachings are called hedge mages.</li>
+<li>The building of a mage's wand is not easy. Rare substances are required, and a vessel must be made that can store great quantities of magical energy.</li>
+<li>Some sensitive mortals have the ability to naturally sniff out fel and arcane magic, being able to detect demons, wizards and possessed people on their own.</li>
+<li>Every mage wielded the forces of magic differently, and if one was sensitive enough, one could tell the differences from one mage to the next.</li>
+<li>Mages have a tendency to premature hair graying from the stress of the magical energies they wield. Despite this they can have lasting longevity, with human mages being able to survive for two hundred years, though deathly thin and frail. Aegwynn bearing a child at seven hundred fifty years old was considered an anomaly.</li>
+<li>According to Muradin Bronzebeard, mages have always struck him as people of extremes, destructive but physically delicate, the metaphorical glass cannon.
+<ul>
+<li>He also mentioned that he never met a mage who didn't have twice the curiosity of a cat and less than half one's self-preservative instincts.</li>
+</ul>
+</li>
+<li>Mages automatically start at friendly standing with the Kirin Tor faction, making it possible to purchase and wear the  [Tabard of the Kirin Tor] at level 1. All other classes start at neutral with the Kirin Tor.</li>
+</ul>
+<h1 id=""></h1>
+<p>There is a better version that takes raft and builds ontop of it... since raft cannot be used in its native state with 2 apps. Which is fucking stupid... becasue I solved that issue very easily... But dude... they run fast as fuck boi... each instance... does not actually relate to one another from a performance perspective. They all just run seperatly. In one of the apps you will have a function that acts as a applcaition umbrella that you can use that connects the data between all 10 apps. But it is just data transfer... its fast.... Idk, just stop making your apps slow?</p>
+<p>Oh ya... There is SO much data... for everything... that I had to come up with the most sophicated solution in terms of dealing with just... the tsunami of data it emits. There are currently 90+ sidebars in the vscode extension... entirely devoted to devtools... and there will be more... in fact when it comes to items liek the router, routes, data transfer, etc between the form app and db and so on.... the dev server actually connects straight to the vscode extension to pass all the real time information so that you no longer.. have to code blind... we are almost in 2030... why the fuck are we coding as if it is still the 80s, makes no fucking sense....</p>
+<p>How do I test individual Incantations in isolation?</p>
+<p>all types are defined in the files and stored in the arcane / dalaran registry... just like everything else in the platform...</p>
+<p>yes there is enc, there are several algorithms used... it is the most sophisticared secrets solution currently. Most secrets though, well because of the architecture... wont even need to be decrypted... since there is not a single thing in the entire platform that touches the client...  why would i make the platform slower by doing that? thats stupid.</p>
+<p>Ofcourse it has hmr... what do you think this is react or something? oh wait... they didnt even have a dev server... the platform also has what solid calls reactiivity.... and to poke fun while one upping them by implementing something.... they never can... this platform does something no other can, renderivity....</p>
+<p>depends on which level of transmogrify we are talking about....  global replaces tailwinds usage, the main version brings tailwind into the app itself... and the plugin alllows you to define both class names and css... classnames oyu cna pplace in other platform functions or right in the calll sites in the jsx or inject the css right in the same jsx of where it is needed.</p>
+<p>if u are installing... 2 differnt version of the same lib... in the same app... man u got problems....</p>
+<p>... why the fuck would you use a monorepo... the_wizard... makes that obsolete garbage.... YOU COULD USE IT THERE....  but why would you take a beautful, sexy.. ferarri.... and go swamping with it? makes no fucking sense...</p>
+<p>for example.. there was a feature that would have helped no code database still have access to all the functions and values that are stored on the platform.... that is sooooooo edge case... because... no code fucking deving... is so fucking stupid...by building an app FOR EVERYONE... you have to account FOR EVERYONE... which means it is slow as dog shit... ontop of that.. you expsose 1% problems to the 99%... why would u do that? paltforms that solve the 1%... all of them, in the end have atleast one 1% problem now exposed to where 99% of devs NOW HAVE TO DEAL WITH THAT FUCKING PROBLEM THEY DONT EVEN KNOW EXCISTS....</p>
+<p>What's the single most surprising thing the platform does that users won't expect?</p>
+
+            
+            
+        </body>
+        </html>

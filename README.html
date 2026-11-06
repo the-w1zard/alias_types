@@ -2,7 +2,7 @@
         <html>
         <head>
             <meta charset="UTF-8">
-            <title>TYPESCRIPT ALIAS</title>
+            <title>Global Type System &amp; Runtime Primitives</title>
             <style>
 /* From extension vscode.github */
 /*---------------------------------------------------------------------------------------------
@@ -140,108 +140,273 @@
         </head>
         <body class="vscode-body vscode-dark">
             <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
-				<h1 id="typescript-alias">TYPESCRIPT ALIAS</h1>
-<blockquote>
-<p>This pkg includes extremely agressive alias of typescripts definitions.</p>
-</blockquote>
-<p>An ultra-concise, ergonomic collection of global TypeScript type aliases, shorthand primitives, and advanced utility helpers designed to speed up type-safe development.</p>
-<p>An ultra-concise, ergonomic collection of global TypeScript type aliases, shorthand primitives, and advanced utility helpers designed to speed up type-safe development.</p>
-<h2 id="-installation">📦 Installation</h2>
-<pre><code class="language-bash">npm install ts-global-shorthands
-<span class="hljs-comment"># or</span>
-yarn add ts-global-shorthands
-<span class="hljs-comment"># or</span>
-pnpm add ts-global-shorthands
+				<div align="left" style="position: relative;">
+<img src="file:///f:\alias_types\icons\gandalf.png" align="right" width="30%" style="margin: -20px 0 0 20px;">
+<h1>Type Alias: <span style="font-size:18px;" >The Wizard's Arsenal</span></h1>
+<p align="left"><em>The most opinionated platform... ever.</em></p>
+<p align="left"><em>Trust me... I'm a fucking wizard... 🧙</em></p>
+<p align="left">VSCode ext:</p>
+<p align="left">
+<img src="https://img.shields.io/badge/THEMES- 251-95ED27?style=flat">
+<img src="https://img.shields.io/badge/SIDEBARS- 160+-95ED27?style=flat">
+<img src="https://img.shields.io/badge/PRODUCT ICONS- 651-95ED27?style=flat">
+<img src="https://img.shields.io/badge/FILE ICONS- 454-95ED27?style=flat">
+<img src="https://img.shields.io/badge/VSCode Extentions- 82+-95ED27?style=flat">
+<img src="https://img.shields.io/badge/FEATURES- SHIT TONNE-95ED27?style=flat">
+</p>
+<p align="left">Small but powerful repos worth checking out:</p>
+<p align="left">
+<p><a href="https://github.com/the-w1zard/app_store"><img src="https://img.shields.io/badge/Store / Maelstrom-000000.svg?style=flat&logo=JetBrains&logoColor=white" alt="JetBrains"></a>
+<a href="https://github.com/the-w1zard/dx"><img src="https://img.shields.io/badge/UX /DX-34A853.svg?style=flat&logo=Android&logoColor=white" alt="Android"></a>
+<a href="https://github.com/the-w1zard/temporal_shift"><img src="https://img.shields.io/badge/Temporal Shift-77AA99.svg?style=flat&logo=Org&logoColor=white" alt="Org"></a>
+<a href="https://github.com/the-w1zard/the_cloud"><img src="https://img.shields.io/badge/The Cloud-02303A.svg?style=flat&logo=Gradle&logoColor=white" alt="Gradle"></a>
+<a href="https://github.com/the-w1zard/signals"><img src="https://img.shields.io/badge/Signals-02303A.svg?style=flat&logo=Gradle&logoColor=white" alt="Gradle"></a>
+<img src="https://img.shields.io/badge/Sometimes, my genius... It generates gravity.-4285F4.svg?style=flat&logo=🧙&logoColor=white" alt="Google">
+<a href="https://github.com/the-w1zard"><img src="https://img.shields.io/badge/Coming Soon: The Wizard Platform-7F52FF.svg?style=flat&logo=Kotlin&logoColor=white" alt="Kotlin"></a>
+<a href="https://github.com/the-w1zard"><img src="https://img.shields.io/badge/Coming Soon: Hadron Particle Disruptor-%23ED8B00.svg?style=flat&logo=openjdk&logoColor=white" alt="java"></a></p>
+</p>
+<p align="left">The goal? To remove all friction, from everything.</p>
+</div>
+<br clear="right">
+<hr>
+<span  style="font-family: monospace"> 
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>TLDR</p><p></p>
+<p>The goal here... remove as many key strokes as possible. The end result also included several other benefits such as compacted props defintions among others.</p>
+<p>Within 20 mins of creating this resource I had removed 250,000 characters from that app. The final tally came up to 1.2 million. It is more, but that's just when I stopped counting.</p>
+</div>
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>UPDATE</p><p></p>
+<p>I believe this to be in its finaly form, despite being such a new solution, the ux was just hit perfectly from the start. This update, and probably its last, included the things that... fuck did they ever get annoying when using them beside the types alias. Every single time I went to...</p>
+<pre><code class="language-tsx"><span class="hljs-title class_">String</span>(<span class="hljs-string">&#x27;st&#x27;</span>)
+<span class="hljs-title class_">Number</span>(<span class="hljs-number">0</span>)
 </code></pre>
-<h1 id="quick-reference--all-defined-types">Quick Reference — All Defined Types</h1>
-<h2 id="primitives--basics">Primitives &amp; basics</h2>
+<p>And so on... If this is your first time seeing this module thinking, 'Is this guy for real? Getting annoyed for typing 5 more chars?'... Ya... Actually, really fucking annoyed, lol. So much so, I literally dropped the app I was working on because I'd hit the wall where I was like , 'FUCK this, I'm stopping and doing this now.'</p>
+<p>Since your new, right now yes, it looks like 5 characters...</p>
+<p>But over an entire codebase, or all of your codebases. We are not talking about single digit savings here. Were talking... in the millions. Just my personal projects alone, I'm just about to hit half a million. While, THOSE, projects it wasn't typed savings, because this solution is newer, as they can still benefit from one of the other many items on that list. While at the same time, that is half a million less chars for the compiler to run through.</p>
+<p>Your files are smaller, and the two things that I have noticed more than any other... a functions props signature, without fail virtually, now fits entirely on a single line without having to unfold it and the read a wall of props.</p>
+<p>The next part, yes it will actually slow you down at first, but once you memorize the alias'... you not only read the code faster due to its vertical compression, but also left to right compression as well. In addition to not having to consume as much data than it would otherwise to reach the same end result.</p>
+<p>Below you a single vertical space where 40 fns and each and every single props of those 40 are visible and can read the entire surface of each fns props. Not to mention, saving from having to scroll up and down all the time. I've even devs take up more than entire vertical heights... just to define and layout the props for what it is that they built.</p>
+<p>This solution will not be for everyone, as there are some hard core ts ceremony devs out there. But if they want to do more work, for the exact same result... Go for it! Seriously, each and every single person has a different preference, but if you aren't one of those devs I highly encourage, at the very least, trying this out.</p>
+</div>
+<br />
+<img src="file:///f:\alias_types\icons\ex.png">
+</span>
+<br />
+<h1 id="global-type-system--runtime-primitives">Global Type System &amp; Runtime Primitives</h1>
+<h2 id="overview">Overview</h2>
+<p>This module establishes a globally accessible foundation of shared TypeScript types, aliases, native constructor references, utility types, and runtime primitives.</p>
+<p>Its purpose is to eliminate repetitive type declarations, reduce unnecessary verbosity, standardize commonly used terminology, and provide a consistent vocabulary across the platform.</p>
+<p>Rather than repeatedly importing and redeclaring commonly used JavaScript and TypeScript primitives, this module makes them globally accessible through short, standardized identifiers.</p>
+<p>The implementation is intentionally compact. Many of its aliases represent frequently used native types, while others provide specialized type transformations, structural utilities, binary data abstractions, and platform-specific definitions.</p>
+<p>The module is divided into several functional groups:</p>
+<ol>
+<li>Runtime primitives</li>
+<li>Upgraded base abstractions</li>
+<li>Native type aliases</li>
+<li>Native constructor globals</li>
+<li>Collection and data structure aliases</li>
+<li>Promise and asynchronous utilities</li>
+<li>Object and structural transformations</li>
+<li>Function and parameter utilities</li>
+<li>Iteration and generator abstractions</li>
+<li>Typed array and binary data aliases</li>
+<li>Advanced conditional and recursive types</li>
+<li>Platform-specific definitions</li>
+<li>Cache and storage backend definitions</li>
+</ol>
+<hr>
+<h1 id="1-runtime-primitives">1. Runtime Primitives</h1>
+<h2 id="maybepromise">MaybePromise</h2>
+<p><code>MaybePromisei&lt;R&gt;(v: R)</code></p>
+<p>If you want to learn more about this, I suggest going to its actual documentation. However, the easiest, most simpliest way to explain this to every single person without fail</p>
+<h3 id="do-you-need-the-value">DO YOU NEED THE VALUE?</h3>
+<ul>
+<li>NO? Then simply do not place an await...</li>
+<li>YES? Place an await infront of the fn...</li>
+</ul>
+<h3 id="global-exposure">Global exposure</h3>
+<p>The implementation is exposed through:</p>
+<ul>
+<li><code>globalThis.MaybePromise</code></li>
+</ul>
+<p>This makes the runtime function accessible globally without requiring repeated imports.</p>
+<h2 id="px--native-proxy">PX — Native Proxy</h2>
+<p><code>globalThis.PX = Proxy</code></p>
+<p>Exposes the native JavaScript <code>Proxy</code> constructor under a shortened global identifier.</p>
+<p>The corresponding TypeScript alias is:</p>
+<p><code>PX&lt;T extends object = object&gt;</code></p>
+<p>The type-side alias provides a convenient reference to an object type when working with proxy-oriented structures.</p>
+<p>The runtime constructor and type alias serve separate purposes:</p>
+<ul>
+<li>Runtime: native Proxy constructor.</li>
+<li>TypeScript: object type abstraction.</li>
+</ul>
+<hr>
+<h1 id="2-upgraded-base-abstractions">2. Upgraded Base Abstractions</h1>
+<p>This section establishes foundational abstractions that extend the native JavaScript collection vocabulary.</p>
+<h2 id="bm--byteop-map">BM — ByteOp Map</h2>
+<p><code>BM&lt;K = A, V = A&gt;</code></p>
+<p>A shortened alias for <code>BYTEOP_MAP_TYPE&lt;K, V&gt;</code>.</p>
+<p>Unlike a native JavaScript <code>Map</code>, this interface describes a map-like structure backed by binary-oriented storage.</p>
+<h3 id="byteop_map_type">BYTEOP_MAP_TYPE</h3>
+<p>The interface defines the following contract:</p>
+<table>
+<thead>
+<tr>
+<th>Member</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>pidToSlot</code></td>
+<td>Int32Array mapping particle identifiers to storage slots</td>
+</tr>
+<tr>
+<td><code>set(k, v)</code></td>
+<td>Associates a key with a value</td>
+</tr>
+<tr>
+<td><code>get(k)</code></td>
+<td>Retrieves a value or returns undefined</td>
+</tr>
+<tr>
+<td><code>has(k)</code></td>
+<td>Checks whether a key exists</td>
+</tr>
+<tr>
+<td><code>delete(k)</code></td>
+<td>Removes an entry</td>
+</tr>
+<tr>
+<td><code>size</code></td>
+<td>Exposes the number of stored entries</td>
+</tr>
+</tbody>
+</table>
+<p>The generic parameters preserve key and value types.</p>
+<h3 id="design-purpose">Design purpose</h3>
+<p>The interface establishes a familiar Map-like API while allowing the underlying implementation to use a binary-oriented representation.</p>
+<p>This separates the consumer-facing collection contract from the internal storage architecture.</p>
+<p>The intent is to provide a JavaScript-compatible interaction model without requiring the underlying implementation to use native Map storage.</p>
+<hr>
+<h1 id="3-native-type-aliases">3. Native Type Aliases</h1>
+<p>The ALIAS region establishes shortened references to commonly used native JavaScript and TypeScript types.</p>
+<p>These aliases are globally available and do not require individual imports.</p>
+<p>The naming convention favors compact identifiers to reduce repetitive syntax throughout the platform.</p>
+<h2 id="fundamental-types">Fundamental types</h2>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
-<th>Note</th>
+<th>Native type</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>A</code></td>
 <td><code>any</code></td>
-<td></td>
+<td>Unrestricted type</td>
 </tr>
 <tr>
-<td><code>B&lt;T = A&gt;</code></td>
-<td><code>boolean</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>N&lt;T = A&gt;</code></td>
-<td><code>number</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>S&lt;T = A&gt;</code></td>
-<td><code>string</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>BI&lt;T = A&gt;</code></td>
-<td><code>bigint</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>SY&lt;T = A&gt;</code></td>
-<td><code>symbol</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>UD&lt;T = A&gt;</code> / <code>UN&lt;T = A&gt;</code></td>
-<td><code>undefined</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>NU&lt;T = A&gt;</code></td>
-<td><code>null</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>V&lt;T = A&gt;</code></td>
-<td><code>void</code></td>
-<td></td>
-</tr>
-<tr>
-<td><code>U&lt;T = A&gt;</code></td>
+<td><code>U</code></td>
 <td><code>unknown</code></td>
-<td></td>
+<td>Unknown value requiring type narrowing</td>
 </tr>
 <tr>
-<td><code>NE&lt;T = A&gt;</code></td>
+<td><code>B</code></td>
+<td><code>boolean</code></td>
+<td>Boolean value</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td><code>number</code></td>
+<td>Numeric value</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td><code>string</code></td>
+<td>String value</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td><code>void</code></td>
+<td>Void return type</td>
+</tr>
+<tr>
+<td><code>NE</code></td>
 <td><code>never</code></td>
-<td></td>
+<td>Impossible type</td>
 </tr>
 <tr>
-<td><code>W</code></td>
-<td><code>&quot;*&quot;</code></td>
-<td></td>
+<td><code>NU</code></td>
+<td><code>null</code></td>
+<td>Null value</td>
 </tr>
 <tr>
-<td><code>K</code></td>
-<td><code>keyof any</code></td>
-<td>= <code>string | number | symbol</code></td>
+<td><code>UD</code></td>
+<td><code>undefined</code></td>
+<td>Undefined value</td>
 </tr>
 <tr>
-<td><code>PK&lt;T = A&gt;</code></td>
-<td><code>PropertyKey</code></td>
-<td></td>
+<td><code>O</code></td>
+<td><code>Object</code></td>
+<td>Object type</td>
+</tr>
+<tr>
+<td><code>BI</code></td>
+<td><code>bigint</code></td>
+<td>Arbitrary-precision integer</td>
+</tr>
+<tr>
+<td><code>SY</code></td>
+<td><code>symbol</code></td>
+<td>Symbol primitive</td>
 </tr>
 </tbody>
 </table>
-<h2 id="wrappers--containers">Wrappers &amp; containers</h2>
+<p>Additional aliases:</p>
+<ul>
+<li><code>NB</code>: bigint</li>
+<li><code>XS</code>: any</li>
+<li><code>Wildcard</code>: <code>&quot;*&quot;</code></li>
+<li><code>W</code>: <code>&quot;*&quot;</code></li>
+</ul>
+<h2 id="string-representations-of-primitive-types">String representations of primitive types</h2>
+<p>The following aliases use template literal types:</p>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>SB</code></td>
+<td>String representation of boolean</td>
+</tr>
+<tr>
+<td><code>SN</code></td>
+<td>String representation of number</td>
+</tr>
+<tr>
+<td><code>SK</code></td>
+<td>String representation of a property-key-compatible type</td>
+</tr>
+<tr>
+<td><code>SBIG</code></td>
+<td>String representation of bigint</td>
+</tr>
+</tbody>
+</table>
+<p>These are useful when working with string-based identifiers, serialization formats, and type-level string transformations.</p>
+<h2 id="arrays-and-buffers">Arrays and buffers</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
 </tr>
 </thead>
 <tbody>
@@ -250,390 +415,823 @@ pnpm add ts-global-shorthands
 <td><code>Array&lt;T&gt;</code></td>
 </tr>
 <tr>
-<td><code>ROARR&lt;T&gt;</code></td>
-<td><code>readonly T[]</code></td>
+<td><code>AB</code></td>
+<td><code>ArrayBuffer</code></td>
 </tr>
 <tr>
-<td><code>TUP&lt;T extends any[] = any[]&gt;</code></td>
-<td><code>[...T]</code></td>
+<td><code>BL</code></td>
+<td><code>Blob</code></td>
 </tr>
 <tr>
-<td><code>NONEMPTY&lt;T&gt;</code></td>
-<td><code>readonly [T, ...T[]]</code></td>
+<td><code>BF</code></td>
+<td><code>Buffer</code></td>
 </tr>
+</tbody>
+</table>
+<p>The <code>AR</code> alias also exposes the native <code>Array</code> constructor through its corresponding global declaration.</p>
+<h2 id="date-and-error-types">Date and error types</h2>
+<table>
+<thead>
 <tr>
-<td><code>ST&lt;T = A&gt;</code> / <code>SETOF&lt;T = A&gt;</code></td>
-<td><code>Set&lt;T&gt;</code></td>
+<th>Alias</th>
+<th>Native type</th>
 </tr>
+</thead>
+<tbody>
 <tr>
-<td><code>MP&lt;K,V&gt;</code> / <code>MAP&lt;K,V&gt;</code> / <code>M&lt;K,V&gt;</code></td>
-<td><code>Map&lt;K,V&gt;</code></td>
-</tr>
-<tr>
-<td><code>RM&lt;K,V&gt;</code></td>
-<td><code>ReadonlyMap&lt;K,V&gt;</code></td>
-</tr>
-<tr>
-<td><code>RS&lt;T&gt;</code></td>
-<td><code>ReadonlySet&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>WS&lt;T extends Object&gt;</code> / <code>WEAKSET&lt;T&gt;</code></td>
-<td><code>WeakSet&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>WM&lt;K,V&gt;</code> / <code>WEAKMAP&lt;K,V&gt;</code></td>
-<td><code>WeakMap&lt;K,V&gt;</code></td>
-</tr>
-<tr>
-<td><code>WREF&lt;T extends Object&gt;</code></td>
-<td><code>WeakRef&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>FREG&lt;T extends Object&gt;</code></td>
-<td><code>FinalizationRegistry&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>OB&lt;T = A&gt;</code> / <code>OBJ&lt;T = A&gt;</code></td>
-<td><code>{ [key: string]: T }</code></td>
-</tr>
-<tr>
-<td><code>DICT&lt;T = A&gt;</code></td>
-<td><code>{ [key: string]: T | undefined }</code></td>
-</tr>
-<tr>
-<td><code>DC&lt;T = A&gt;</code></td>
-<td><code>Record&lt;string, T&gt;</code></td>
-</tr>
-<tr>
-<td><code>R&lt;K,V&gt;</code></td>
-<td><code>Record&lt;K,V&gt;</code></td>
-</tr>
-<tr>
-<td><code>D&lt;T = A&gt;</code></td>
+<td><code>D</code></td>
 <td><code>Date</code></td>
 </tr>
 <tr>
-<td><code>REG&lt;T = A&gt;</code></td>
-<td><code>RegExp</code></td>
+<td><code>E</code></td>
+<td><code>Error</code></td>
 </tr>
 <tr>
-<td><code>O&lt;T = A&gt;</code></td>
-<td><code>Object</code></td>
+<td><code>AGE</code></td>
+<td><code>AggregateError</code></td>
+</tr>
+<tr>
+<td><code>DOMX</code></td>
+<td><code>DOMException</code></td>
+</tr>
+<tr>
+<td><code>ERRCAUSE&lt;T&gt;</code></td>
+<td>Error with optional typed cause</td>
 </tr>
 </tbody>
 </table>
-<h2 id="promises--async">Promises / async</h2>
+<p><code>ERRCAUSE&lt;T&gt;</code> extends the standard Error shape with a typed optional <code>cause</code> property.</p>
+<h2 id="dom-types">DOM types</h2>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
+<th>Native type</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>P&lt;T = A&gt;</code> / <code>PROM&lt;T = A&gt;</code></td>
-<td><code>Promise&lt;T&gt;</code></td>
+<td><code>ND</code></td>
+<td><code>Node</code></td>
 </tr>
 <tr>
-<td><code>PL&lt;T = A&gt;</code></td>
-<td><code>PromiseLike&lt;T&gt;</code></td>
+<td><code>NA&lt;T&gt;</code></td>
+<td><code>NodeListOf&lt;T&gt;</code></td>
 </tr>
 <tr>
-<td><code>AW&lt;T = A&gt;</code></td>
-<td><code>Awaited&lt;T&gt;</code></td>
+<td><code>NLE</code></td>
+<td><code>NodeListOf&lt;Element&gt;</code></td>
 </tr>
 <tr>
-<td><code>AWAIT&lt;T&gt;</code></td>
-<td>recursive unwrap of <code>PromiseLike</code></td>
+<td><code>EL</code></td>
+<td><code>Element</code></td>
 </tr>
 <tr>
-<td><code>ASF&lt;T&gt;</code></td>
-<td>async version of a function type</td>
+<td><code>HE</code></td>
+<td><code>HTMLElement</code></td>
+</tr>
+<tr>
+<td><code>DM</code></td>
+<td><code>Document</code></td>
+</tr>
+<tr>
+<td><code>FR</code></td>
+<td><code>DocumentFragment</code></td>
+</tr>
+<tr>
+<td><code>EV</code></td>
+<td><code>Event</code></td>
+</tr>
+<tr>
+<td><code>CE</code></td>
+<td><code>CustomEvent</code></td>
+</tr>
+<tr>
+<td><code>ME</code></td>
+<td><code>MouseEvent</code></td>
+</tr>
+<tr>
+<td><code>KE</code></td>
+<td><code>KeyboardEvent</code></td>
+</tr>
+<tr>
+<td><code>PE</code></td>
+<td><code>PointerEvent</code></td>
+</tr>
+<tr>
+<td><code>WIN</code></td>
+<td><code>Window</code></td>
+</tr>
+</tbody>
+</table>
+<p>Additional DOM-related aliases:</p>
+<ul>
+<li><code>FD</code>: FormData</li>
+<li><code>DV</code>: DataView</li>
+</ul>
+<p>These provide compact references for browser-facing code without repeatedly spelling out native DOM type names.</p>
+<h2 id="url-and-regular-expressions">URL and regular expressions</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>URI</code></td>
+<td>URL</td>
+</tr>
+<tr>
+<td><code>URL</code></td>
+<td>URL</td>
+</tr>
+<tr>
+<td><code>REG</code></td>
+<td>RegExp</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>REG</code> constructor is also exposed through the global declaration.</p>
+<hr>
+<h1 id="4-native-constructor-globals">4. Native Constructor Globals</h1>
+<p>Several native JavaScript constructors are declared globally under shortened identifiers.</p>
+<p>These declarations allow the same compact naming convention to be used in both type positions and runtime expressions.</p>
+<table>
+<thead>
+<tr>
+<th>Global</th>
+<th>Native constructor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>B</code></td>
+<td>Boolean</td>
+</tr>
+<tr>
+<td><code>AR</code></td>
+<td>Array</td>
+</tr>
+<tr>
+<td><code>AB</code></td>
+<td>ArrayBuffer</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td>Date</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td>Error</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td>Function</td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td>JSON</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td>Map</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td>Number</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td>Object</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td>Promise</td>
+</tr>
+<tr>
+<td><code>PX</code></td>
+<td>Proxy</td>
+</tr>
+<tr>
+<td><code>REG</code></td>
+<td>RegExp</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td>String</td>
+</tr>
+<tr>
+<td><code>ST</code></td>
+<td>Set</td>
+</tr>
+<tr>
+<td><code>WR</code></td>
+<td>WeakRef</td>
+</tr>
+<tr>
+<td><code>DV</code></td>
+<td>DataView</td>
+</tr>
+</tbody>
+</table>
+<p>The purpose is to make native constructors available through a consistent global vocabulary.</p>
+<p>This is particularly useful in modules where native constructors are frequently referenced and importing or repeatedly writing their full names adds unnecessary verbosity.</p>
+<p>The declarations describe the expected runtime globals; they do not independently instantiate or implement the native constructors.</p>
+<hr>
+<h1 id="5-collections-and-data-structures">5. Collections and Data Structures</h1>
+<p>This section provides shortened aliases for native JavaScript collection types.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M&lt;K,V&gt;</code></td>
+<td>Map</td>
+</tr>
+<tr>
+<td><code>MAP&lt;K,V&gt;</code></td>
+<td>Map</td>
+</tr>
+<tr>
+<td><code>WM&lt;K,V&gt;</code></td>
+<td>WeakMap</td>
+</tr>
+<tr>
+<td><code>WEAKMAP&lt;K,V&gt;</code></td>
+<td>WeakMap</td>
+</tr>
+<tr>
+<td><code>RM&lt;K,V&gt;</code></td>
+<td>ReadonlyMap</td>
+</tr>
+<tr>
+<td><code>ST&lt;T&gt;</code></td>
+<td>Set</td>
+</tr>
+<tr>
+<td><code>RS&lt;T&gt;</code></td>
+<td>ReadonlySet</td>
+</tr>
+<tr>
+<td><code>WS&lt;T&gt;</code></td>
+<td>WeakSet</td>
+</tr>
+<tr>
+<td><code>R&lt;K,V&gt;</code></td>
+<td>Record</td>
+</tr>
+<tr>
+<td><code>OB&lt;T&gt;</code></td>
+<td>String-keyed object</td>
+</tr>
+<tr>
+<td><code>OBJ&lt;T&gt;</code></td>
+<td>String-keyed object</td>
+</tr>
+<tr>
+<td><code>DC&lt;T&gt;</code></td>
+<td>String-keyed Record</td>
+</tr>
+<tr>
+<td><code>DICT&lt;T&gt;</code></td>
+<td>String-keyed dictionary allowing undefined values</td>
+</tr>
+</tbody>
+</table>
+<p>The collection aliases retain generic parameters so that key and value types can be propagated through the platform.</p>
+<h2 id="object-oriented-aliases">Object-oriented aliases</h2>
+<ul>
+<li><code>O</code>: Object</li>
+<li><code>OB&lt;T&gt;</code>: String-indexed object</li>
+<li><code>OBJ&lt;T&gt;</code>: Equivalent string-indexed object</li>
+<li><code>R&lt;K,V&gt;</code>: Record</li>
+<li><code>DC&lt;T&gt;</code>: String-keyed record</li>
+<li><code>DICT&lt;T&gt;</code>: Dictionary with optional undefined values</li>
+</ul>
+<p>These definitions provide a consistent shorthand for common object shapes.</p>
+<hr>
+<h1 id="6-promise-and-asynchronous-utilities">6. Promise and Asynchronous Utilities</h1>
+<p>This section provides aliases for synchronous/asynchronous execution and promise-related types.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>P&lt;T&gt;</code></td>
+<td>Promise</td>
+</tr>
+<tr>
+<td><code>PL&lt;T&gt;</code></td>
+<td>PromiseLike</td>
+</tr>
+<tr>
+<td><code>AWD&lt;T&gt;</code></td>
+<td>Awaited</td>
+</tr>
+<tr>
+<td><code>AW&lt;T&gt;</code></td>
+<td>Recursive promise-like unwrapping</td>
 </tr>
 <tr>
 <td><code>PSR&lt;T&gt;</code></td>
-<td><code>PromiseSettledResult&lt;T&gt;</code></td>
+<td>PromiseSettledResult</td>
 </tr>
 <tr>
 <td><code>PFR&lt;T&gt;</code></td>
-<td><code>PromiseFulfilledResult&lt;T&gt;</code></td>
+<td>PromiseFulfilledResult</td>
 </tr>
 <tr>
 <td><code>PRR</code></td>
-<td><code>PromiseRejectedResult</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="iterables--generators">Iterables &amp; generators</h2>
-<table>
-<thead>
-<tr>
-<th>Alias</th>
-<th>Expands to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>I&lt;T = A&gt;</code></td>
-<td><code>Iterable&lt;T&gt;</code></td>
+<td>PromiseRejectedResult</td>
 </tr>
 <tr>
-<td><code>ITR&lt;T = A&gt;</code></td>
-<td><code>IterableIterator&lt;T&gt;</code></td>
+<td><code>ASF&lt;T&gt;</code></td>
+<td>Async version of a function signature</td>
 </tr>
 <tr>
-<td><code>ITOR&lt;T = A&gt;</code></td>
-<td><code>Iterator&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>ITOBJ&lt;T,R,N&gt;</code></td>
-<td><code>IteratorObject&lt;T,R,N&gt;</code></td>
-</tr>
-<tr>
-<td><code>AI&lt;T = A&gt;</code> / <code>ASYNCIT&lt;T&gt;</code></td>
-<td><code>AsyncIterable&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>ASYNCITR&lt;T&gt;</code></td>
-<td><code>AsyncIterableIterator&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>AITOBJ&lt;T,R,N&gt;</code></td>
-<td><code>AsyncIteratorObject&lt;T,R,N&gt;</code></td>
-</tr>
-<tr>
-<td><code>GEN&lt;T,R,N&gt;</code></td>
-<td><code>Generator&lt;T,R,N&gt;</code></td>
-</tr>
-<tr>
-<td><code>AG&lt;T,R,N&gt;</code> / <code>ASYNCGEN&lt;T,R,N&gt;</code></td>
-<td><code>AsyncGenerator&lt;T,R,N&gt;</code></td>
-</tr>
-<tr>
-<td><code>FIRST&lt;T&gt;</code></td>
-<td>first element of tuple/array</td>
-</tr>
-<tr>
-<td><code>LAST&lt;T&gt;</code></td>
-<td>last element of tuple/array</td>
-</tr>
-<tr>
-<td><code>LENGTH&lt;T&gt;</code></td>
-<td><code>T['length']</code></td>
-</tr>
-<tr>
-<td><code>IDX&lt;T&gt;</code> / <code>EXT&lt;T&gt;</code></td>
-<td>element type of array</td>
-</tr>
-</tbody>
-</table>
-<h2 id="utility--object-manipulation">Utility — object manipulation</h2>
-<table>
-<thead>
-<tr>
-<th>Alias</th>
-<th>Expands to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>PA&lt;T&gt;</code></td>
-<td><code>Partial&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>RE&lt;T&gt;</code></td>
-<td><code>Required&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>RO&lt;T&gt;</code></td>
-<td><code>Readonly&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>ROOBJ&lt;T&gt;</code></td>
-<td><code>{ readonly [K in keyof T]: T[K] }</code></td>
-</tr>
-<tr>
-<td><code>MUT&lt;T&gt;</code></td>
-<td><code>{ -readonly [K in keyof T]: T[K] }</code></td>
-</tr>
-<tr>
-<td><code>MUTOBJ&lt;T&gt;</code></td>
-<td>same as <code>MUT&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>OM&lt;T,K&gt;</code></td>
-<td><code>Omit&lt;T,K&gt;</code></td>
-</tr>
-<tr>
-<td><code>PI&lt;T,K&gt;</code></td>
-<td><code>Pick&lt;T,K&gt;</code></td>
-</tr>
-<tr>
-<td><code>OV&lt;T,U&gt;</code></td>
-<td><code>Omit&lt;T, keyof U&gt; &amp; U</code></td>
-</tr>
-<tr>
-<td><code>XOR&lt;T,U&gt;</code></td>
-<td>exclusive union</td>
-</tr>
-<tr>
-<td><code>DEEP&lt;T&gt;</code></td>
-<td>deep readonly-ish recursion</td>
-</tr>
-<tr>
-<td><code>DEEPP&lt;T&gt;</code></td>
-<td>deep partial recursion</td>
-</tr>
-<tr>
-<td><code>DPR&lt;T&gt;</code></td>
-<td>deep readonly recursion</td>
-</tr>
-<tr>
-<td><code>KEYS&lt;T&gt;</code> / <code>KOF&lt;T&gt;</code></td>
-<td><code>keyof T</code></td>
-</tr>
-<tr>
-<td><code>SK&lt;T&gt;</code></td>
-<td><code>keyof T &amp; string</code></td>
-</tr>
-<tr>
-<td><code>VAL&lt;T&gt;</code> / <code>VALOF&lt;T&gt;</code></td>
-<td><code>T[keyof T]</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="utility--unions--conditionals">Utility — unions &amp; conditionals</h2>
-<table>
-<thead>
-<tr>
-<th>Alias</th>
-<th>Expands to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>EX&lt;T,U&gt;</code></td>
-<td><code>Exclude&lt;T,U&gt;</code></td>
-</tr>
-<tr>
-<td><code>IN&lt;T,U&gt;</code></td>
-<td><code>Extract&lt;T,U&gt;</code></td>
-</tr>
-<tr>
-<td><code>NR&lt;T&gt;</code></td>
-<td><code>NonNullable&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>MAY&lt;T&gt;</code></td>
-<td><code>T | null | undefined</code></td>
+<td><code>UF&lt;T&gt;</code></td>
+<td>Value or function returning that value</td>
 </tr>
 <tr>
 <td><code>OPT&lt;T&gt;</code></td>
-<td><code>T | undefined</code></td>
+<td>Value or undefined</td>
 </tr>
 <tr>
-<td><code>NIL&lt;T&gt;</code></td>
-<td><code>T | null</code></td>
+<td><code>MAY&lt;T&gt;</code></td>
+<td>Value, null, or undefined</td>
 </tr>
 <tr>
-<td><code>DIFF&lt;T,U&gt;</code></td>
-<td><code>T extends U ? never : T</code></td>
-</tr>
-<tr>
-<td><code>GUARD&lt;T,U&gt;</code></td>
-<td><code>T extends U ? T : never</code></td>
-</tr>
-<tr>
-<td><code>UNION&lt;T&gt;</code></td>
-<td><code>T extends any ? T : never</code></td>
-</tr>
-<tr>
-<td><code>NOI&lt;T&gt;</code></td>
-<td><code>NoInfer&lt;T&gt;</code></td>
+<td><code>SU</code></td>
+<td>String or undefined</td>
 </tr>
 </tbody>
 </table>
-<h2 id="utility--type-predicates">Utility — type predicates</h2>
+<h2 id="asf--async-function-transformation">ASF — Async Function Transformation</h2>
+<p><code>ASF&lt;T&gt;</code></p>
+<p>Transforms a function signature into an asynchronous equivalent.</p>
+<p>It preserves the original function parameters while wrapping the awaited return type in a Promise.</p>
+<p>This allows existing function signatures to be reused when defining asynchronous interfaces.</p>
+<h2 id="uf--value-or-function">UF — Value or Function</h2>
+<p><code>UF&lt;T = A&gt;</code></p>
+<p>Represents either:</p>
+<ul>
+<li>A direct value of type <code>T</code>.</li>
+<li>A function returning <code>T</code>.</li>
+</ul>
+<p>This is useful for APIs that accept either eagerly supplied values or lazily evaluated values.</p>
+<h2 id="opt-and-may">OPT and MAY</h2>
+<ul>
+<li><code>OPT&lt;T&gt;</code> represents an optional value through <code>undefined</code>.</li>
+<li><code>MAY&lt;T&gt;</code> represents a nullable or optional value.</li>
+</ul>
+<p>These provide compact ways to describe common optional-value contracts.</p>
+<hr>
+<h1 id="7-object-and-structural-transformations">7. Object and Structural Transformations</h1>
+<p>This group contains utility types for modifying, extracting, replacing, and inspecting object structures.</p>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Result</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>RE&lt;T&gt;</code></td>
+<td>Required properties</td>
+</tr>
+<tr>
+<td><code>PA&lt;T&gt;</code></td>
+<td>Partial properties</td>
+</tr>
+<tr>
+<td><code>RO&lt;T&gt;</code></td>
+<td>Readonly properties</td>
+</tr>
+<tr>
+<td><code>OM&lt;T,K&gt;</code></td>
+<td>Omit selected properties</td>
+</tr>
+<tr>
+<td><code>OV&lt;T,U&gt;</code></td>
+<td>Override properties</td>
+</tr>
+<tr>
+<td><code>PI&lt;T,K&gt;</code></td>
+<td>Pick selected properties</td>
+</tr>
+<tr>
+<td><code>MUT&lt;T&gt;</code></td>
+<td>Remove readonly modifiers</td>
+</tr>
+<tr>
+<td><code>ROOBJ&lt;T&gt;</code></td>
+<td>Deep property-preserving readonly shape</td>
+</tr>
+<tr>
+<td><code>MUTOBJ&lt;T&gt;</code></td>
+<td>Remove readonly modifiers</td>
+</tr>
+<tr>
+<td><code>DPR&lt;T&gt;</code></td>
+<td>Deep readonly transformation</td>
+</tr>
+<tr>
+<td><code>DEEP&lt;T&gt;</code></td>
+<td>Recursive type transformation</td>
+</tr>
+<tr>
+<td><code>DEEPP&lt;T&gt;</code></td>
+<td>Recursive optional transformation</td>
+</tr>
+<tr>
+<td><code>NR&lt;T&gt;</code></td>
+<td>NonNullable</td>
+</tr>
+<tr>
+<td><code>EX&lt;T,U&gt;</code></td>
+<td>Exclude</td>
+</tr>
+<tr>
+<td><code>IN&lt;T,U&gt;</code></td>
+<td>Extract</td>
+</tr>
+<tr>
+<td><code>VAL&lt;T&gt;</code></td>
+<td>Union of property values</td>
+</tr>
+<tr>
+<td><code>VALOF&lt;T&gt;</code></td>
+<td>Union of property values</td>
+</tr>
+<tr>
+<td><code>KEYS&lt;T&gt;</code></td>
+<td>Property keys</td>
+</tr>
+<tr>
+<td><code>KOF&lt;T&gt;</code></td>
+<td>Property keys</td>
+</tr>
+<tr>
+<td><code>SK&lt;T&gt;</code></td>
+<td>String property keys</td>
+</tr>
+</tbody>
+</table>
+<h2 id="ov--override">OV — Override</h2>
+<p><code>OV&lt;T, U&gt;</code></p>
+<p>Removes properties from <code>T</code> that are also present in <code>U</code>, then combines the remaining properties with <code>U</code>.</p>
+<p>This allows one object type to override selected properties of another without manually reconstructing the entire shape.</p>
+<h2 id="xor--exclusive-object-union">XOR — Exclusive Object Union</h2>
+<p><code>XOR&lt;T, U&gt;</code></p>
+<p>Provides an exclusive object union.</p>
+<p>When working with object types, it retains the properties belonging to one structure while excluding conflicting properties from the other.</p>
+<p>This is useful for describing APIs where two alternative object shapes should not freely overlap.</p>
+<h2 id="ctx-and-ott">CTX and OTT</h2>
+<ul>
+<li><code>OTT&lt;T&gt;</code> removes the explicit <code>this</code> parameter from a function type.</li>
+<li><code>CTX&lt;T&gt;</code> provides the same transformation under a context-oriented alias.</li>
+</ul>
+<hr>
+<h1 id="8-function-and-parameter-utilities">8. Function and Parameter Utilities</h1>
+<p>This section contains aliases for inspecting and transforming function signatures.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>F&lt;T&gt;</code></td>
+<td>Function or zero-argument function returning T</td>
+</tr>
+<tr>
+<td><code>FN&lt;T&gt;</code></td>
+<td>Function type</td>
+</tr>
+<tr>
+<td><code>RT&lt;T&gt;</code></td>
+<td>Return type</td>
+</tr>
+<tr>
+<td><code>RET&lt;T&gt;</code></td>
+<td>Return type</td>
+</tr>
+<tr>
+<td><code>ARGS&lt;T&gt;</code></td>
+<td>Function parameters</td>
+</tr>
+<tr>
+<td><code>PARAMS&lt;T&gt;</code></td>
+<td>Function parameters</td>
+</tr>
+<tr>
+<td><code>CON&lt;T&gt;</code></td>
+<td>Constructor parameters</td>
+</tr>
+<tr>
+<td><code>IT&lt;T&gt;</code></td>
+<td>Constructor instance type</td>
+</tr>
+<tr>
+<td><code>INST&lt;T&gt;</code></td>
+<td>InstanceType</td>
+</tr>
+<tr>
+<td><code>TT&lt;T&gt;</code></td>
+<td>ThisParameterType</td>
+</tr>
+<tr>
+<td><code>CTX&lt;T&gt;</code></td>
+<td>Function without explicit this parameter</td>
+</tr>
+</tbody>
+</table>
+<p>These utilities allow function signatures to be reused and inspected without manually reconstructing their parameter and return types.</p>
+<p>They are particularly useful when building generic APIs, wrappers, adapters, callbacks, and dynamically composed functions.</p>
+<hr>
+<h1 id="9-iteration-and-generator-abstractions">9. Iteration and Generator Abstractions</h1>
+<p>This group standardizes aliases for synchronous and asynchronous iteration.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I&lt;T&gt;</code></td>
+<td>Iterable</td>
+</tr>
+<tr>
+<td><code>AI&lt;T&gt;</code></td>
+<td>AsyncIterable</td>
+</tr>
+<tr>
+<td><code>AII&lt;T&gt;</code></td>
+<td>AsyncIterableIterator</td>
+</tr>
+<tr>
+<td><code>IO&lt;T,R,N&gt;</code></td>
+<td>IteratorObject</td>
+</tr>
+<tr>
+<td><code>AIO&lt;T,R,N&gt;</code></td>
+<td>AsyncIteratorObject</td>
+</tr>
+<tr>
+<td><code>ITOR&lt;T&gt;</code></td>
+<td>Iterator</td>
+</tr>
+<tr>
+<td><code>ITR&lt;T&gt;</code></td>
+<td>IterableIterator</td>
+</tr>
+<tr>
+<td><code>GEN&lt;T,R,N&gt;</code></td>
+<td>Generator</td>
+</tr>
+<tr>
+<td><code>AG&lt;T,R,N&gt;</code></td>
+<td>AsyncGenerator</td>
+</tr>
+<tr>
+<td><code>ASYNCGEN&lt;T,R,N&gt;</code></td>
+<td>AsyncGenerator</td>
+</tr>
+</tbody>
+</table>
+<p>The generic parameters preserve the iterator contract:</p>
+<ul>
+<li><code>T</code>: yielded value.</li>
+<li><code>R</code>: return value.</li>
+<li><code>N</code>: value accepted by the iterator's next operation.</li>
+</ul>
+<p>These aliases allow the same terminology to be used across synchronous iteration, asynchronous iteration, and generator-based execution.</p>
+<hr>
+<h1 id="10-typed-arrays-and-binary-data">10. Typed Arrays and Binary Data</h1>
+<p>The typed-array section provides shortened identifiers for JavaScript's native binary numeric representations.</p>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Native type</th>
+<th>Width</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>I8</code></td>
+<td>Int8Array</td>
+<td>8-bit signed</td>
+</tr>
+<tr>
+<td><code>U8</code></td>
+<td>Uint8Array</td>
+<td>8-bit unsigned</td>
+</tr>
+<tr>
+<td><code>U8C</code></td>
+<td>Uint8ClampedArray</td>
+<td>8-bit clamped</td>
+</tr>
+<tr>
+<td><code>I16</code></td>
+<td>Int16Array</td>
+<td>16-bit signed</td>
+</tr>
+<tr>
+<td><code>U16</code></td>
+<td>Uint16Array</td>
+<td>16-bit unsigned</td>
+</tr>
+<tr>
+<td><code>I32</code></td>
+<td>Int32Array</td>
+<td>32-bit signed</td>
+</tr>
+<tr>
+<td><code>U32</code></td>
+<td>Uint32Array</td>
+<td>32-bit unsigned</td>
+</tr>
+<tr>
+<td><code>F32</code></td>
+<td>Float32Array</td>
+<td>32-bit floating point</td>
+</tr>
+<tr>
+<td><code>F64</code></td>
+<td>Float64Array</td>
+<td>64-bit floating point</td>
+</tr>
+</tbody>
+</table>
+<p>Each corresponding constructor is also declared globally.</p>
+<h2 id="u32arb">U32ARB</h2>
+<p><code>U32ARB = Uint32Array&lt;ArrayBufferLike&gt;</code></p>
+<p>Provides an explicitly parameterized Uint32Array type using ArrayBufferLike as its backing storage type.</p>
+<h2 id="design-purpose-1">Design purpose</h2>
+<p>These aliases are especially relevant to binary-oriented platform modules.</p>
+<p>They provide a compact vocabulary for working with:</p>
+<ul>
+<li>Typed-array storage.</li>
+<li>Binary encoding and decoding.</li>
+<li>Numeric buffers.</li>
+<li>Shared data structures.</li>
+<li>Slot and index mappings.</li>
+<li>Binary operation lanes.</li>
+<li>Low-level storage representations.</li>
+</ul>
+<p>The aliases preserve the underlying native typed-array behavior and do not introduce alternative numeric representations.</p>
+<hr>
+<h1 id="11-string-and-uri-utilities">11. String and URI Utilities</h1>
+<p>The module declares several global string-processing functions.</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dURI(string)</code></td>
+<td>Decode URI</td>
+</tr>
+<tr>
+<td><code>eURI(string)</code></td>
+<td>Encode URI</td>
+</tr>
+<tr>
+<td><code>esc(string)</code></td>
+<td>Escape string</td>
+</tr>
+<tr>
+<td><code>unesc(string)</code></td>
+<td>Unescape string</td>
+</tr>
+<tr>
+<td><code>pInt(string, radix?)</code></td>
+<td>Parse integer</td>
+</tr>
+<tr>
+<td><code>pFloat(string)</code></td>
+<td>Parse floating-point number</td>
+</tr>
+</tbody>
+</table>
+<p>These declarations provide globally accessible function signatures for commonly used string operations.</p>
+<p>The declarations establish the expected interfaces; their actual implementations must be provided elsewhere in the runtime.</p>
+<hr>
+<h1 id="12-advanced-type-level-utilities">12. Advanced Type-Level Utilities</h1>
+<p>This section contains more specialized TypeScript utilities.</p>
+<p>Unlike simple aliases, many of these definitions perform conditional evaluation, recursive transformations, inference, or compile-time validation.</p>
+<h2 id="type-inspection">Type inspection</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>EQ&lt;X,Y&gt;</code></td>
-<td><code>true</code> if <code>X</code> and <code>Y</code> are identical</td>
+<td>Tests type equality</td>
 </tr>
 <tr>
 <td><code>ISNEVER&lt;T&gt;</code></td>
-<td><code>true</code> if <code>T</code> is <code>never</code></td>
+<td>Tests whether T is never</td>
 </tr>
 <tr>
 <td><code>ISANY&lt;T&gt;</code></td>
-<td><code>true</code> if <code>T</code> is <code>any</code></td>
+<td>Tests whether T is any</td>
 </tr>
 <tr>
 <td><code>ISUNKNOWN&lt;T&gt;</code></td>
-<td><code>true</code> if <code>T</code> is <code>unknown</code></td>
+<td>Tests whether T is unknown</td>
 </tr>
 <tr>
-<td><code>ISUNION&lt;T,C&gt;</code></td>
-<td><code>true</code> if <code>T</code> is a union</td>
+<td><code>ISUNION&lt;T&gt;</code></td>
+<td>Tests whether T is a union</td>
 </tr>
 <tr>
-<td><code>ASSERT&lt;T extends true&gt;</code></td>
-<td>compile-time assertion</td>
+<td><code>UNION&lt;T&gt;</code></td>
+<td>Distributive union utility</td>
+</tr>
+<tr>
+<td><code>GUARD&lt;T,U&gt;</code></td>
+<td>Retains T when assignable to U</td>
+</tr>
+<tr>
+<td><code>DIFF&lt;T,U&gt;</code></td>
+<td>Removes members assignable to U</td>
+</tr>
+<tr>
+<td><code>ASSERT&lt;T&gt;</code></td>
+<td>Compile-time assertion requiring true</td>
 </tr>
 </tbody>
 </table>
-<h2 id="utility--functions--constructors">Utility — functions &amp; constructors</h2>
+<p>These utilities allow types to be inspected and validated during compilation rather than relying exclusively on runtime checks.</p>
+<h2 id="inference-and-extraction">Inference and extraction</h2>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>F&lt;T = A&gt;</code></td>
-<td><code>Function | (() =&gt; T)</code></td>
+<td><code>EXT&lt;T&gt;</code></td>
+<td>Extracts an array element type</td>
 </tr>
 <tr>
-<td><code>FN&lt;T&gt;</code></td>
-<td>identity alias for a function type</td>
+<td><code>IDX&lt;T&gt;</code></td>
+<td>Extracts an element from a readonly array</td>
 </tr>
 <tr>
-<td><code>ARGS&lt;T&gt;</code> / <code>PARAMS&lt;T&gt;</code></td>
-<td><code>Parameters&lt;T&gt;</code></td>
+<td><code>FIRST&lt;T&gt;</code></td>
+<td>Extracts the first tuple element</td>
 </tr>
 <tr>
-<td><code>RET&lt;T&gt;</code> / <code>RT&lt;T&gt;</code></td>
-<td><code>ReturnType&lt;T&gt;</code></td>
+<td><code>LAST&lt;T&gt;</code></td>
+<td>Extracts the last tuple element</td>
 </tr>
 <tr>
-<td><code>CON&lt;T&gt;</code></td>
-<td><code>ConstructorParameters&lt;T&gt;</code></td>
+<td><code>LENGTH&lt;T&gt;</code></td>
+<td>Extracts tuple length</td>
 </tr>
 <tr>
-<td><code>INST&lt;T&gt;</code></td>
-<td><code>InstanceType&lt;T&gt;</code></td>
+<td><code>VALOF&lt;T&gt;</code></td>
+<td>Extracts property-value unions</td>
 </tr>
 <tr>
-<td><code>IT&lt;T&gt;</code></td>
-<td>instance type from abstract constructor</td>
+<td><code>KEYS&lt;T&gt;</code></td>
+<td>Extracts object keys</td>
 </tr>
 <tr>
-<td><code>THIS&lt;T&gt;</code></td>
-<td><code>ThisParameterType&lt;T&gt;</code></td>
+<td><code>ARGS&lt;T&gt;</code></td>
+<td>Extracts function parameters</td>
 </tr>
 <tr>
-<td><code>CTX&lt;T&gt;</code> / <code>OTHIS&lt;T&gt;</code></td>
-<td><code>OmitThisParameter&lt;T&gt;</code></td>
+<td><code>PARAMS&lt;T&gt;</code></td>
+<td>Infers function parameters</td>
 </tr>
 </tbody>
 </table>
@@ -642,289 +1240,1443 @@ pnpm add ts-global-shorthands
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>CAP&lt;T&gt;</code></td>
-<td><code>Capitalize&lt;T&gt;</code></td>
+<td>Capitalize</td>
 </tr>
 <tr>
-<td><code>UNCAP&lt;T&gt;</code></td>
-<td><code>Uncapitalize&lt;T&gt;</code></td>
+<td><code>UNC&lt;T&gt;</code></td>
+<td>Uncapitalize</td>
 </tr>
 <tr>
-<td><code>UPPER&lt;T&gt;</code></td>
-<td><code>Uppercase&lt;T&gt;</code></td>
+<td><code>UPC&lt;T&gt;</code></td>
+<td>Uppercase</td>
 </tr>
 <tr>
 <td><code>LOWER&lt;T&gt;</code></td>
-<td><code>Lowercase&lt;T&gt;</code></td>
+<td>Lowercase</td>
 </tr>
 <tr>
 <td><code>STR&lt;T&gt;</code></td>
-<td><code>T extends string ? T : never</code></td>
-</tr>
-<tr>
-<td><code>REPLACE&lt;S0,F,T&gt;</code></td>
-<td>string replace (one occurrence)</td>
-</tr>
-<tr>
-<td><code>SPLIT&lt;S0,D&gt;</code></td>
-<td>string split into tuple</td>
-</tr>
-<tr>
-<td><code>JOIN&lt;T,D&gt;</code></td>
-<td>tuple of strings joined</td>
+<td>Retains string-compatible types</td>
 </tr>
 <tr>
 <td><code>TL&lt;T&gt;</code></td>
-<td><code>T['length']</code> (string literal)</td>
+<td>String length</td>
 </tr>
 <tr>
-<td><code>BRAND&lt;T,N&gt;</code></td>
-<td>branded type <code>T &amp; { __brand: N }</code></td>
+<td><code>REPLACE&lt;S,F,T&gt;</code></td>
+<td>Replaces a matching substring</td>
 </tr>
 <tr>
-<td><code>STRNUM&lt;T&gt;</code></td>
-<td><code>${number}</code></td>
+<td><code>SPLIT&lt;S,D&gt;</code></td>
+<td>Splits a string into a tuple</td>
 </tr>
 <tr>
-<td><code>STRBIG&lt;T&gt;</code></td>
-<td><code>${bigint}</code></td>
-</tr>
-<tr>
-<td><code>STRBOOL&lt;T&gt;</code></td>
-<td><code>${boolean}</code></td>
-</tr>
-<tr>
-<td><code>STRKEY&lt;T&gt;</code></td>
-<td><code>${string}</code></td>
+<td><code>JOIN&lt;T,D&gt;</code></td>
+<td>Joins a tuple of strings</td>
 </tr>
 </tbody>
 </table>
-<h2 id="buffer--binary--typed-arrays">Buffer / binary / typed arrays</h2>
+<p>These operate at the TypeScript type level.</p>
+<p>They allow string-based identifiers, literal types, and tuple structures to be manipulated during compilation.</p>
+<h2 id="tuple-and-array-utilities">Tuple and array utilities</h2>
 <table>
 <thead>
 <tr>
 <th>Alias</th>
-<th>Expands to</th>
+<th>Purpose</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>AB&lt;T = A&gt;</code></td>
-<td><code>ArrayBuffer</code></td>
+<td><code>ROARR&lt;T&gt;</code></td>
+<td>Readonly array</td>
 </tr>
 <tr>
-<td><code>DV&lt;T = A&gt;</code></td>
-<td><code>DataView</code></td>
+<td><code>NONEMPTY&lt;T&gt;</code></td>
+<td>Nonempty readonly array</td>
 </tr>
 <tr>
-<td><code>BL&lt;T = A&gt;</code></td>
+<td><code>FIRST&lt;T&gt;</code></td>
+<td>First tuple member</td>
+</tr>
+<tr>
+<td><code>LAST&lt;T&gt;</code></td>
+<td>Last tuple member</td>
+</tr>
+<tr>
+<td><code>LENGTH&lt;T&gt;</code></td>
+<td>Tuple length</td>
+</tr>
+<tr>
+<td><code>TUP&lt;T&gt;</code></td>
+<td>Mutable tuple copy</td>
+</tr>
+</tbody>
+</table>
+<h2 id="branding-and-instance-utilities">Branding and instance utilities</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>BRAND&lt;T,N&gt;</code></td>
+<td>Adds a nominal-style brand</td>
+</tr>
+<tr>
+<td><code>INST&lt;T&gt;</code></td>
+<td>Extracts an instance type</td>
+</tr>
+<tr>
+<td><code>IT&lt;T&gt;</code></td>
+<td>Extracts a constructor instance</td>
+</tr>
+<tr>
+<td><code>CON&lt;T&gt;</code></td>
+<td>Extracts constructor parameters</td>
+</tr>
+<tr>
+<td><code>FREG&lt;T&gt;</code></td>
+<td>FinalizationRegistry</td>
+</tr>
+<tr>
+<td><code>WR&lt;T&gt;</code></td>
+<td>WeakRef</td>
+</tr>
+</tbody>
+</table>
+<p><code>BRAND&lt;T,N&gt;</code> intersects a type with a readonly <code>__brand</code> property, allowing otherwise structurally compatible types to be distinguished.</p>
+<hr>
+<h1 id="13-platform-specific-definitions">13. Platform-Specific Definitions</h1>
+<p>The final section introduces definitions that are specific to the wider platform rather than direct aliases of native JavaScript types.</p>
+<h2 id="structural-definitions">Structural definitions</h2>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Definition / Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AO</code></td>
+<td>String-keyed object with any values</td>
+</tr>
+<tr>
+<td><code>AS</code></td>
+<td>Object containing <code>self</code> and string-keyed properties</td>
+</tr>
+<tr>
+<td><code>AF</code></td>
+<td>Function receiving AS and returning AO</td>
+</tr>
+<tr>
+<td><code>AOAF</code></td>
+<td>Either AO or AF</td>
+</tr>
+<tr>
+<td><code>CHAIN</code></td>
+<td><code>&quot;chain&quot; | &quot;rechain&quot;</code></td>
+</tr>
+<tr>
+<td><code>SU</code></td>
+<td>String or undefined</td>
+</tr>
+<tr>
+<td><code>XS</code></td>
+<td>Any</td>
+</tr>
+<tr>
+<td><code>Wildcard</code></td>
+<td><code>&quot;*&quot;</code></td>
+</tr>
+<tr>
+<td><code>NB</code></td>
+<td>Bigint</td>
+</tr>
+</tbody>
+</table>
+<p>These definitions provide shared structural contracts for platform APIs.</p>
+<h2 id="cache_type">CACHE_TYPE</h2>
+<p><code>CACHE_TYPE</code> establishes the supported storage and caching backend identifiers.</p>
+<p>It currently includes:</p>
+<table>
+<thead>
+<tr>
+<th>Identifier</th>
+<th>Backend</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>sauron</code></td>
+<td>SAURON storage</td>
+</tr>
+<tr>
+<td><code>disruptor</code></td>
+<td>Disruptor storage</td>
+</tr>
+<tr>
+<td><code>cache</code></td>
+<td>General-purpose cache</td>
+</tr>
+<tr>
+<td><code>rifts</code></td>
+<td>Rifts storage</td>
+</tr>
+<tr>
+<td><code>sclass</code></td>
+<td>SClass storage</td>
+</tr>
+<tr>
+<td><code>cookie</code></td>
+<td>Cookie storage</td>
+</tr>
+<tr>
+<td><code>scookie</code></td>
+<td>Secure cookie storage</td>
+</tr>
+<tr>
+<td><code>kvdb</code></td>
+<td>Key-value database</td>
+</tr>
+<tr>
+<td><code>rdb</code></td>
+<td>Relational database</td>
+</tr>
+<tr>
+<td><code>tdb</code></td>
+<td>Table-oriented database</td>
+</tr>
+<tr>
+<td><code>bdb</code></td>
+<td>Binary database</td>
+</tr>
+<tr>
+<td><code>gdb</code></td>
+<td>Graph database</td>
+</tr>
+<tr>
+<td><code>idb</code></td>
+<td>IndexedDB</td>
+</tr>
+<tr>
+<td><code>hpd</code></td>
+<td>Hadron Particle Disruptor database</td>
+</tr>
+<tr>
+<td><code>undefined</code></td>
+<td>Unspecified backend</td>
+</tr>
+</tbody>
+</table>
+<p>The <code>CACHE</code> alias references <code>CACHE_TYPE</code>.</p>
+<h3 id="purpose">Purpose</h3>
+<p>This type establishes a common vocabulary for selecting and describing storage destinations throughout the platform.</p>
+<p>Rather than allowing arbitrary strings to identify storage backends, consumers can reference a shared union of supported identifiers.</p>
+<p>This provides a consistent type-level contract for APIs that need to distinguish between storage implementations.</p>
+<hr>
+<h1 id="14-global-declaration-strategy">14. Global Declaration Strategy</h1>
+<p>The majority of the module is contained within <code>declare global</code>.</p>
+<p>This is intentional.</p>
+<p>The module is designed to augment the global TypeScript namespace rather than require individual modules to import every alias.</p>
+<p>For example, once the module's declarations are included in the TypeScript compilation context, consumers can reference:</p>
+<ul>
+<li><code>A</code> instead of <code>any</code>.</li>
+<li><code>S</code> instead of <code>string</code>.</li>
+<li><code>N</code> instead of <code>number</code>.</li>
+<li><code>M&lt;K,V&gt;</code> instead of <code>Map&lt;K,V&gt;</code>.</li>
+<li><code>P&lt;T&gt;</code> instead of <code>Promise&lt;T&gt;</code>.</li>
+<li><code>U8</code> instead of <code>Uint8Array</code>.</li>
+<li><code>RO&lt;T&gt;</code> instead of <code>Readonly&lt;T&gt;</code>.</li>
+<li><code>ARGS&lt;T&gt;</code> instead of <code>Parameters&lt;T&gt;</code>.</li>
+</ul>
+<p>This reduces repetitive syntax and keeps the platform's internal vocabulary consistent.</p>
+<h2 id="type-declarations-versus-runtime-declarations">Type declarations versus runtime declarations</h2>
+<p>An important distinction exists between the two kinds of global definitions.</p>
+<p><strong>Type-level declarations</strong></p>
+<p>These exist during TypeScript compilation and provide type information.</p>
+<p>Examples:</p>
+<ul>
+<li><code>type A = any</code></li>
+<li><code>type M&lt;K,V&gt; = Map&lt;K,V&gt;</code></li>
+<li><code>type RO&lt;T&gt; = Readonly&lt;T&gt;</code></li>
+<li><code>type CACHE_TYPE = ...</code></li>
+</ul>
+<p>They do not create runtime JavaScript values.</p>
+<p><strong>Runtime declarations</strong></p>
+<p>These describe or expose actual JavaScript values.</p>
+<p>Examples:</p>
+<ul>
+<li><code>var M: MapConstructor</code></li>
+<li><code>var P: PromiseConstructor</code></li>
+<li><code>var PX: ProxyConstructor</code></li>
+<li><code>globalThis.MaybePromise = MaybePromisei</code></li>
+<li><code>globalThis.PX = Proxy</code></li>
+</ul>
+<p>These correspond to runtime-accessible values.</p>
+<p>Maintaining this distinction is important because a shortened type alias and a shortened runtime constructor are separate declarations serving different purposes.</p>
+<hr>
+<h1 id="15-architectural-intent">15. Architectural Intent</h1>
+<p>This module is intended to function as a shared language foundation across the platform.</p>
+<p>Its design follows several principles:</p>
+<h3 id="1-reduce-repetitive-syntax">1. Reduce repetitive syntax</h3>
+<p>Frequently used native types and constructors receive short global aliases.</p>
+<h3 id="2-standardize-terminology">2. Standardize terminology</h3>
+<p>Modules can use the same identifiers when referring to common JavaScript structures.</p>
+<h3 id="3-preserve-generic-information">3. Preserve generic information</h3>
+<p>Aliases retain generic parameters wherever applicable, allowing type information to propagate through nested structures and function signatures.</p>
+<h3 id="4-keep-native-behavior-intact">4. Keep native behavior intact</h3>
+<p>Most aliases are direct references to native JavaScript or TypeScript types. They do not introduce new runtime behavior or replace native implementations.</p>
+<h3 id="5-support-binary-oriented-development">5. Support binary-oriented development</h3>
+<p>The typed-array aliases and <code>BYTEOP_MAP_TYPE</code> establish a vocabulary for working with binary storage abstractions alongside conventional JavaScript collections.</p>
+<h3 id="6-centralize-shared-contracts">6. Centralize shared contracts</h3>
+<p>Platform-specific definitions, including cache backend identifiers and structural interfaces, live alongside the shared type foundation.</p>
+<h3 id="7-minimize-import-overhead">7. Minimize import overhead</h3>
+<p>Global declarations eliminate the need to repeatedly import common type aliases into every consuming module.</p>
+<hr>
+<h1 id="summary">Summary</h1>
+<p>This module provides a centralized global vocabulary for the platform.</p>
+<p>It combines native type aliases, runtime constructor references, promise utilities, object transformations, function introspection, iterator abstractions, typed-array definitions, advanced conditional types, and platform-specific storage contracts.</p>
+<p>It is not a replacement for TypeScript's type system or JavaScript's native primitives.</p>
+<p>It is a shared abstraction layer that makes those existing capabilities more concise, consistent, and accessible throughout the platform.</p>
+<p>The result is a compact global foundation that allows the rest of the codebase to operate using a standardized set of types and primitives rather than repeatedly rebuilding the same vocabulary across individual modules.</p>
+<h1 id="global-type--alias-reference">Global Type &amp; Alias Reference</h1>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Resolves To</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>A</code></td>
+<td><code>any</code></td>
+<td>Unrestricted type</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td><code>boolean</code></td>
+<td>Boolean values</td>
+</tr>
+<tr>
+<td><code>SB</code></td>
+<td><code>`${B}`</code></td>
+<td>String representation of boolean</td>
+</tr>
+<tr>
+<td><code>BL</code></td>
 <td><code>Blob</code></td>
+<td>Binary data object</td>
 </tr>
 <tr>
-<td><code>BU&lt;T = A&gt;</code></td>
+<td><code>BF</code></td>
 <td><code>Buffer</code></td>
+<td>Binary buffer</td>
+</tr>
+<tr>
+<td><code>AR&lt;T&gt;</code></td>
+<td><code>Array&lt;T&gt;</code></td>
+<td>Generic array</td>
+</tr>
+<tr>
+<td><code>AB</code></td>
+<td><code>ArrayBuffer</code></td>
+<td>Raw binary buffer</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td><code>Date</code></td>
+<td>Date representation</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td><code>Error</code></td>
+<td>Error object</td>
+</tr>
+<tr>
+<td><code>EV</code></td>
+<td><code>Event</code></td>
+<td>DOM event</td>
+</tr>
+<tr>
+<td><code>F&lt;T&gt;</code></td>
+<td><code>Function | (() =&gt; T)</code></td>
+<td>Function or zero-argument function returning T</td>
+</tr>
+<tr>
+<td><code>I&lt;T&gt;</code></td>
+<td><code>Iterable&lt;T&gt;</code></td>
+<td>Synchronous iterable</td>
+</tr>
+<tr>
+<td><code>AI&lt;T&gt;</code></td>
+<td><code>AsyncIterable&lt;T&gt;</code></td>
+<td>Asynchronous iterable</td>
+</tr>
+<tr>
+<td><code>AII&lt;T&gt;</code></td>
+<td><code>AsyncIterableIterator&lt;T&gt;</code></td>
+<td>Asynchronous iterable iterator</td>
+</tr>
+<tr>
+<td><code>IO&lt;T,R,N&gt;</code></td>
+<td><code>IteratorObject&lt;T,R,N&gt;</code></td>
+<td>Iterator object</td>
+</tr>
+<tr>
+<td><code>AIO&lt;T,R,N&gt;</code></td>
+<td><code>AsyncIteratorObject&lt;T,R,N&gt;</code></td>
+<td>Async iterator object</td>
+</tr>
+<tr>
+<td><code>INF</code></td>
+<td><code>number</code></td>
+<td>Infinity constant</td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td><code>JSON</code></td>
+<td>JSON utility namespace</td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td><code>keyof A</code></td>
+<td>Property keys of any</td>
+</tr>
+<tr>
+<td><code>SK</code></td>
+<td><code>keyof T &amp; S</code> / <code>`${S &amp; {}}`</code></td>
+<td>String-key extraction / string representation; two definitions currently exist</td>
+</tr>
+<tr>
+<td><code>M&lt;K,V&gt;</code></td>
+<td><code>Map&lt;K,V&gt;</code></td>
+<td>Native map</td>
+</tr>
+<tr>
+<td><code>WM&lt;K,V&gt;</code></td>
+<td><code>WeakMap&lt;K,V&gt;</code></td>
+<td>Weakly referenced map</td>
+</tr>
+<tr>
+<td><code>WEAKMAP&lt;K,V&gt;</code></td>
+<td><code>WeakMap&lt;K,V&gt;</code></td>
+<td>Alternative weak map alias</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td><code>number</code></td>
+<td>Numeric values</td>
+</tr>
+<tr>
+<td><code>SN</code></td>
+<td><code>`${N}`</code></td>
+<td>String representation of number</td>
+</tr>
+<tr>
+<td><code>NaN</code></td>
+<td><code>number</code></td>
+<td>Not-a-Number value</td>
+</tr>
+<tr>
+<td><code>BI</code></td>
+<td><code>bigint</code></td>
+<td>Arbitrary-precision integer</td>
+</tr>
+<tr>
+<td><code>BIG</code></td>
+<td><code>BigInt</code></td>
+<td>BigInt type reference</td>
+</tr>
+<tr>
+<td><code>SBIG</code></td>
+<td><code>`${bigint}`</code></td>
+<td>String representation of bigint</td>
+</tr>
+<tr>
+<td><code>ND</code></td>
+<td><code>Node</code></td>
+<td>DOM node</td>
+</tr>
+<tr>
+<td><code>NA&lt;T&gt;</code></td>
+<td><code>NodeListOf&lt;T&gt;</code></td>
+<td>Typed node list</td>
+</tr>
+<tr>
+<td><code>NLE</code></td>
+<td><code>NodeListOf&lt;Element&gt;</code></td>
+<td>Element node list</td>
+</tr>
+<tr>
+<td><code>NE</code></td>
+<td><code>never</code></td>
+<td>Impossible type</td>
+</tr>
+<tr>
+<td><code>NIL&lt;T&gt;</code></td>
+<td><code>T | null</code></td>
+<td>Nullable value</td>
+</tr>
+<tr>
+<td><code>NU</code></td>
+<td><code>null</code></td>
+<td>Null value</td>
+</tr>
+<tr>
+<td><code>NR&lt;T&gt;</code></td>
+<td><code>NonNullable&lt;T&gt;</code></td>
+<td>Removes null and undefined</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td><code>Object</code></td>
+<td>Object type</td>
+</tr>
+<tr>
+<td><code>OB&lt;T&gt;</code></td>
+<td><code>{ [key: S]: T }</code></td>
+<td>String-keyed object</td>
+</tr>
+<tr>
+<td><code>OBJ&lt;T&gt;</code></td>
+<td><code>{ [key: S]: T }</code></td>
+<td>String-keyed object</td>
+</tr>
+<tr>
+<td><code>OV&lt;T,U&gt;</code></td>
+<td><code>Omit&lt;T,keyof U&gt; &amp; U</code></td>
+<td>Overrides properties of T with U</td>
+</tr>
+<tr>
+<td><code>OM&lt;T,K&gt;</code></td>
+<td><code>Omit&lt;T,K&gt;</code></td>
+<td>Removes selected properties</td>
+</tr>
+<tr>
+<td><code>OTT&lt;T&gt;</code></td>
+<td><code>OmitThisParameter&lt;T&gt;</code></td>
+<td>Removes explicit this parameter</td>
+</tr>
+<tr>
+<td><code>CTX&lt;T&gt;</code></td>
+<td><code>OmitThisParameter&lt;T&gt;</code></td>
+<td>Context-free function signature</td>
+</tr>
+<tr>
+<td><code>XOR&lt;T,U&gt;</code></td>
+<td>Exclusive object union</td>
+<td>Defines mutually exclusive object shapes</td>
+</tr>
+<tr>
+<td><code>P&lt;T&gt;</code></td>
+<td><code>Promise&lt;T&gt;</code></td>
+<td>Promise</td>
+</tr>
+<tr>
+<td><code>AWD&lt;T&gt;</code></td>
+<td><code>Awaited&lt;T&gt;</code></td>
+<td>Resolves nested promise types</td>
+</tr>
+<tr>
+<td><code>AW&lt;T&gt;</code></td>
+<td>Recursive <code>PromiseLike</code> unwrapping</td>
+<td>Unwraps promise-like values using AWAIT</td>
+</tr>
+<tr>
+<td><code>PL&lt;T&gt;</code></td>
+<td><code>PromiseLike&lt;T&gt;</code></td>
+<td>Promise-compatible interface</td>
+</tr>
+<tr>
+<td><code>PSR&lt;T&gt;</code></td>
+<td><code>PromiseSettledResult&lt;T&gt;</code></td>
+<td>Promise settlement result</td>
+</tr>
+<tr>
+<td><code>PFR&lt;T&gt;</code></td>
+<td><code>PromiseFulfilledResult&lt;T&gt;</code></td>
+<td>Fulfilled promise result</td>
+</tr>
+<tr>
+<td><code>PRR</code></td>
+<td><code>PromiseRejectedResult</code></td>
+<td>Rejected promise result</td>
+</tr>
+<tr>
+<td><code>PK</code></td>
+<td><code>PropertyKey</code></td>
+<td>String, number, or symbol property key</td>
+</tr>
+<tr>
+<td><code>PX&lt;T&gt;</code></td>
+<td><code>T extends object ? T : object</code> / declared as <code>T</code></td>
+<td>Proxy-related object type alias</td>
+</tr>
+<tr>
+<td><code>RE&lt;T&gt;</code></td>
+<td><code>Required&lt;T&gt;</code></td>
+<td>Makes properties required</td>
+</tr>
+<tr>
+<td><code>RM&lt;K,V&gt;</code></td>
+<td><code>ReadonlyMap&lt;K,V&gt;</code></td>
+<td>Readonly map</td>
+</tr>
+<tr>
+<td><code>RS&lt;T&gt;</code></td>
+<td><code>ReadonlySet&lt;T&gt;</code></td>
+<td>Readonly set</td>
+</tr>
+<tr>
+<td><code>RO&lt;T&gt;</code></td>
+<td><code>Readonly&lt;T&gt;</code></td>
+<td>Makes properties readonly</td>
+</tr>
+<tr>
+<td><code>ROA&lt;T&gt;</code></td>
+<td><code>ReadonlyArray&lt;T[N]&gt;</code></td>
+<td>Readonly array of indexed element type</td>
+</tr>
+<tr>
+<td><code>R&lt;K,V&gt;</code></td>
+<td><code>Record&lt;K,V&gt;</code></td>
+<td>Key-value object</td>
+</tr>
+<tr>
+<td><code>REG</code></td>
+<td><code>RegExp</code></td>
+<td>Regular expression</td>
+</tr>
+<tr>
+<td><code>RT&lt;T&gt;</code></td>
+<td><code>ReturnType&lt;T&gt;</code> / custom conditional</td>
+<td>Extracts function return type; defined twice</td>
+</tr>
+<tr>
+<td><code>RET&lt;T&gt;</code></td>
+<td><code>ReturnType&lt;T&gt;</code></td>
+<td>Extracts function return type</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td><code>string</code></td>
+<td>String values</td>
+</tr>
+<tr>
+<td><code>SY</code></td>
+<td><code>symbol</code></td>
+<td>Symbol primitive</td>
+</tr>
+<tr>
+<td><code>SYM</code></td>
+<td><code>Symbol</code></td>
+<td>Symbol type reference</td>
+</tr>
+<tr>
+<td><code>ST&lt;T&gt;</code></td>
+<td><code>Set&lt;T&gt;</code></td>
+<td>Native set</td>
+</tr>
+<tr>
+<td><code>WS&lt;T&gt;</code></td>
+<td><code>WeakSet&lt;T&gt;</code></td>
+<td>Weakly referenced set</td>
+</tr>
+<tr>
+<td><code>TT&lt;T&gt;</code></td>
+<td><code>ThisParameterType&lt;T&gt;</code></td>
+<td>Extracts explicit this parameter</td>
+</tr>
+<tr>
+<td><code>U</code></td>
+<td><code>unknown</code></td>
+<td>Unknown value</td>
+</tr>
+<tr>
+<td><code>UD</code></td>
+<td><code>undefined</code></td>
+<td>Undefined value</td>
+</tr>
+<tr>
+<td><code>UNC&lt;T&gt;</code></td>
+<td><code>Uncapitalize&lt;T&gt;</code></td>
+<td>Lowercases first character</td>
+</tr>
+<tr>
+<td><code>UPC&lt;T&gt;</code></td>
+<td><code>Uppercase&lt;T&gt;</code></td>
+<td>Uppercases string</td>
+</tr>
+<tr>
+<td><code>URI</code></td>
+<td><code>URL</code></td>
+<td>URL representation</td>
+</tr>
+<tr>
+<td><code>URL</code></td>
+<td><code>URL</code></td>
+<td>URL representation</td>
+</tr>
+<tr>
+<td><code>UF&lt;T&gt;</code></td>
+<td><code>T | (() =&gt; T)</code></td>
+<td>Direct value or lazy function</td>
+</tr>
+<tr>
+<td><code>V</code></td>
+<td><code>void</code></td>
+<td>Void return type</td>
+</tr>
+<tr>
+<td><code>W</code></td>
+<td><code>&quot;*&quot;</code></td>
+<td>Wildcard literal</td>
+</tr>
+<tr>
+<td><code>WR&lt;T&gt;</code></td>
+<td><code>WeakRef&lt;T&gt;</code></td>
+<td>Weak reference</td>
+</tr>
+<tr>
+<td><code>WIN</code></td>
+<td><code>Window</code></td>
+<td>Browser window</td>
 </tr>
 <tr>
 <td><code>I8</code></td>
 <td><code>Int8Array</code></td>
+<td>Signed 8-bit typed array</td>
 </tr>
 <tr>
-<td><code>I16</code></td>
-<td><code>Int16Array</code></td>
-</tr>
-<tr>
-<td><code>I32&lt;T = A&gt;</code></td>
-<td><code>Int32Array</code></td>
-</tr>
-<tr>
-<td><code>U8&lt;T = A&gt;</code></td>
+<td><code>U8</code></td>
 <td><code>Uint8Array</code></td>
+<td>Unsigned 8-bit typed array</td>
 </tr>
 <tr>
 <td><code>U8C</code></td>
 <td><code>Uint8ClampedArray</code></td>
+<td>Clamped unsigned 8-bit typed array</td>
+</tr>
+<tr>
+<td><code>I16</code></td>
+<td><code>Int16Array</code></td>
+<td>Signed 16-bit typed array</td>
 </tr>
 <tr>
 <td><code>U16</code></td>
 <td><code>Uint16Array</code></td>
+<td>Unsigned 16-bit typed array</td>
 </tr>
 <tr>
-<td><code>U32&lt;T = A&gt;</code></td>
+<td><code>I32</code></td>
+<td><code>Int32Array</code></td>
+<td>Signed 32-bit typed array</td>
+</tr>
+<tr>
+<td><code>U32</code></td>
 <td><code>Uint32Array</code></td>
-</tr>
-<tr>
-<td><code>U32ARB&lt;T = A&gt;</code></td>
-<td><code>Uint32Array&lt;ArrayBufferLike&gt;</code></td>
+<td>Unsigned 32-bit typed array</td>
 </tr>
 <tr>
 <td><code>F32</code></td>
 <td><code>Float32Array</code></td>
+<td>32-bit floating-point typed array</td>
 </tr>
 <tr>
-<td><code>F64&lt;T = A&gt;</code></td>
+<td><code>F64</code></td>
 <td><code>Float64Array</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="dom--web-apis">DOM / Web APIs</h2>
-<table>
-<thead>
-<tr>
-<th>Alias</th>
-<th>Expands to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>DE&lt;T = A&gt;</code></td>
-<td><code>Document</code></td>
+<td>64-bit floating-point typed array</td>
 </tr>
 <tr>
-<td><code>FR&lt;T = A&gt;</code></td>
-<td><code>DocumentFragment</code></td>
+<td><code>U32ARB</code></td>
+<td><code>Uint32Array&lt;ArrayBufferLike&gt;</code></td>
+<td>Uint32 array with explicit backing-buffer type</td>
 </tr>
 <tr>
-<td><code>EL&lt;T = A&gt;</code></td>
-<td><code>Element</code></td>
-</tr>
-<tr>
-<td><code>HE&lt;T = A&gt;</code></td>
-<td><code>HTMLElement</code></td>
-</tr>
-<tr>
-<td><code>ND&lt;T = A&gt;</code></td>
-<td><code>Node</code></td>
-</tr>
-<tr>
-<td><code>NA&lt;T = A&gt;</code></td>
-<td><code>NodeListOf&lt;T&gt;</code></td>
-</tr>
-<tr>
-<td><code>NLE&lt;T = A&gt;</code></td>
-<td><code>NodeListOf&lt;Element&gt;</code></td>
-</tr>
-<tr>
-<td><code>EV&lt;T = A&gt;</code></td>
-<td><code>Event</code></td>
-</tr>
-<tr>
-<td><code>CE&lt;T = A&gt;</code></td>
-<td><code>CustomEvent</code></td>
-</tr>
-<tr>
-<td><code>KE&lt;T = A&gt;</code></td>
-<td><code>KeyboardEvent</code></td>
-</tr>
-<tr>
-<td><code>ME&lt;T = A&gt;</code></td>
-<td><code>MouseEvent</code></td>
-</tr>
-<tr>
-<td><code>PE&lt;T = A&gt;</code></td>
-<td><code>PointerEvent</code></td>
-</tr>
-<tr>
-<td><code>FD&lt;T = A&gt;</code></td>
-<td><code>FormData</code></td>
-</tr>
-<tr>
-<td><code>URI&lt;T&gt;</code> / <code>URLT&lt;T&gt;</code></td>
-<td><code>URL</code></td>
-</tr>
-<tr>
-<td><code>WIN&lt;T = A&gt;</code></td>
-<td><code>Window</code></td>
-</tr>
-<tr>
-<td><code>DOMX</code></td>
-<td><code>DOMException</code></td>
-</tr>
-<tr>
-<td><code>ABC</code></td>
-<td><code>AbortController</code></td>
-</tr>
-<tr>
-<td><code>ABS</code></td>
-<td><code>AbortSignal</code></td>
+<td><code>AG&lt;T,R,N&gt;</code></td>
+<td><code>AsyncGenerator&lt;T,R,N&gt;</code></td>
+<td>Async generator</td>
 </tr>
 <tr>
 <td><code>AGE</code></td>
 <td><code>AggregateError</code></td>
-</tr>
-</tbody>
-</table>
-<h2 id="misc--errors">Misc / errors</h2>
-<table>
-<thead>
-<tr>
-<th>Alias</th>
-<th>Expands to</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>E&lt;T = A&gt;</code> / <code>ERR&lt;T = A&gt;</code></td>
-<td><code>Error</code></td>
+<td>Multiple aggregated errors</td>
 </tr>
 <tr>
-<td><code>ERRCAUSE&lt;T&gt;</code></td>
-<td><code>Error &amp; { cause?: T }</code></td>
+<td><code>ABC</code></td>
+<td><code>AbortController</code></td>
+<td>Controls asynchronous cancellation</td>
+</tr>
+<tr>
+<td><code>ABS</code></td>
+<td><code>AbortSignal</code></td>
+<td>Cancellation signal</td>
+</tr>
+<tr>
+<td><code>ASF&lt;T&gt;</code></td>
+<td><code>(...args: Parameters&lt;T&gt;) =&gt; Promise&lt;Awaited&lt;ReturnType&lt;T&gt;&gt;&gt;</code></td>
+<td>Converts function signature to asynchronous equivalent</td>
+</tr>
+<tr>
+<td><code>CAP&lt;T&gt;</code></td>
+<td><code>Capitalize&lt;T&gt;</code></td>
+<td>Capitalizes first character</td>
+</tr>
+<tr>
+<td><code>CON&lt;T&gt;</code></td>
+<td><code>ConstructorParameters&lt;T&gt;</code></td>
+<td>Extracts constructor parameters</td>
+</tr>
+<tr>
+<td><code>CE</code></td>
+<td><code>CustomEvent</code></td>
+<td>Custom DOM event</td>
+</tr>
+<tr>
+<td><code>DM</code></td>
+<td><code>Document</code></td>
+<td>DOM document</td>
+</tr>
+<tr>
+<td><code>DPR&lt;T&gt;</code></td>
+<td>Recursive readonly mapped type</td>
+<td>Deep readonly transformation</td>
+</tr>
+<tr>
+<td><code>DC&lt;T&gt;</code></td>
+<td><code>Record&lt;string,T&gt;</code></td>
+<td>String-keyed record</td>
+</tr>
+<tr>
+<td><code>DV</code></td>
+<td><code>DataView</code></td>
+<td>Binary buffer view</td>
+</tr>
+<tr>
+<td><code>EL</code></td>
+<td><code>Element</code></td>
+<td>DOM element</td>
+</tr>
+<tr>
+<td><code>EQ&lt;X,Y&gt;</code></td>
+<td>Conditional equality test</td>
+<td>Tests whether two types are equivalent</td>
+</tr>
+<tr>
+<td><code>EX&lt;T,U&gt;</code></td>
+<td><code>Exclude&lt;T,U&gt;</code></td>
+<td>Excludes union members</td>
+</tr>
+<tr>
+<td><code>EXT&lt;T&gt;</code></td>
+<td>Array element inference</td>
+<td>Extracts array element type</td>
+</tr>
+<tr>
+<td><code>FR</code></td>
+<td><code>DocumentFragment</code></td>
+<td>DOM fragment</td>
+</tr>
+<tr>
+<td><code>FD</code></td>
+<td><code>FormData</code></td>
+<td>Form data representation</td>
+</tr>
+<tr>
+<td><code>FN&lt;T&gt;</code></td>
+<td>Function type</td>
+<td>Generic function signature</td>
+</tr>
+<tr>
+<td><code>GEN&lt;T,R,N&gt;</code></td>
+<td><code>Generator&lt;T,R,N&gt;</code></td>
+<td>Synchronous generator</td>
+</tr>
+<tr>
+<td><code>HE</code></td>
+<td><code>HTMLElement</code></td>
+<td>HTML element</td>
+</tr>
+<tr>
+<td><code>IN&lt;T,U&gt;</code></td>
+<td><code>Extract&lt;T,U&gt;</code></td>
+<td>Extracts matching union members</td>
+</tr>
+<tr>
+<td><code>IT&lt;T&gt;</code></td>
+<td>Constructor instance inference</td>
+<td>Extracts constructed instance type</td>
+</tr>
+<tr>
+<td><code>IDX&lt;T&gt;</code></td>
+<td>Readonly array element inference</td>
+<td>Extracts indexed element type</td>
+</tr>
+<tr>
+<td><code>ITR&lt;T&gt;</code></td>
+<td><code>IterableIterator&lt;T&gt;</code></td>
+<td>Iterable iterator</td>
+</tr>
+<tr>
+<td><code>ITOR&lt;T&gt;</code></td>
+<td><code>Iterator&lt;T&gt;</code></td>
+<td>Iterator</td>
+</tr>
+<tr>
+<td><code>KE</code></td>
+<td><code>KeyboardEvent</code></td>
+<td>Keyboard interaction event</td>
+</tr>
+<tr>
+<td><code>KOF&lt;T&gt;</code></td>
+<td><code>keyof T</code></td>
+<td>Extracts object keys</td>
+</tr>
+<tr>
+<td><code>MAP&lt;K,V&gt;</code></td>
+<td><code>Map&lt;K,V&gt;</code></td>
+<td>Alternative map alias</td>
+</tr>
+<tr>
+<td><code>MUT&lt;T&gt;</code></td>
+<td>Removes readonly modifiers</td>
+<td>Makes properties mutable</td>
+</tr>
+<tr>
+<td><code>MAY&lt;T&gt;</code></td>
+<td><code>T | null | undefined</code></td>
+<td>Nullable and optional value</td>
+</tr>
+<tr>
+<td><code>ME</code></td>
+<td><code>MouseEvent</code></td>
+<td>Mouse interaction event</td>
+</tr>
+<tr>
+<td><code>NOI&lt;T&gt;</code></td>
+<td><code>NoInfer&lt;T&gt;</code></td>
+<td>Prevents inference from a type position</td>
+</tr>
+<tr>
+<td><code>OPT&lt;T&gt;</code></td>
+<td><code>T | undefined</code></td>
+<td>Optional value</td>
+</tr>
+<tr>
+<td><code>PA&lt;T&gt;</code></td>
+<td><code>Partial&lt;T&gt;</code></td>
+<td>Makes properties optional</td>
+</tr>
+<tr>
+<td><code>PE</code></td>
+<td><code>PointerEvent</code></td>
+<td>Pointer interaction event</td>
+</tr>
+<tr>
+<td><code>PI&lt;T,K&gt;</code></td>
+<td><code>Pick&lt;T,K&gt;</code></td>
+<td>Selects object properties</td>
+</tr>
+<tr>
+<td><code>STR&lt;T&gt;</code></td>
+<td><code>T extends string ? T : never</code></td>
+<td>Retains string-compatible types</td>
+</tr>
+<tr>
+<td><code>TL&lt;T&gt;</code></td>
+<td><code>T['length']</code></td>
+<td>Extracts string length</td>
+</tr>
+<tr>
+<td><code>TUP&lt;T&gt;</code></td>
+<td><code>[...T]</code></td>
+<td>Produces mutable tuple copy</td>
+</tr>
+<tr>
+<td><code>VAL&lt;T&gt;</code></td>
+<td><code>T[keyof T]</code></td>
+<td>Extracts property value union</td>
+</tr>
+<tr>
+<td><code>DOMX</code></td>
+<td><code>DOMException</code></td>
+<td>DOM-specific exception</td>
+</tr>
+<tr>
+<td><code>FREG&lt;T&gt;</code></td>
+<td><code>FinalizationRegistry&lt;T&gt;</code></td>
+<td>Object finalization registry</td>
 </tr>
 <tr>
 <td><code>DISP</code></td>
 <td><code>Disposable</code></td>
+<td>Synchronous disposal contract</td>
 </tr>
 <tr>
 <td><code>ADISP</code></td>
 <td><code>AsyncDisposable</code></td>
+<td>Asynchronous disposal contract</td>
 </tr>
 <tr>
-<td><code>J&lt;T = A&gt;</code></td>
-<td><code>JSON</code></td>
+<td><code>ERRCAUSE&lt;T&gt;</code></td>
+<td><code>Error &amp; { cause?: T }</code></td>
+<td>Error with typed cause</td>
 </tr>
 <tr>
-<td><code>BIG&lt;T = A&gt;</code></td>
-<td><code>BigInt</code></td>
+<td><code>DICT&lt;T&gt;</code></td>
+<td><code>{ [key: S]: T | undefined }</code></td>
+<td>Dictionary with potentially undefined values</td>
 </tr>
 <tr>
-<td><code>SYM&lt;T = A&gt;</code></td>
-<td><code>Symbol</code></td>
+<td><code>ROOBJ&lt;T&gt;</code></td>
+<td>Readonly mapped type</td>
+<td>Readonly object properties</td>
 </tr>
 <tr>
-<td><code>BYTEOP_MAP_TYPE&lt;K,V&gt;</code> / <code>BM&lt;K,V&gt;</code></td>
-<td>custom Map-like shape with <code>pidToSlot</code></td>
+<td><code>MUTOBJ&lt;T&gt;</code></td>
+<td>Mutable mapped type</td>
+<td>Removes readonly object properties</td>
 </tr>
 <tr>
-<td><code>MaybePromise&lt;R = any&gt;</code></td>
-<td><code>R</code> (type) + runtime function from <code>./index</code></td>
+<td><code>VALOF&lt;T&gt;</code></td>
+<td><code>T[keyof T]</code></td>
+<td>Extracts all property values</td>
+</tr>
+<tr>
+<td><code>KEYS&lt;T&gt;</code></td>
+<td><code>keyof T</code></td>
+<td>Extracts property keys</td>
+</tr>
+<tr>
+<td><code>UNION&lt;T&gt;</code></td>
+<td>Distributive conditional type</td>
+<td>Preserves union members</td>
+</tr>
+<tr>
+<td><code>ISNEVER&lt;T&gt;</code></td>
+<td>Conditional type</td>
+<td>Detects never</td>
+</tr>
+<tr>
+<td><code>ISANY&lt;T&gt;</code></td>
+<td>Conditional type</td>
+<td>Detects any</td>
+</tr>
+<tr>
+<td><code>ISUNKNOWN&lt;T&gt;</code></td>
+<td><code>EQ&lt;T,unknown&gt;</code></td>
+<td>Detects unknown</td>
+</tr>
+<tr>
+<td><code>ISUNION&lt;T&gt;</code></td>
+<td>Conditional type</td>
+<td>Detects union types</td>
+</tr>
+<tr>
+<td><code>ROARR&lt;T&gt;</code></td>
+<td><code>readonly T[]</code></td>
+<td>Readonly array</td>
+</tr>
+<tr>
+<td><code>NONEMPTY&lt;T&gt;</code></td>
+<td><code>readonly [T,...T[]]</code></td>
+<td>Nonempty readonly array</td>
+</tr>
+<tr>
+<td><code>FIRST&lt;T&gt;</code></td>
+<td>Tuple inference</td>
+<td>Extracts first tuple element</td>
+</tr>
+<tr>
+<td><code>LAST&lt;T&gt;</code></td>
+<td>Tuple inference</td>
+<td>Extracts last tuple element</td>
+</tr>
+<tr>
+<td><code>LENGTH&lt;T&gt;</code></td>
+<td><code>T['length']</code></td>
+<td>Extracts tuple length</td>
+</tr>
+<tr>
+<td><code>REPLACE&lt;S,F,T&gt;</code></td>
+<td>Template literal conditional type</td>
+<td>Replaces matching string segment</td>
+</tr>
+<tr>
+<td><code>SPLIT&lt;S,D&gt;</code></td>
+<td>Recursive template literal type</td>
+<td>Splits string into tuple</td>
+</tr>
+<tr>
+<td><code>JOIN&lt;T,D&gt;</code></td>
+<td>Recursive template literal type</td>
+<td>Joins string tuple</td>
+</tr>
+<tr>
+<td><code>ARGS&lt;T&gt;</code></td>
+<td><code>Parameters&lt;T&gt;</code></td>
+<td>Extracts function arguments</td>
+</tr>
+<tr>
+<td><code>ASYNCGEN&lt;T,R,N&gt;</code></td>
+<td><code>AsyncGenerator&lt;T,R,N&gt;</code></td>
+<td>Alternative async generator alias</td>
+</tr>
+<tr>
+<td><code>ASSERT&lt;T&gt;</code></td>
+<td><code>T extends true</code></td>
+<td>Compile-time assertion</td>
+</tr>
+<tr>
+<td><code>BRAND&lt;T,N&gt;</code></td>
+<td><code>T &amp; { readonly __brand: N }</code></td>
+<td>Adds nominal-style type identity</td>
+</tr>
+<tr>
+<td><code>DIFF&lt;T,U&gt;</code></td>
+<td><code>T extends U ? never : T</code></td>
+<td>Removes assignable members</td>
+</tr>
+<tr>
+<td><code>DEEP&lt;T&gt;</code></td>
+<td>Recursive mapped type</td>
+<td>Recursively transforms object properties</td>
+</tr>
+<tr>
+<td><code>DEEPP&lt;T&gt;</code></td>
+<td>Recursive optional mapped type</td>
+<td>Recursively makes object properties optional</td>
+</tr>
+<tr>
+<td><code>GUARD&lt;T,U&gt;</code></td>
+<td><code>T extends U ? T : never</code></td>
+<td>Type compatibility filter</td>
+</tr>
+<tr>
+<td><code>INST&lt;T&gt;</code></td>
+<td><code>InstanceType&lt;T&gt;</code></td>
+<td>Extracts instance type</td>
+</tr>
+<tr>
+<td><code>LOWER&lt;T&gt;</code></td>
+<td><code>Lowercase&lt;T&gt;</code></td>
+<td>Lowercases string</td>
+</tr>
+<tr>
+<td><code>PARAMS&lt;T&gt;</code></td>
+<td>Function parameter inference</td>
+<td>Extracts function parameters</td>
+</tr>
+<tr>
+<td><code>AO</code></td>
+<td><code>Record&lt;string,any&gt;</code></td>
+<td>String-keyed object</td>
+</tr>
+<tr>
+<td><code>AS</code></td>
+<td><code>{ self: any; [key: string]: any }</code></td>
+<td>Self-referencing structural object</td>
+</tr>
+<tr>
+<td><code>AF</code></td>
+<td><code>(ctx: AS) =&gt; AO</code></td>
+<td>Context-based object factory</td>
+</tr>
+<tr>
+<td><code>AOAF</code></td>
+<td><code>AO | AF</code></td>
+<td>Object or object-producing function</td>
+</tr>
+<tr>
+<td><code>CHAIN</code></td>
+<td><code>&quot;chain&quot; | &quot;rechain&quot;</code></td>
+<td>Chain operation identifiers</td>
+</tr>
+<tr>
+<td><code>SU</code></td>
+<td><code>string | undefined</code></td>
+<td>Optional string</td>
+</tr>
+<tr>
+<td><code>XS</code></td>
+<td><code>any</code></td>
+<td>Alternative unrestricted type</td>
+</tr>
+<tr>
+<td><code>Wildcard</code></td>
+<td><code>&quot;*&quot;</code></td>
+<td>Wildcard identifier</td>
+</tr>
+<tr>
+<td><code>NB</code></td>
+<td><code>bigint</code></td>
+<td>Bigint alias</td>
+</tr>
+<tr>
+<td><code>CACHE_TYPE</code></td>
+<td>Union of storage identifiers</td>
+<td>Defines supported storage backends</td>
+</tr>
+<tr>
+<td><code>CACHE</code></td>
+<td><code>CACHE_TYPE</code></td>
+<td>Shortened cache backend type</td>
+</tr>
+<tr>
+<td><code>BM&lt;K,V&gt;</code></td>
+<td><code>BYTEOP_MAP_TYPE&lt;K,V&gt;</code></td>
+<td>Binary-oriented Map abstraction</td>
+</tr>
+<tr>
+<td><code>BYTEOP_MAP_TYPE&lt;K,V&gt;</code></td>
+<td>Custom interface</td>
+<td>Map-like binary storage contract</td>
+</tr>
+<tr>
+<td><code>MaybePromise&lt;R&gt;</code></td>
+<td><code>R</code></td>
+<td>Type-level MaybePromise alias</td>
+</tr>
+<tr>
+<td><code>MaybePromisei&lt;R&gt;</code></td>
+<td>Custom function</td>
+<td>Returns defined values directly or resolves undefined through Promise</td>
+</tr>
+<tr>
+<td><code>dURI</code></td>
+<td><code>(encodedURI: string) =&gt; string</code></td>
+<td>URI decoding</td>
+</tr>
+<tr>
+<td><code>eURI</code></td>
+<td><code>(uri: string) =&gt; string</code></td>
+<td>URI encoding</td>
+</tr>
+<tr>
+<td><code>esc</code></td>
+<td><code>(string: string) =&gt; string</code></td>
+<td>String escaping</td>
+</tr>
+<tr>
+<td><code>unesc</code></td>
+<td><code>(string: string) =&gt; string</code></td>
+<td>String unescaping</td>
+</tr>
+<tr>
+<td><code>pInt</code></td>
+<td><code>(string: string, radix?: number) =&gt; number</code></td>
+<td>Integer parsing</td>
+</tr>
+<tr>
+<td><code>pFloat</code></td>
+<td><code>(string: string) =&gt; number</code></td>
+<td>Floating-point parsing</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<p>💡 Example Usage</p>
-<pre><code class="language-tsx"><span class="hljs-comment">// Using short primitives and record structures</span>
-<span class="hljs-keyword">const</span> <span class="hljs-attr">user</span>: R&lt;S, A&gt; = {
-    <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Alice&quot;</span>,
-    <span class="hljs-attr">age</span>: <span class="hljs-number">30</span>
-};
-</code></pre>
-<pre><code class="language-tsx"><span class="hljs-comment">// Using utility helpers like Deep Partial and Awaited Promises</span>
-type <span class="hljs-title class_">Config</span> = <span class="hljs-variable constant_">DEEPP</span>&lt;{
-    <span class="hljs-attr">server</span>: {
-        <span class="hljs-attr">host</span>: S;
-        <span class="hljs-attr">port</span>: N;
-    };
-}&gt;;
-</code></pre>
-<pre><code class="language-tsx"><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">fetchData</span>(<span class="hljs-params"></span>): P&lt;<span class="hljs-variable constant_">AR</span>&lt;S&gt;&gt; {
-    <span class="hljs-keyword">return</span> [<span class="hljs-string">&quot;item1&quot;</span>, <span class="hljs-string">&quot;item2&quot;</span>];
-}
-</code></pre>
+<h2 id="runtime-globals">Runtime Globals</h2>
+<p>The following identifiers additionally have runtime constructor or function declarations:</p>
+<table>
+<thead>
+<tr>
+<th>Global</th>
+<th>Resolves To</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>MaybePromise</code></td>
+<td><code>MaybePromisei</code></td>
+<td>Global MaybePromise runtime utility</td>
+</tr>
+<tr>
+<td><code>PX</code></td>
+<td><code>Proxy</code></td>
+<td>Native proxy constructor</td>
+</tr>
+<tr>
+<td><code>B</code></td>
+<td><code>Boolean</code></td>
+<td>Boolean constructor</td>
+</tr>
+<tr>
+<td><code>AR</code></td>
+<td><code>Array</code></td>
+<td>Array constructor</td>
+</tr>
+<tr>
+<td><code>AB</code></td>
+<td><code>ArrayBuffer</code></td>
+<td>ArrayBuffer constructor</td>
+</tr>
+<tr>
+<td><code>D</code></td>
+<td><code>Date</code></td>
+<td>Date constructor</td>
+</tr>
+<tr>
+<td><code>E</code></td>
+<td><code>Error</code></td>
+<td>Error constructor</td>
+</tr>
+<tr>
+<td><code>F</code></td>
+<td><code>Function</code></td>
+<td>Function constructor</td>
+</tr>
+<tr>
+<td><code>J</code></td>
+<td><code>JSON</code></td>
+<td>JSON namespace</td>
+</tr>
+<tr>
+<td><code>M</code></td>
+<td><code>Map</code></td>
+<td>Map constructor</td>
+</tr>
+<tr>
+<td><code>N</code></td>
+<td><code>Number</code></td>
+<td>Number constructor</td>
+</tr>
+<tr>
+<td><code>O</code></td>
+<td><code>Object</code></td>
+<td>Object constructor</td>
+</tr>
+<tr>
+<td><code>P</code></td>
+<td><code>Promise</code></td>
+<td>Promise constructor</td>
+</tr>
+<tr>
+<td><code>REG</code></td>
+<td><code>RegExp</code></td>
+<td>Regular expression constructor</td>
+</tr>
+<tr>
+<td><code>S</code></td>
+<td><code>String</code></td>
+<td>String constructor</td>
+</tr>
+<tr>
+<td><code>ST</code></td>
+<td><code>Set</code></td>
+<td>Set constructor</td>
+</tr>
+<tr>
+<td><code>WR</code></td>
+<td><code>WeakRef</code></td>
+<td>Weak reference constructor</td>
+</tr>
+<tr>
+<td><code>DV</code></td>
+<td><code>DataView</code></td>
+<td>DataView constructor</td>
+</tr>
+<tr>
+<td><code>I8</code></td>
+<td><code>Int8Array</code></td>
+<td>Signed 8-bit array constructor</td>
+</tr>
+<tr>
+<td><code>U8</code></td>
+<td><code>Uint8Array</code></td>
+<td>Unsigned 8-bit array constructor</td>
+</tr>
+<tr>
+<td><code>U8C</code></td>
+<td><code>Uint8ClampedArray</code></td>
+<td>Clamped 8-bit array constructor</td>
+</tr>
+<tr>
+<td><code>I16</code></td>
+<td><code>Int16Array</code></td>
+<td>Signed 16-bit array constructor</td>
+</tr>
+<tr>
+<td><code>U16</code></td>
+<td><code>Uint16Array</code></td>
+<td>Unsigned 16-bit array constructor</td>
+</tr>
+<tr>
+<td><code>I32</code></td>
+<td><code>Int32Array</code></td>
+<td>Signed 32-bit array constructor</td>
+</tr>
+<tr>
+<td><code>U32</code></td>
+<td><code>Uint32Array</code></td>
+<td>Unsigned 32-bit array constructor</td>
+</tr>
+<tr>
+<td><code>F32</code></td>
+<td><code>Float32Array</code></td>
+<td>Float32 array constructor</td>
+</tr>
+<tr>
+<td><code>F64</code></td>
+<td><code>Float64Array</code></td>
+<td>Float64 array constructor</td>
+</tr>
+</tbody>
+</table>
+<h2 id="global-utility-functions">Global Utility Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Resolves To</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>dURI</code></td>
+<td>URI decoder signature</td>
+<td>Decode encoded URI</td>
+</tr>
+<tr>
+<td><code>eURI</code></td>
+<td>URI encoder signature</td>
+<td>Encode URI</td>
+</tr>
+<tr>
+<td><code>esc</code></td>
+<td>String utility signature</td>
+<td>Escape string</td>
+</tr>
+<tr>
+<td><code>unesc</code></td>
+<td>String utility signature</td>
+<td>Unescape string</td>
+</tr>
+<tr>
+<td><code>pInt</code></td>
+<td>Integer parser signature</td>
+<td>Parse integer</td>
+</tr>
+<tr>
+<td><code>pFloat</code></td>
+<td>Float parser signature</td>
+<td>Parse floating-point value</td>
+</tr>
+</tbody>
+</table>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             

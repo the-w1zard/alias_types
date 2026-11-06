@@ -2,6 +2,7 @@
   "name": "@the-w1zard/alias_types",
   "version": "1.0.2",
   "type": "module",
+  "private":false,
   "sideEffects": false,
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",
@@ -13,7 +14,6 @@
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
-  "private": false,
   "types": "./src/global.d.ts",
   "main": "./src/index.ts",
   "exports": {

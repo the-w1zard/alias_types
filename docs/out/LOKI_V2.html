@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>THE&lowbar;WIZARD PLATFORM</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-dark">
+            <span id="markdown-mermaid" aria-hidden="true" data-config="{&quot;darkModeTheme&quot;:&quot;vscode&quot;,&quot;lightModeTheme&quot;:&quot;vscode&quot;,&quot;maxTextSize&quot;:50000,&quot;clickDrag&quot;:&quot;alt&quot;,&quot;showControls&quot;:&quot;onHoverOrFocus&quot;,&quot;resizable&quot;:false,&quot;maxHeight&quot;:&quot;&quot;}"></span>
+				<h1 id="the_wizard-platform">THE_WIZARD PLATFORM</h1>
+<h3 id="general">General</h3>
+<ul>
+<li>do not output any other extra comments or &quot;talking points&quot;, only provide the output of the code I am asking for</li>
+<li>KEEP THE RESPONSES DIRECT, CONCISE AND TO THE POINT</li>
+<li>WHEN EVER YOU NEED THE USER TO FIND AND REPLACE CODE, YOU MUST GIVE THE USER A STRING TO SEARCH FOLLOWED BY A STRING TO REPLACE THAT SAME SEARCH STRING. WITHOUT THIS STEP, IT ENDS UP TAKING EXPONTENTLY LONGER TO FIND AND REPLACE ANY CODE SNIPPERS</li>
+<li>YOU ARE NOT ALLOWED TO PROVIDE ADDED VALUE IN THE FORM OF CHANGING OUT THE USERS CODE. IF YOU SEE AN AREA THAT IS CAUSE FOR ISSUE, DO NOT EDIT IT, BUT INSTEAD BRING IT UP TO THE USERS ATTENTION, AND PROVIDE A SEARCH STRING, AND THE REPLACMENT STRING TO FIX THE ERROR. THIS 'FIX' CAN ONLY BE GIVEN TO THE USER THROUGH THE RESPONSE AND NOT THROUGH AND CODE THAT YOU ARE TO BE GIVING BACK TO THEM</li>
+</ul>
+<h3 id="technology-stack">Technology Stack</h3>
+<ul>
+<li><strong>Styling</strong>: Tailwind CSS v3 (semantic classes ONLY: bg-background, text-foreground, border-border, etc.)</li>
+<li><strong>Component Library</strong>: shadCN UI: BUT THE IMPORT PATH IS '#sauron'</li>
+<li><strong>Icons</strong>: lucide-react</li>
+<li><strong>Tailwind.css Path</strong>: '#tailwind'</li>
+<li><strong>json import Path</strong>: '#tw'</li>
+<li><strong>Primsa Path</strong>: '#midgardr'</li>
+<li><strong>Utilities Path</strong>: '#midgardr'</li>
+<li><strong>Components Path</strong>: '#midgardr'
+<ul>
+<li>Correct: `import { Button } from '#midgardr'`</li>
+<li>Wrong: `import { Button } from &quot;~/components/catalyst-ui&quot;`</li>
+</ul>
+</li>
+</ul>
+<h3 id="platform">PLATFORM</h3>
+<ul>
+<li><strong>FRAMEWORK</strong>: the_wizard</li>
+<li><strong>RUNTIME</strong>: 100% SSR running on bun and rspack</li>
+<li><strong>DEV SERVER</strong>: gpu dev server</li>
+<li><strong>RENDERER</strong>: custom htmx</li>
+<li><strong>NOTES ON WHAT IT DOES NOT HAVE</strong>:
+<ul>
+<li>does not have a:
+<ul>
+<li>action</li>
+<li>loader</li>
+<li>route comps in the traditional sense</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>NOTES ON WHAT IT DOES HAVE</strong>:
+<ul>
+<li>3 custom hooks libs</li>
+<li>4 ui comps libs: totaling to over 4000+ ui comps</li>
+<li>the most advanced message queue system in the industry: 'staff' the data god solution &amp;&amp; Hyper-specialized data systems, unified by a common platform transport layer.
+<ul>
+<li>YJS REPLACEMENT</li>
+<li>runs entirely on the server, no client code execution what... so... ever</li>
+<li>no outside deps of any kind</li>
+<li>employs hybrid logical clock</li>
+<li>pre configured where no set up is needed to stand up a test instance locally to test to see if it is working, will also come pre configured with several production set ups</li>
+<li>multiple modes to fit your needs
+<ul>
+<li>docs, of various data types</li>
+<li>ui, cursor and such</li>
+<li>fields, including dropdowns, checkboxes, inputs, etc</li>
+<li>rte</li>
+<li>spreadsheets</li>
+</ul>
+</li>
+<li>no need really for any plugins... as it already comes with the following
+<ul>
+<li>bus: has 28+ adapters for all envs and protocols</li>
+<li>25+ different streaming primtives</li>
+<li>multiplexed by default so no overhead cost</li>
+<li>2 different types of databases... already ready to go</li>
+<li>and a lot more...</li>
+</ul>
+</li>
+<li>ASYNC THROTTLE</li>
+<li>BATCH</li>
+<li>BINARY</li>
+<li>CHERRIO</li>
+<li>CIRCUIT BREAKER</li>
+<li>COMPRESSION</li>
+<li>CONCURRENT</li>
+<li>CQRS</li>
+<li>CRDT - PN_COUNTER</li>
+<li>CRDT - OR_SET</li>
+<li>CRDT - LWW_REGISTER</li>
+<li>DROP LOG - a full fledged... theming system for console.logs... seriously, with fully matching themes that tie directly to the vscode extensions registered themes. Making it so your console log messages match your vscode theme</li>
+<li>DEBOUNCE</li>
+<li>DIFFPATCH</li>
+<li>FULL TEXT SEARCH</li>
+<li>HTTP CLIENT — a fetch-native Axios replacement with zero dependencies... EXTREMELY OVERPOWERED</li>
+<li>HYBRID LOGICAL CLOCK</li>
+<li>LONGPOLL</li>
+<li>METRICS</li>
+<li>OPTIMISTIC</li>
+<li>PERFORMANCE TIMER</li>
+<li>PLINKO and GATEMASTER</li>
+<li>TIERED QUEUE CONCURENTLY EXECUTING BATCHES</li>
+<li>QUEUE</li>
+<li>RAFT 2.0
+<ul>
+<li>dont have a name for this one yet obviously but raft that also covers 1 and 2 nodes</li>
+<li>runs entirely on the server, no client code execution what... so... ever</li>
+<li>no outside deps of any kinda</li>
+</ul>
+</li>
+<li>RATE LIMIT</li>
+<li>REVERSE HEART BEAT MANAGER</li>
+<li>SEMAPHORE</li>
+<li>SIGNALS</li>
+<li>SSE</li>
+<li>SWR</li>
+<li>THROTTLE</li>
+<li>WS</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>COMPATIBLE WITH</strong>: every single react library that is server safe, PLATFORM DOES NOT HAVE REACT INSTALLED</li>
+<li><strong>ROUTER</strong>: in the '#the_cloud'</li>
+<li><strong>#the_cloud RENDERER PRIMITIVES</strong>: useMatches, useParams, useLocation, useSearchParams, useHref, useResolvedPath, useOutlet, useRouteError, useAsyncValue, useAsyncError, json, redirect, redirectDocument, replace, isWardResponse, isRouteErrorResponse, Portal, renderPortalTarget, pushOutletFrame, popOutletFrame, Outlet, currentOutletHtml, live, escapeAttr, Link, NavLink, onMount, onEffect, onLayoutEffect, emitSwap, registerHTMXHandler, injectHTMX, handleHTMX, GlitchBoundary, registerFragment, scheduleFragmentRender, flushFragmentRender, teardownClient, normalizeFormData, deserialize, handleFormValidate, defer, isDeferredData, Await, kvdbFieldRef, rdbFieldRef, ChronoBoundary, pushSwap, triggerRender</li>
+<li><strong>#the_wizard PLATFORM PRIMITIVES</strong>:</li>
+</ul>
+<h3 id="absolute-code-standards">Absolute Code Standards</h3>
+<ul>
+<li><strong>Function Declaration</strong>: Use `export function ComponentName()` NEVER `const ComponentName = () =&gt; {}`</li>
+<li><strong>Default Exports</strong>: No default exports in any file</li>
+<li><strong>Comments</strong>: Do not leave comments in code</li>
+<li><strong>Color Values</strong>: Never use hard-coded colors (no #hex, no rgb(), no color names)</li>
+</ul>
+<h3 id="code-building-proceses-to-employ">Code Building Proceses To Employ</h3>
+<ul>
+<li>When building components using shadCN's exact architectural patterns</li>
+<li>All props must have sensible default values to minimize end-user configuration</li>
+<li>Support variants via props when multiple styles are applicable</li>
+<li>Always accept and merge className prop for style overrides</li>
+<li>Support children prop when content should be customizable</li>
+<li>Props interface should extend appropriate React HTML attributes</li>
+</ul>
+<h3 id="critical-functional-requirements">Critical Functional Requirements</h3>
+<p>All interactive features MUST be fully functional and working:</p>
+<ul>
+<li>Search inputs must actually search/filter data</li>
+<li>Filter controls must actually filter results</li>
+<li>Sort buttons must actually sort data</li>
+<li>Form submissions must handle data</li>
+<li>Buttons must have real onClick handlers with logic
+<ul>
+<li>unless the button is used within remix's Form or fetcher.Form component</li>
+<li>if those features are not used, then the following form example must be used along side any other functionality that needs to be triggered when that form is submitted, this format  your more than welcome to create a function before the return statment to define this</li>
+</ul>
+</li>
+<li>Loading states must represent real async operations</li>
+<li>No placeholder functionality</li>
+<li>No dummy/mock implementations</li>
+<li>No &quot;TODO&quot; or &quot;implement this later&quot; code</li>
+</ul>
+<p>If a component has interactive elements, those elements MUST work in the context they are used.</p>
+<h3 id="shadcn-component-usage-read-carefully">shadCN Component Usage (READ CAREFULLY)</h3>
+<p>DO NOT recreate any shadCN components that already exist.
+Use existing shadCN components from the library.</p>
+
+            
+            
+        </body>
+        </html>
