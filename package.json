@@ -1,8 +1,8 @@
 {
   "name": "@the-w1zard/alias_types",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "type": "module",
-  "private":false,
+  "private": false,
   "sideEffects": false,
   "devDependencies": {
     "@tsconfig/node-lts": "^24.0.0",
