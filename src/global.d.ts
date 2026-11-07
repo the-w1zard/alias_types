@@ -1,6 +1,5 @@
-import { MaybePromisei, MaybePromise } from './index'
+import { MaybePromisei, MaybePromise,UFI, UFOI, UFUI, } from './index'
 export { }
-
 
 declare global {
     // #region ═════════════════════════════════════════════════════════════ UPGRADED BASE ═══
@@ -152,6 +151,19 @@ declare global {
     type URL = URL
 
     type UF<T = A> = T | (() => T);
+    var UF: UFI;
+    type UFO<T = A> = UF<T> | UD;
+    var UFO: UFOI;
+    type UFU<T = A> = T | ((old: T) => T);
+    var UFU: UFUI;
+    type UFD<T = A> = T | UD;
+    var UFD: UFDI;
+    type UFM<T = A> = T | null | UD;
+    var UFM: UFMI;
+    type UFA<T = A> = T | P<T> | (() => T | P<T>);
+    var UFA: UFAI;
+    type UFP<T = A> = T | P<T>;
+    var UFP: UFPI;
 
     type V = void
     type W = "*";
@@ -303,93 +315,4 @@ declare global {
     // #endregion
 }
 
-/**	public createHook<T>(hookName: string, sauronId: string, initializer: () => HookState, updater: (state: HookState, key: string, notify: (key: string) => void) => T, triggerRender: boolean = true): T {
- if (isReact === true && IS_THE_WIZARD === false) {
-     try {
-         const isReact = this._isReactRenderContext();
-         const { instance, forceUpdate } = isReact && this._adapter ? this._adapter.getComponentInstance() : { instance: this.getCurrentComponent(), forceUpdate: undefined };
-
-         const component = instance;
-
-         // ─── THE TARGETED FIX ───────────────────────────────────────────────────────
-         // Use sequential indexing when in React so it matches React's rendering slots.
-         // Otherwise, use Sauron's default compilation ID string.
-         const stableSlotId = isReact ? `seq-${this._reactHookCursor++}` : sauronId;
-         const key = `${component.id}:${hookName}:${stableSlotId}`;
-         // ────────────────────────────────────────────────────────────────────────────
-         if (!this._components.has(component.id)) {
-             this._components.set(component.id, component);
-         }
-
-         if (!component.hooks.has(key)) {
-             const state = initializer();
-             component.hooks.set(key, state);
-             if (component.render) {
-                 const unsub = this.subscribeToHook(key, () => component.render?.());
-                 component.unmount.add(unsub);
-             }
-         }
-
-         if (isReact && this._adapter && forceUpdate) {
-             this._adapter.onHookSubscribe(key, forceUpdate);
-         }
-
-         const notify = (k: string) => {
-             if (typeof process !== "undefined" && process.env?.NODE_ENV !== "production") {
-                 const state = component.hooks.get(k);
-                 this.devRecord(component.id, hookName, stableSlotId, k, state?.value);
-             }
-             this.notifyHook(k);
-         };
-
-         const hookState = component.hooks.get(key)!;
-         this.beginHookDependencyCapture(hookState);
-         try {
-             return updater(hookState, key, notify);
-         } finally {
-             this.endHookDependencyCapture();
-         }
-     } catch (e: A) {
-         //  log(`[THE_CLOUD][CREATE_HOOK]`, { error: e, }, t.error)
-         return e.error;
-     }
- } else {
-     try {
-         const component = this.getCurrentComponent();
-         const key = `${component.id}:${hookName}:${sauronId}`;
-
-         if (!this._components.has(component.id)) {
-             this._components.set(component.id, component);
-         }
-
-         if (!component.hooks.has(key)) {
-             const state = initializer();
-             component.hooks.set(key, state);
-
-             if (triggerRender && component.render) {
-                 const unsub = this.subscribeToHook(key, () => component.render?.());
-                 component.unmount.add(unsub);
-             }
-         }
-
-         const notify = (k: string) => {
-             if (typeof process !== "undefined" && process.env?.NODE_ENV !== "production") {
-                 const state = component.hooks.get(k);
-                 this.devRecord(component.id, hookName, sauronId, k, state?.value);
-             }
-             if (triggerRender) this.notifyHook(k);
-         };
-
-         const hookState = component.hooks.get(key)!;
-         this.beginHookDependencyCapture(hookState);
-         try {
-             return updater(hookState, key, notify);
-         } finally {
-             this.endHookDependencyCapture();
-         }
-     } catch (e: A) {
-         // log(`[THE_CLOUD][CREATE_HOOK]`, { error: e, }, t.error)
-         return e.error;
-     }
- }
-} */
+ 
