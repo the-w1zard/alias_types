@@ -2,7 +2,7 @@ export type MaybePromise<R = any> = R;
 export function MaybePromisei<R = any>(v: R): MaybePromise {
     return v !== undefined ? v as R : Promise.resolve(v) as Promise<R> 
 }
-
+                   <T>(v: T | (() => T)): T => typeof v === "function" ? (v as () => T)() : v;
 export const UFI = <T>(v: UF<T>): T => typeof v === "function" ? (v as () => T)() : v;
 // resolve optional unknown-or-factory
 export const UFOI = <T>(v: UF<T> | UD): T | UD =>  v === undefined ? undefined : UFI(v);
@@ -154,7 +154,7 @@ globalThis.FL = File;
 globalThis.FS = FileSystem;
 globalThis.FLR = FileReader;
 globalThis.MO = MutationObserver;
-globalThis.RO = ResizeObserver;
+globalThis.RSO = ResizeObserver;
 globalThis.ITO = IntersectionObserver;
 globalThis.PO = PerformanceObserver;
 globalThis.EL = Element;

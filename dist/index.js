@@ -1,6 +1,7 @@
 export function MaybePromisei(v) {
     return v !== undefined ? v : Promise.resolve(v);
 }
+(v) => typeof v === "function" ? v() : v;
 export const UFI = (v) => typeof v === "function" ? v() : v;
 // resolve optional unknown-or-factory
 export const UFOI = (v) => v === undefined ? undefined : UFI(v);
@@ -150,7 +151,7 @@ globalThis.FL = File;
 globalThis.FS = FileSystem;
 globalThis.FLR = FileReader;
 globalThis.MO = MutationObserver;
-globalThis.RO = ResizeObserver;
+globalThis.RSO = ResizeObserver;
 globalThis.ITO = IntersectionObserver;
 globalThis.PO = PerformanceObserver;
 globalThis.EL = Element;

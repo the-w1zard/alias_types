@@ -330,7 +330,7 @@ declare global {
 	type REQ<T> = Required<T>;
 	type RM<K = A, V = A> = ReadonlyMap<K, V>;
 	type RS<T = A> = ReadonlySet<T>;
-	type R<T> = Readonly<T>;
+	type RO<T> = Readonly<T>;
 	type ROA<T extends A[]> = ReadonlyArray<T[N]>;
     // Readonly Object - Makes every property of an object readonly.
     type ROBJ<T> = { readonly [K in keyof T]: T[K] };
@@ -351,8 +351,8 @@ declare global {
 	type RT<T extends (...args: A) => A> = ReturnType<T>;
 	type RET<T extends (...args: A) => A> = ReturnType<T>;
 
-	type RO = ResizeObserver;
-	var RO: typeof ResizeObserver;
+	type RSO = ResizeObserver;
+	var RSO: typeof ResizeObserver;
 
 
 	// #endregion
