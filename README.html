@@ -2677,6 +2677,216 @@
 </tr>
 </tbody>
 </table>
+<h2 id="uf-utility-family">UF Utility Family</h2>
+<p>The UF family provides a consistent way to accept either a value or a zero-argument factory.</p>
+<pre><code>export type UF&lt;T&gt; = T | (() =&gt; T);
+
+export const UFI = &lt;T&gt;(v: UF&lt;T&gt;): T =&gt;
+  typeof v === &quot;function&quot; ? (v as () =&gt; T)() : v;
+
+export const UFOI = &lt;T&gt;(v?: UF&lt;T&gt;): T | undefined =&gt;
+  v === undefined ? undefined : UFI(v);
+
+export const UFUI = &lt;T&gt;(v: UF&lt;T&gt;, u: (v: T) =&gt; T): T =&gt;
+  u(UFI(v));
+
+export const UFDI = &lt;T&gt;(v: UF&lt;T&gt;, d: T): T =&gt;
+  v === undefined ? d : UFI(v);
+
+export const UFMI = &lt;T&gt;(v: UF&lt;T&gt;, d: T): T =&gt;
+  v == null ? d : UFI(v);
+
+export const UFAI = &lt;T&gt;(v: UF&lt;T&gt; | T[]): T[] =&gt;
+  Array.isArray(v) ? v : [UFI(v)];
+
+export const UFPI = &lt;T&gt;(v: UF&lt;T&gt;): Promise&lt;T&gt; =&gt;
+  Promise.resolve(UFI(v));
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Helper</th>
+<th>Behavior</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UFI</code></td>
+<td>Resolves a value or invokes its factory.</td>
+</tr>
+<tr>
+<td><code>UFOI</code></td>
+<td>Resolves an optional value or factory; preserves <code>undefined</code>.</td>
+</tr>
+<tr>
+<td><code>UFUI</code></td>
+<td>Resolves the value, then applies an updater.</td>
+</tr>
+<tr>
+<td><code>UFDI</code></td>
+<td>Uses the default when the value is <code>undefined</code>.</td>
+</tr>
+<tr>
+<td><code>UFMI</code></td>
+<td>Uses the default when the value is <code>null</code> or <code>undefined</code>.</td>
+</tr>
+<tr>
+<td><code>UFAI</code></td>
+<td>Normalizes a value or array into an array.</td>
+</tr>
+<tr>
+<td><code>UFPI</code></td>
+<td>Resolves a value or factory into a Promise.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="global-uf-aliases">Global UF Aliases</h3>
+<pre><code>globalThis.UF = UFI;
+globalThis.UFO = UFOI;
+globalThis.UFU = UFUI;
+globalThis.UFD = UFDI;
+globalThis.UFM = UFMI;
+globalThis.UFA = UFAI;
+globalThis.UFP = UFPI;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Alias</th>
+<th>Helper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>UF</code></td>
+<td><code>UFI</code></td>
+</tr>
+<tr>
+<td><code>UFO</code></td>
+<td><code>UFOI</code></td>
+</tr>
+<tr>
+<td><code>UFU</code></td>
+<td><code>UFUI</code></td>
+</tr>
+<tr>
+<td><code>UFD</code></td>
+<td><code>UFDI</code></td>
+</tr>
+<tr>
+<td><code>UFM</code></td>
+<td><code>UFMI</code></td>
+</tr>
+<tr>
+<td><code>UFA</code></td>
+<td><code>UFAI</code></td>
+</tr>
+<tr>
+<td><code>UFP</code></td>
+<td><code>UFPI</code></td>
+</tr>
+</tbody>
+</table>
+<h2 id="ser--deser--tagged-serialization">SER / DESER — Tagged Serialization</h2>
+<p><code>seri</code> and <code>deseri</code> provide tagged JSON serialization for supported JavaScript values.</p>
+<pre><code>globalThis.SER = seri;
+globalThis.DESER = deseri;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Serialization</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Map</code></td>
+<td>Tagged Map representation</td>
+</tr>
+<tr>
+<td><code>Set</code></td>
+<td>Tagged Set representation</td>
+</tr>
+<tr>
+<td><code>Array</code></td>
+<td>Array representation</td>
+</tr>
+<tr>
+<td><code>Object</code></td>
+<td>Object representation</td>
+</tr>
+<tr>
+<td>Primitive</td>
+<td>Primitive representation</td>
+</tr>
+</tbody>
+</table>
+<p><code>SER</code> serializes supported values into tagged JSON. <code>DESER</code> reconstructs the supported values from that representation.</p>
+<h2 id="global-runtime-utilities">Global Runtime Utilities</h2>
+<p>The following globals expose commonly used native constructors and utility functions without requiring individual imports.</p>
+<table>
+<thead>
+<tr>
+<th>Global</th>
+<th>Runtime value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>M</code></td>
+<td><code>Map</code></td>
+</tr>
+<tr>
+<td><code>WM</code></td>
+<td><code>WeakMap</code></td>
+</tr>
+<tr>
+<td><code>ST</code></td>
+<td><code>Set</code></td>
+</tr>
+<tr>
+<td><code>WST</code></td>
+<td><code>WeakSet</code></td>
+</tr>
+<tr>
+<td><code>UF</code></td>
+<td><code>UFI</code></td>
+</tr>
+<tr>
+<td><code>UFO</code></td>
+<td><code>UFOI</code></td>
+</tr>
+<tr>
+<td><code>UFU</code></td>
+<td><code>UFUI</code></td>
+</tr>
+<tr>
+<td><code>UFD</code></td>
+<td><code>UFDI</code></td>
+</tr>
+<tr>
+<td><code>UFM</code></td>
+<td><code>UFMI</code></td>
+</tr>
+<tr>
+<td><code>UFA</code></td>
+<td><code>UFAI</code></td>
+</tr>
+<tr>
+<td><code>UFP</code></td>
+<td><code>UFPI</code></td>
+</tr>
+<tr>
+<td><code>SER</code></td>
+<td><code>seri</code></td>
+</tr>
+<tr>
+<td><code>DESER</code></td>
+<td><code>deseri</code></td>
+</tr>
+</tbody>
+</table>
 
             <script async src="https://cdn.jsdelivr.net/npm/katex-copytex@latest/dist/katex-copytex.min.js"></script>
             

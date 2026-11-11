@@ -1042,3 +1042,104 @@ The following identifiers additionally have runtime constructor or function decl
 | `pInt` | Integer parser signature | Parse integer |
 | `pFloat` | Float parser signature | Parse floating-point value |
 
+
+
+## UF Utility Family
+
+The UF family provides a consistent way to accept either a value or a zero-argument factory.
+
+```
+export type UF<T> = T | (() => T);
+
+export const UFI = <T>(v: UF<T>): T =>
+  typeof v === "function" ? (v as () => T)() : v;
+
+export const UFOI = <T>(v?: UF<T>): T | undefined =>
+  v === undefined ? undefined : UFI(v);
+
+export const UFUI = <T>(v: UF<T>, u: (v: T) => T): T =>
+  u(UFI(v));
+
+export const UFDI = <T>(v: UF<T>, d: T): T =>
+  v === undefined ? d : UFI(v);
+
+export const UFMI = <T>(v: UF<T>, d: T): T =>
+  v == null ? d : UFI(v);
+
+export const UFAI = <T>(v: UF<T> | T[]): T[] =>
+  Array.isArray(v) ? v : [UFI(v)];
+
+export const UFPI = <T>(v: UF<T>): Promise<T> =>
+  Promise.resolve(UFI(v));
+```
+
+| Helper | Behavior                                                      |
+| ------ | ------------------------------------------------------------- |
+| `UFI`  | Resolves a value or invokes its factory.                      |
+| `UFOI` | Resolves an optional value or factory; preserves `undefined`. |
+| `UFUI` | Resolves the value, then applies an updater.                  |
+| `UFDI` | Uses the default when the value is `undefined`.               |
+| `UFMI` | Uses the default when the value is `null` or `undefined`.     |
+| `UFAI` | Normalizes a value or array into an array.                    |
+| `UFPI` | Resolves a value or factory into a Promise.                   |
+
+### Global UF Aliases
+
+```
+globalThis.UF = UFI;
+globalThis.UFO = UFOI;
+globalThis.UFU = UFUI;
+globalThis.UFD = UFDI;
+globalThis.UFM = UFMI;
+globalThis.UFA = UFAI;
+globalThis.UFP = UFPI;
+```
+
+| Alias | Helper |
+| ----- | ------ |
+| `UF`  | `UFI`  |
+| `UFO` | `UFOI` |
+| `UFU` | `UFUI` |
+| `UFD` | `UFDI` |
+| `UFM` | `UFMI` |
+| `UFA` | `UFAI` |
+| `UFP` | `UFPI` |
+
+## SER / DESER — Tagged Serialization
+
+`seri` and `deseri` provide tagged JSON serialization for supported JavaScript values.
+
+```
+globalThis.SER = seri;
+globalThis.DESER = deseri;
+```
+
+| Type      | Serialization             |
+| --------- | ------------------------- |
+| `Map`     | Tagged Map representation |
+| `Set`     | Tagged Set representation |
+| `Array`   | Array representation      |
+| `Object`  | Object representation     |
+| Primitive | Primitive representation  |
+
+`SER` serializes supported values into tagged JSON. `DESER` reconstructs the supported values from that representation.
+
+## Global Runtime Utilities
+
+The following globals expose commonly used native constructors and utility functions without requiring individual imports.
+
+| Global  | Runtime value |
+| ------- | ------------- |
+| `M`     | `Map`         |
+| `WM`    | `WeakMap`     |
+| `ST`    | `Set`         |
+| `WST`   | `WeakSet`     |
+| `UF`    | `UFI`         |
+| `UFO`   | `UFOI`        |
+| `UFU`   | `UFUI`        |
+| `UFD`   | `UFDI`        |
+| `UFM`   | `UFMI`        |
+| `UFA`   | `UFAI`        |
+| `UFP`   | `UFPI`        |
+| `SER`   | `seri`        |
+| `DESER` | `deseri`      |
