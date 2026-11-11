@@ -17,71 +17,7 @@ export const UFAI = async <T>(v: T | P<T> | (() => T | P<T>)): P<AWD<T>> => awai
 export const UFPI = <T>(v: T | P<T>): P<AWD<T>> => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
 
-export function deseri<T=A, Z=A>(raw: S | O | M<T, Z> | Set<T> |AR<T>): A {
-    if (raw === null || raw === undefined) return raw;
-    try {
-      const parsed = typeof raw === 'string' ? JSON.parse(raw) : raw;
-   
-      if (parsed?.__type === 'Map') {
-        return new Map(parsed.value.map(([key, val]: [S, S]) => [deseri(key), deseri(val)]));
-      }
-      if (parsed?.__type === 'Set') {
-        return new Set(parsed.value.map((val: S) => deseri(val)));
-      }
-      if (parsed?.__type === 'Array') {
-        return parsed.value.map((val: S) => deseri(val));
-      }
-      if (parsed?.__type === 'Object') {
-        const obj: Record<string, any> = {};
-        for (const [key, val] of Object.entries(parsed.value)) {
-          obj[key] = deseri(val as S);
-        }
-        return obj;
-      }
-      if (parsed?.__type === 'Primitive') {
-        return parsed.value;
-      }
-   
-      return parsed;
-    } catch {
-      return raw;
-    }
-}
-export function seri(value: U): S {
-    if (value instanceof Map) {
-      return JSON.stringify({ 
-        __type: 'Map', 
-        value: Array.from(value.entries()).map(([key, val]) => [seri(key), seri(val)]) 
-      });
-    }
-    if (value instanceof Set) {
-      return JSON.stringify({ 
-        __type: 'Set', 
-        value: Array.from(value.values()).map(val => seri(val)) 
-      });
-    }
-    if (Array.isArray(value)) {
-      return JSON.stringify({ 
-        __type: 'Array', 
-        value: value.map(item => seri(item)) 
-      });
-    }
-    if (value !== null && typeof value === 'object') {
-      const obj: Record<string, S> = {};
-      for (const [key, val] of Object.entries(value)) {
-        obj[key] = seri(val);
-      }
-      return JSON.stringify({ 
-        __type: 'Object', 
-        value: obj 
-      });
-    }
-    // Wrap primitives (strings, numbers, booleans, null) to preserve exact types
-    return JSON.stringify({ 
-      __type: 'Primitive', 
-      value 
-    });
-}
+
 
 globalThis.MaybePromise = MaybePromisei;
 globalThis.PX = Proxy;
@@ -94,8 +30,6 @@ globalThis.E = Error
 globalThis.EV = Event
 globalThis.TD = new TextDecoder();
 globalThis.TE = new TextEncoder()
-globalThis.DESER = deseri
-globalThis.SER = seri
 globalThis.J = JSON
 globalThis.M = Map
 globalThis.WM = WeakMap

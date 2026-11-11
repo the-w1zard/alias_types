@@ -1,2 +1,0 @@
-# SIGNAL CELLS
-

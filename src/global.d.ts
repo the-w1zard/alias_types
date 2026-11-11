@@ -1,4 +1,4 @@
-import { MaybePromisei, MaybePromise, UFI, UFOI, UFUI, deseri, seri } from "./index";
+import { MaybePromisei, MaybePromise, UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
 export {};
 
 declare global {
@@ -57,7 +57,6 @@ declare global {
 	type AE = AggregateError;
 	var AE: typeof AggregateError;
 
-	type ASF<T extends (...args: A) => A> = (...args: Parameters<T>) => Promise<Awaited<ReturnType<T>>>;
 	// #endregion
 	//                                                                                                   [B]
 	// #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -285,8 +284,6 @@ declare global {
 	var OA: typeof Object.assign;
 	type OB<T = A> = { [key: S]: T };
 	type OBJ<T = A> = { [key: S]: T };
-    // Mutable Object - Removes readonly modifiers from every property of an object.  
-    type MO<T> = { -readonly [K in keyof T]: T[K] };
 
 	type OO<T, U> = Omit<T, keyof U> & U;
 	type OM<T, K extends keyof T> = Omit<T, K>;
@@ -301,7 +298,7 @@ declare global {
 	//                                                                                                   [P]
 	// #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
 	type P<T = A> = Promise<T>;
-	declare var P: PromiseConstructor;
+	var P: PromiseConstructor;
 	type AWD<T = A> = Awaited<T>;
 	type AW<T> = T extends PromiseLike<infer U> ? AWAIT<U> : T;
 	type PL<T = A> = PromiseLike<T>;
@@ -364,13 +361,6 @@ declare global {
     type STR<T> = T extends S ? T : never;
     // String Keys - Extracts the string keys from an object's key union.  
     type SK<T> = keyof T & S;
-
-	interface DESERI { <T = A, Z = A>(raw: S | O | M<T, Z> | Set<T> | AR<T>): A; }
-	interface DESER extends DESERI {}
-	var DESER: deseri;
-	interface SERI { (value: U): S; }
-	interface SER extends SERI {}
-	var SER: seri;
 
 	type SY = symbol;
 	var SY: SymbolConstructor;
@@ -435,7 +425,7 @@ declare global {
 	var UFP: UFPI;
 
     // Is Union -Checks whether a type contains multiple distinct union members. 
-    type IU<T, C = T> = T extends C ? ([C] extends [T] ? false : true) : never;
+    type IUN<T, C = T> = T extends C ? ([C] extends [T] ? false : true) : never;
     
 
 	// #endregion
@@ -486,7 +476,7 @@ declare global {
     // Include / Extract - extracts from `T` the union members assignable to `U`. 
     type IN<T, U> = Extract<T, U>;
     // Instance Type - Extracts the instance type produced by a constructor.
-    type IT<T extends abstract new (...args: A) => A> = T extends abstract new (...args: A) => infer R ? R : A;
+    type ICT<T extends abstract new (...args: A) => A> = T extends abstract new (...args: A) => infer R ? R : A;
     // Indexed Element Type - Extracts the element type from a readonly or mutable array. 
     type IDX<T> = T extends readonly (infer U)[] ? U : never;
 
@@ -552,8 +542,6 @@ declare global {
 	//                                                                                               [OTHER]
 	// #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
 	type AO = Record<S, A>;
-	type AS = { self: A; [key: S]: A };
-	type AF = (ctx: AS) => AO;
 	type AOAF = AO | AF;
 	type CHAIN = "chain" | "rechain";
 	type SU = string | undefined;
