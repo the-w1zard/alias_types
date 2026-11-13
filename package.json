@@ -1,6 +1,6 @@
 {
   "name": "@the-w1zard/alias_types",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "type": "module",
   "private": false,
   "sideEffects": false,
@@ -33,7 +33,6 @@
     "./global.d.ts": {
       "types": "./dist/global.d.ts"
     }
-
   },
   "files": [
     "dist"
