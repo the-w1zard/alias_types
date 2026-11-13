@@ -23,13 +23,19 @@
     "*": "npm run build && npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
   },
   "license": "MIT",
-  "main": "./src/index.ts",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "default": "./src/index.ts"
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./global.d.ts": {
+      "types": "./dist/global.d.ts"
     }
+
   },
   "files": [
-    "src"
+    "dist"
   ]
 }
