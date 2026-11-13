@@ -1,7 +1,3 @@
-export function MaybePromisei(v) {
-    return v !== undefined ? v : Promise.resolve(v);
-}
-(v) => typeof v === "function" ? v() : v;
 export const UFI = (v) => typeof v === "function" ? v() : v;
 // resolve optional unknown-or-factory
 export const UFOI = (v) => v === undefined ? undefined : UFI(v);
@@ -15,7 +11,6 @@ export const UFAI = async (v) => await (typeof v === "function" ? v() : v);
 // const config = await UFA(loadConfig);
 export const UFPI = (v) => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
-globalThis.MaybePromise = MaybePromisei;
 globalThis.PX = Proxy;
 globalThis.AR = Array;
 globalThis.AB = ArrayBuffer;

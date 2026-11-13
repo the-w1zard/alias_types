@@ -20,14 +20,12 @@
     "8": "npm publish --access public",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "*": "npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
+    "*": "npm run build && npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
   },
   "license": "MIT",
-  "types": "./src/global.d.ts",
   "main": "./src/index.ts",
   "exports": {
     ".": {
-      "types": "./src/global.d.ts",
       "default": "./src/index.ts"
     }
   },
