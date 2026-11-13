@@ -1,3 +1,4 @@
+import "./global.d.ts";
 export declare const UFI: <T>(v: UF<T>) => T;
 export declare const UFOI: <T>(v: UF<T> | UD) => T | UD;
 export declare const UFUI: <T>(v: UF<T>, old: T) => T;

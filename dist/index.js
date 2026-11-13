@@ -1,3 +1,4 @@
+import "./global.d.ts";
 /// <reference path="./global.d.ts" />
 export const UFI = (v) => typeof v === "function" ? v() : v;
 // resolve optional unknown-or-factory

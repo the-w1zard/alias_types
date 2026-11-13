@@ -1,6 +1,12 @@
 // import {  UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
-export {};
-
+declare const UFI: <T>(v: UF<T>) => T;
+declare const UFOI: <T>(v: UF<T> | UD) => T | UD;
+declare const UFUI: <T>(v: UF<T>, old: T) => T;
+declare const UFDI: <T>(v: T | UD, d: UF<T>) => T;
+declare const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
+declare const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
+declare const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
+export {}
 declare global {
     // #region ═════════════════════════════════════════════════════════════ UPGRADED BASE ═══
     type BM<K = A, V = A> = BYTEOP_MAP_TYPE<K, V>; // aliasing byteop map down to bm, a javascript map conversion to byteop code

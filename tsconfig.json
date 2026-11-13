@@ -9,10 +9,10 @@
       "outDir": "./dist",
       "declaration": true,
 		"allowJs": true,
-		"strict": true,
+		"strict": false,
 		"isolatedModules": false,
     "skipLibCheck": true,
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
       "types":[
        "node",
        "./src/global.d.ts"
