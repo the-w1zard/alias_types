@@ -7,5 +7,3 @@ export declare const UFDI: <T>(v: T | UD, d: UF<T>) => T;
 export declare const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
 export declare const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
 export declare const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
-export declare function deseri<T = A, Z = A>(raw: S | O | M<T, Z> | Set<T> | AR<T>): A;
-export declare function seri(value: U): S;

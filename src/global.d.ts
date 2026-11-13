@@ -1,10 +1,8 @@
-import { MaybePromisei, MaybePromise, UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
+import {  UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
 export {};
 
 declare global {
 	// #region ═════════════════════════════════════════════════════════════ UPGRADED BASE ═══
-	type MaybePromise<R = any> = R;
-	var MaybePromise: typeof MaybePromisei;
 	type BM<K = A, V = A> = BYTEOP_MAP_TYPE<K, V>; // aliasing byteop map down to bm, a javascript map conversion to byteop code
 	type BYTEOP_MAP_TYPE<K = A, V = A> = {
 		pidToSlot: I32;

@@ -15,6 +15,7 @@
     "verbatimModuleSyntax": true,
       "types":[
        "./src/global.d.ts", 
+       "node"
       ]
     },
     "include": [
