@@ -20,7 +20,7 @@
     "8": "npm publish --access public",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "*": "npm run build && npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
+    "*": "npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
   },
   "license": "MIT",
   "main": "./dist/index.js",
