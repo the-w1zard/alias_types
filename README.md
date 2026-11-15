@@ -55,7 +55,52 @@
 >
 > ... is there a learning curve? haha, yes... but its not a big one.
 >
+> BUT... without showing you, you truly get a feel for just how much... in the long run this ends up saving you. I just finished writing some code for a storage medium.
+>
+> ```tsx
+> 	THE_MESH_CACHE: R<S, R<S, R<S, R<S, V>>>> = O.create(null);
+>
+>	#handlers: R<S, R<S, R<S, R<S, A>>>> = O.create(null);
+>	#subRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_handlers: R<S, A> = O.create(null);
+>
+>	_globalThis: R<S, A>
+>	_the_mesh_cache: R<S, A>
+>
+>	#meta: R<S, R<S, R<S, A>>> = O.create(null);
+>	#metaSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_meta: R<S, A> = O.create(null);
+>
+>	#signals: R<S, R<S, R<S, A>>> = O.create(null);
+>	#signalsSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_signals: R<S, A> = O.create(null);
+>
+>	#naked_signals: R<S, R<S, R<S, A>>> = O.create(null);
+>	#nakedSignalsSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_naked_signals: R<S, A> = O.create(null);
+>
+>	#context: R<S, R<S, R<S, A>>> = O.create(null);
+>	#contextSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_context: R<S, A> = O.create(null);
+>
+>	#atoms: R<S, R<S, R<S, A>>> = O.create(null);
+>	#atomsSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_atoms: R<S, A> = O.create(null);
+>
+>	#sauron: R<S, R<S, R<S, A>>> = O.create(null);
+>	#sauronSubRoot: R<S, R<S, R<S, R<S, ST<QuadSub<A>>>>>> = O.create(null);
+>	_sauron: R<S, A> = O.create(null);
+> ```
+>
+> Just in this one snippet of code, the aliases that were used here saved in total 806 chars from being typed out, over a very small portion of code that only takes up, what 30 lines of code I think.
+>
+> With my time in sales, I had learned that... it isn't the actual LARGE time wasters that... in the end waste more time. People tend to think that because they see, 'oh fuck, this wasted 2 1/2 hours of my time'. But, you only do that... once every 6-12 months. When in fact, it always... and I mean always, ends up being the smaller time wasters that are done 100's or 1000's and there are even times where you can do it 10,000 times a day. Now take that number multiply it by time wasted, it always ends up being a MUCH greater number than that measly 2.5 hours.
+>
+> So, if you thought this was a 'style choice' or a matter of 'opinion', it isn't. It is just cold hard truth that we, especially within the career of being a dev, we have a TON of tiny little time wasters that which, at the end of the year, will waste weeks... but more than likely will add up to multiple months wasted, every year. Don't believe me? Measure it...
+>
 > Below I've included a screen shot of what an entire vertical space looks like with this library included.
+>
+> 
 
 <br />
 
