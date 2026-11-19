@@ -224,6 +224,21 @@ S = string</p>
 <img src="file:///f:\alias_types\icons\ex.png">
 </span>
 <br />
+<div class="markdown-alert markdown-alert-important"><p class="markdown-alert-title"><svg class="octicon octicon-report mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 1.75C0 .784.784 0 1.75 0h12.5C15.216 0 16 .784 16 1.75v9.5A1.75 1.75 0 0 1 14.25 13H8.06l-2.573 2.573A1.458 1.458 0 0 1 3 14.543V13H1.75A1.75 1.75 0 0 1 0 11.25Zm1.75-.25a.25.25 0 0 0-.25.25v9.5c0 .138.112.25.25.25h2a.75.75 0 0 1 .75.75v2.19l2.72-2.72a.749.749 0 0 1 .53-.22h6.5a.25.25 0 0 0 .25-.25v-9.5a.25.25 0 0 0-.25-.25Zm7 2.25v2.5a.75.75 0 0 1-1.5 0v-2.5a.75.75 0 0 1 1.5 0ZM9 9a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z"></path></svg>THE USE OF GENERICS IS STILL AVAILABLE</p><p></p>
+<p>Despite the agressive compression, at a first glance it looks as if single char generics is no longer a thing, but that isn't the case.</p>
+<ul>
+<li>T</li>
+<li>L</li>
+<li>Q</li>
+<li>X</li>
+<li>Y</li>
+<li>Z</li>
+</ul>
+<p>Are compeletely free and void of having to collide with any alias within the module. It is also worth mentioning that, the entire alphabets worth of chars can still be used as generics everywhere, the only time it becomes a problem for example, a generic typed fn where you use M among your generics, one of two things will happen depending on where you placed M.</p>
+<p>If it was used as a value such as <code>&lt;T = M&gt;</code>, well now everywhere that you used T to declare what a value ends up being, is now typed as Map.</p>
+<p>If it was used as a type definition such as, <code>&lt;M = A&gt;</code>, and you decided to use M within that fn, well... Instead of Map, it's now defined as any.</p>
+<p>At the time of writing this, there is still not a single naming collision of any kind in relation to the entire react ecosystem. Mainly because, I beleive everyone just thinks that they will experience some sort of naming collisions if they were to compress this agressively. But... so far that is not the case.</p>
+</div>
 <h2 id="maybepromise">MaybePromise</h2>
 <p><code>MaybePromisei&lt;R&gt;(v: R)</code></p>
 <p>If you want to learn more about this, I suggest going to its actual documentation. However, the easiest, most simpliest way to explain this to every single person without fail</p>

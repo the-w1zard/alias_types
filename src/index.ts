@@ -15,6 +15,8 @@ export const UFPI = <T>(v: T | P<T>): P<AWD<T>> => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
 export const fi = false as const   // type: false
 export const ti = true as const    // type: true
+export const NUI = null
+export const UDI = undefined
 
 export {
     UFI as UF,
@@ -26,7 +28,11 @@ export {
     UFPI as UFP,
     fi as f,
     ti as t,
+    NUI as NU,
+    UDI as UD,
 }
+globalThis.UD = UDI
+globalThis.NU = NUI
 globalThis.f = false
 globalThis.t = true
 globalThis.PX = Proxy

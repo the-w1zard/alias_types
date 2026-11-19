@@ -110,6 +110,24 @@
 
 <br />
 
+> [!IMPORTANT] THE USE OF GENERICS IS STILL AVAILABLE
+>
+> Despite the agressive compression, at a first glance it looks as if single char generics is no longer a thing, but that isn't the case.
+> - T
+> - L
+> - Q
+> - X 
+> - Y 
+> - Z
+>
+> Are compeletely free and void of having to collide with any alias within the module. It is also worth mentioning that, the entire alphabets worth of chars can still be used as generics everywhere, the only time it becomes a problem for example, a generic typed fn where you use M among your generics, one of two things will happen depending on where you placed M. 
+> 
+> If it was used as a value such as `<T = M>`, well now everywhere that you used T to declare what a value ends up being, is now typed as Map.
+>
+> If it was used as a type definition such as, `<M = A>`, and you decided to use M within that fn, well... Instead of Map, it's now defined as any.
+>
+> At the time of writing this, there is still not a single naming collision of any kind in relation to the entire react ecosystem. Mainly because, I beleive everyone just thinks that they will experience some sort of naming collisions if they were to compress this agressively. But... so far that is not the case.
+
 ## MaybePromise
 
 `MaybePromisei<R>(v: R)`
