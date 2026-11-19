@@ -13,6 +13,11 @@ export const UFAI = async (v) => await (typeof v === "function" ? v() : v);
 // const config = await UFA(loadConfig);
 export const UFPI = (v) => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
+export const fi = false; // type: false
+export const ti = true; // type: true
+export { UFI as UF, UFOI as UFO, UFUI as UFU, UFDI as UFD, UFMI as UFM, UFAI as UFA, UFPI as UFP, fi as f, ti as t, };
+globalThis.f = false;
+globalThis.t = true;
 globalThis.PX = Proxy;
 globalThis.AR = Array;
 globalThis.AB = ArrayBuffer;

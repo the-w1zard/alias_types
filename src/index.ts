@@ -13,10 +13,23 @@ export const UFAI = async <T>(v: T | P<T> | (() => T | P<T>)): P<AWD<T>> => awai
 // const config = await UFA(loadConfig);
 export const UFPI = <T>(v: T | P<T>): P<AWD<T>> => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
+export const fi = false as const   // type: false
+export const ti = true as const    // type: true
 
-
-
-globalThis.PX = Proxy;
+export {
+    UFI as UF,
+    UFOI as UFO,
+    UFUI as UFU,
+    UFDI as UFD,
+    UFMI as UFM,
+    UFAI as UFA,
+    UFPI as UFP,
+    fi as f,
+    ti as t,
+}
+globalThis.f = false
+globalThis.t = true
+globalThis.PX = Proxy
 globalThis.AR = Array
 globalThis.AB = ArrayBuffer
 globalThis.B = Boolean

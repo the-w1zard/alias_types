@@ -6,3 +6,6 @@ export declare const UFDI: <T>(v: T | UD, d: UF<T>) => T;
 export declare const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
 export declare const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
 export declare const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
+export declare const fi: false;
+export declare const ti: true;
+export { UFI as UF, UFOI as UFO, UFUI as UFU, UFDI as UFD, UFMI as UFM, UFAI as UFA, UFPI as UFP, fi as f, ti as t, };
