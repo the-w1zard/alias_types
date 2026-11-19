@@ -273,6 +273,7 @@ declare global {
     type INE<T> = [T] extends [never] ? true : false;
     type NIL<T> = T | null;
     type NU = null;
+    var NU: null;
     type NR<T> = NonNullable<T>;
 
     type NNM = NamedNodeMap;
@@ -415,6 +416,7 @@ declare global {
     // Is Unknown - Checks whether a type is exactly `unknown`. 
     type IU<T> = EQ<T, unknown>;
     type UD = undefined;
+    var UD: undefined;
 
     type UNC<T extends S> = Uncapitalize<T>;
     type UPC<T extends S> = Uppercase<T>;

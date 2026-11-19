@@ -15,7 +15,11 @@ export const UFPI = (v) => P.resolve(v);
 // const result = await UFP(possiblyAsyncValue);
 export const fi = false; // type: false
 export const ti = true; // type: true
-export { UFI as UF, UFOI as UFO, UFUI as UFU, UFDI as UFD, UFMI as UFM, UFAI as UFA, UFPI as UFP, fi as f, ti as t, };
+export const NUI = null;
+export const UDI = undefined;
+export { UFI as UF, UFOI as UFO, UFUI as UFU, UFDI as UFD, UFMI as UFM, UFAI as UFA, UFPI as UFP, fi as f, ti as t, NUI as NU, UDI as UD, };
+globalThis.UD = UDI;
+globalThis.NU = NUI;
 globalThis.f = false;
 globalThis.t = true;
 globalThis.PX = Proxy;
