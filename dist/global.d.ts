@@ -1,15 +1,16 @@
-// import {  UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
-declare const UFI: <T>(v: UF<T>) => T;
-declare const UFOI: <T>(v: UF<T> | UD) => T | UD;
-declare const UFUI: <T>(v: UF<T>, old: T) => T;
-declare const UFDI: <T>(v: T | UD, d: UF<T>) => T;
-declare const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
-declare const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
-declare const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
-declare const fi: false;
-declare const ti: true;
+/**
+ * // import {  UFI, UFOI, UFUI, UFDI, UFMI, 	UFAI, 	UFPI} from "./index";
 export {}
 declare global {
+    const UFI: <T>(v: UF<T>) => T;
+    const UFOI: <T>(v: UF<T> | UD) => T | UD;
+    const UFUI: <T>(v: UF<T>, old: T) => T;
+    const UFDI: <T>(v: T | UD, d: UF<T>) => T;
+    const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
+    const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
+    const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
+    const fi: false;
+    const ti: true;
 	//                                                                                            [BOOLEANS]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     type f = false;
@@ -585,3 +586,5 @@ declare global {
 
 
 
+
+ */
