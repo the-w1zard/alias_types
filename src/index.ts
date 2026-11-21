@@ -1,15 +1,21 @@
 export const UFI = <T>(v: UF<T>): T => typeof v === "function" ? (v as () => T)() : v;
+
 // resolve optional unknown-or-factory
 export const UFOI = <T>(v: UF<T> | UD): T | UD =>  v === undefined ? undefined : UFI(v);
+
 // resolve unknown-or-updater, React-style
 export const UFUI = <T>(v: UF<T>, old: T): T => typeof v === "function" ? (v as (old: T) => T)(old) : v;
 export const UFDI = <T>(v: T | UD, d: UF<T>): T =>v === undefined ? UFI(d) : v;
+
 // const timeout = UFD(config.timeout, () => calculateTimeout());
 export const UFMI = <T>(v: T | null | UD, d: UF<T>): T => v == null ? UFI(d) : v;
+
 // const value = UFM(input, () => defaultValue);
 export const UFAI = async <T>(v: T | P<T> | (() => T | P<T>)): P<AWD<T>> => await (typeof v === "function" ? (v as () => T | P<T>)() : v);
+
 // const config = await UFA(loadConfig);
 export const UFPI = <T>(v: T | P<T>): P<AWD<T>> => P.resolve(v);
+
 // const result = await UFP(possiblyAsyncValue);
 export const fi = false as const   // type: false
 export const ti = true as const    // type: true
@@ -37,12 +43,8 @@ globalThis.PX = Proxy
 globalThis.AR = Array
 globalThis.AB = ArrayBuffer
 globalThis.B = Boolean
-globalThis.BL = Blob
 globalThis.D = Date
 globalThis.E = Error
-globalThis.EV = Event
-globalThis.TD = new TextDecoder();
-globalThis.TE = new TextEncoder()
 globalThis.J = JSON
 globalThis.M = Map
 globalThis.WM = WeakMap
@@ -55,7 +57,6 @@ globalThis.REG = RegExp
 globalThis.S = String
 globalThis.ST = Set
 globalThis.WST = WeakSet
-globalThis.WR = WeakRef
 globalThis.I8 = Int8Array
 globalThis.U8 = Uint8Array
 globalThis.U8C = Uint8ClampedArray
@@ -72,48 +73,13 @@ globalThis.UFD = UFDI;
 globalThis.UFU = UFUI;
 globalThis.UFO = UFOI;
 globalThis.UF = UFI;
-globalThis.DOMX = DOMException;
-globalThis.CE = CustomEvent;
-globalThis.KE = KeyboardEvent;
-globalThis.ME = MouseEvent;
-globalThis.PE = PointerEvent;
-globalThis.AC = AbortController;
-globalThis.AS = AbortSignal;
-globalThis.FR = FinalizationRegistry;
 globalThis.DV = DataView;
-globalThis.DF = DocumentFragment;
-globalThis.DOC = Document;
-globalThis.ND = Node;
-globalThis.NL = NodeList;
-globalThis.HE = HTMLElement;
 globalThis.SY = Symbol;
-globalThis.BI = BigInt;
-globalThis.AE = AggregateError;
 globalThis.RE = RangeError;
 globalThis.RFE = ReferenceError;
 globalThis.TYE = TypeError;
 globalThis.UE = URIError;
 globalThis.SE = SyntaxError;
-globalThis.U8C = Uint8ClampedArray;
-globalThis.DV = DataView;
-globalThis.FD = FormData;
-globalThis.FL = File;
-globalThis.FS = FileSystem;
-globalThis.FLR = FileReader;
-globalThis.MO = MutationObserver;
-globalThis.RSO = ResizeObserver;
-globalThis.ITO = IntersectionObserver;
-globalThis.PO = PerformanceObserver;
-globalThis.EL = Element;
-globalThis.RA = Range;
-globalThis.TW = TreeWalker;
-globalThis.NNM = NamedNodeMap;
-globalThis.URL = URL;
-globalThis.URLP = URLPattern;
-globalThis.WS = WebSocket;
-globalThis.W = Worker;
-globalThis.MC = MessageChannel;
-globalThis.MP = MessagePort;
 globalThis.F = Function;
 globalThis.OI = Object.is;
 globalThis.OK = Object.keys;
@@ -130,20 +96,67 @@ globalThis.MF = Math.floor;
 globalThis.MCL = Math.ceil;
 globalThis.MR = Math.round;
 globalThis.MT = Math.trunc;
+globalThis.INF = Infinity;
+globalThis.NaN = NaN;
+globalThis.dURI = decodeURI;
+globalThis.eURI = encodeURI;
+globalThis.esc = escape;
+globalThis.unesc = unescape;
 
-
-
+if (typeof DisposableStack !== "undefined") globalThis.DS = DisposableStack;
+if (typeof AsyncDisposableStack !== "undefined") globalThis.ADS = AsyncDisposableStack;
+if (typeof BigInt !== "undefined") globalThis.BI = BigInt;
+if (typeof Blob !== "undefined") globalThis.BL = Blob;
+if (typeof Event !== "undefined") globalThis.EV = Event;
+if (typeof TextDecoder !== "undefined") globalThis.TD = new TextDecoder();
+if (typeof TextEncoder !== "undefined") globalThis.TE = new TextEncoder();
+if (typeof DOMException !== "undefined") globalThis.DOMX = DOMException;
+if (typeof AbortController !== "undefined") globalThis.AC = AbortController;
+if (typeof AbortSignal !== "undefined") globalThis.AS = AbortSignal;
+if (typeof FinalizationRegistry !== "undefined") globalThis.FR = FinalizationRegistry;
+if (typeof AggregateError !== "undefined") globalThis.AE = AggregateError;
+if (typeof FormData !== "undefined") globalThis.FD = FormData;
+if (typeof File !== "undefined") globalThis.FL = File;
+if (typeof URL !== "undefined") globalThis.URL = URL;
+if (typeof WebSocket !== "undefined") globalThis.WS = WebSocket;
+if (typeof Worker !== "undefined") globalThis.W = Worker;
+if (typeof MessageChannel !== "undefined") globalThis.MC = MessageChannel;
+if (typeof MessagePort !== "undefined") globalThis.MP = MessagePort;
+if (typeof WeakRef !== "undefined") globalThis.WR = WeakRef;
+if (typeof CustomEvent !== "undefined") globalThis.CE = CustomEvent;
+if (typeof KeyboardEvent !== "undefined") globalThis.KE = KeyboardEvent;
+if (typeof MouseEvent !== "undefined") globalThis.ME = MouseEvent;
+if (typeof PointerEvent !== "undefined") globalThis.PE = PointerEvent;
+if (typeof HTMLElement !== "undefined") globalThis.HE = HTMLElement;
+if (typeof DocumentFragment !== "undefined") globalThis.DF = DocumentFragment;
+if (typeof Document !== "undefined") globalThis.DOC = Document;
+if (typeof Node !== "undefined") globalThis.ND = Node;
+if (typeof NodeList !== "undefined") globalThis.NL = NodeList;
+if (typeof FileReader !== "undefined") globalThis.FLR = FileReader;
+if (typeof MutationObserver !== "undefined") globalThis.MO = MutationObserver;
+if (typeof ResizeObserver !== "undefined") globalThis.RSO = ResizeObserver;
+if (typeof IntersectionObserver !== "undefined") globalThis.ITO = IntersectionObserver;
+if (typeof PerformanceObserver !== "undefined") globalThis.PO = PerformanceObserver;
+if (typeof Element !== "undefined") globalThis.EL = Element;
+if (typeof Range !== "undefined") globalThis.RA = Range;
+if (typeof TreeWalker !== "undefined") globalThis.TW = TreeWalker;
+if (typeof NamedNodeMap !== "undefined") globalThis.NNM = NamedNodeMap;
+if (typeof URLPattern !== "undefined") globalThis.URLP = URLPattern;
+if (typeof Window !== "undefined") globalThis.WIN = Window;
+if (typeof DocumentType !== "undefined") globalThis.DT = DocumentType;
+if (typeof HTMLCollection !== "undefined") globalThis.HC = HTMLCollection;
+if (typeof DOMParser !== "undefined") globalThis.DOMP = DOMParser;
+if (typeof XMLSerializer !== "undefined") globalThis.XMLS = XMLSerializer;
+if (typeof DOMMatrix !== "undefined") globalThis.DM = DOMMatrix;
+if (typeof DOMPoint !== "undefined") globalThis.DPT = DOMPoint;
+if (typeof DOMRect !== "undefined") globalThis.DR = DOMRect;
+if (typeof CSSStyleSheet !== "undefined") globalThis.CSSS = CSSStyleSheet;
+if (typeof ShadowRoot !== "undefined") globalThis.SR = ShadowRoot;
+if (typeof Storage !== "undefined") globalThis.STRG = Storage;
+if (typeof History !== "undefined") globalThis.HIST = History;
+if (typeof Location !== "undefined") globalThis.LOC = Location;
 
 declare global {
-    const UFI: <T>(v: UF<T>) => T;
-    const UFOI: <T>(v: UF<T> | UD) => T | UD;
-    const UFUI: <T>(v: UF<T>, old: T) => T;
-    const UFDI: <T>(v: T | UD, d: UF<T>) => T;
-    const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
-    const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
-    const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
-    const fi: false;
-    const ti: true;
 	//                                                                                            [BOOLEANS]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     type f = false;
@@ -151,7 +164,6 @@ declare global {
     type t = true;
     var t: true;
     // #endregion
-   
     //                                                                                                   [A]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     type A = any;
@@ -201,17 +213,20 @@ declare global {
     type B = boolean;
     var B: BooleanConstructor;
     type SB = `${B}`;
+    const fi: false;
+    const ti: true;
 
     type BL = Blob;
     var BL: typeof Blob;
     type BF = Buffer;
-
     // #endregion
     //                                                                                                   [C]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     type CAP<T extends S> = Capitalize<T>;
     type CP<T> = ConstructorParameters<T extends abstract new (...args: A) => A ? T : never>;
-
+    
+    type CSSS = CSSStyleSheet;
+    var CSSS: typeof CSSStyleSheet;
     // #endregion
     //                                                                                                   [D]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -232,7 +247,16 @@ declare global {
     type DP = Disposable;
     type ADP = AsyncDisposable;
 
-
+    type DT = DocumentType;
+    var DT: typeof DocumentType;
+    type DOMP = DOMParser;
+    var DOMP: typeof DOMParser;
+    type DM = DOMMatrix;
+    var DM: typeof DOMMatrix;
+    type DPT = DOMPoint;
+    var DPT: typeof DOMPoint;
+    type DR = DOMRect;
+    var DR: typeof DOMRect;
     // #endregion
     //                                                                                                   [E]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -300,7 +324,10 @@ declare global {
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     type HE = HTMLElement;
     var HE: typeof HTMLElement;
-
+    type HIST = History;
+    var HIST: typeof History;
+    type HC = HTMLCollection;
+    var HC: typeof HTMLCollection;
     // #endregion
     //                                                                                                   [I]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -338,7 +365,8 @@ declare global {
     // #endregion
     //                                                                                                   [L]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
-
+    type LOC = Location;
+    var LOC: typeof Location;
     // #endregion
     //                                                                                                   [M]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -527,7 +555,10 @@ declare global {
     var ST: SetConstructor;
     type WST<T extends O = O> = WeakSet<T>;
     var WST: WeakSetConstructor;
-
+    type SR = ShadowRoot;
+    var SR: typeof ShadowRoot;
+    type STRG = Storage;
+    var STRG: typeof Storage;
     // #endregion
     //                                                                                                   [T]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -582,7 +613,13 @@ declare global {
     // Is Union -Checks whether a type contains multiple distinct union members. 
     type IUN<T, C = T> = T extends C ? ([C] extends [T] ? false : true) : never;
     
-
+    const UFI: <T>(v: UF<T>) => T;
+    const UFOI: <T>(v: UF<T> | UD) => T | UD;
+    const UFUI: <T>(v: UF<T>, old: T) => T;
+    const UFDI: <T>(v: T | UD, d: UF<T>) => T;
+    const UFMI: <T>(v: T | null | UD, d: UF<T>) => T;
+    const UFPI: <T>(v: T | P<T>) => P<AWD<T>>;
+    const UFAI: <T>(v: T | P<T> | (() => T | P<T>)) => P<AWD<T>>;
     // #endregion
     //                                                                                                   [V]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -595,6 +632,7 @@ declare global {
     type WR<T extends O> = WeakRef<T>;
     var WR: WeakRefConstructor;
     type WIN = Window;
+    var WIN: typeof Window;
 
     type WS = WebSocket;
     var WS: typeof WebSocket;
@@ -606,7 +644,8 @@ declare global {
     //                                                                                                   [X]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
     // X
-
+    type XMLS = XMLSerializer;
+    var XMLS: typeof XMLSerializer;
     // #endregion
     //                                                                                                   [Y]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
@@ -614,24 +653,27 @@ declare global {
     // #endregion
     //                                                                                                   [Z]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════
-
-
-
     // Async Function - Converts a function's return type into a Promise of its awaited return type, preserving its parameters.
     type ASF<T extends (...args: A) => A> = (...args: Parameters<T>) => Promise<Awaited<ReturnType<T>>>;
+
     // Deep Readonly - Recursively makes every property in an object and its nested objects readonly. 
     type DPR<T> = { readonly [K in keyof T]: DPR<T[K]> };
+
     // Dictionary - Creates a string-keyed record whose values use the supplied type.
     type DC<T = A> = Record<S, T>;
+
     // Type Equality - Tests whether two types are exactly equal, returning `true` or `false`.    
     type EQ<X, Y> = (<T>() => T extends X ? 1 : 2) extends <T>() => T extends Y ? 1 : 2 ? true : false;
+
     // Extract Array Type - Extracts the element type from an array; otherwise returns `never`.
     type EXT<T> = T extends (infer U)[] ? U : never;
 
     // Include / Extract - extracts from `T` the union members assignable to `U`. 
     type IN<T, U> = Extract<T, U>;
+
     // Instance Type - Extracts the instance type produced by a constructor.
     type ICT<T extends abstract new (...args: A) => A> = T extends abstract new (...args: A) => infer R ? R : A;
+
     // Indexed Element Type - Extracts the element type from a readonly or mutable array. 
     type IDX<T> = T extends readonly (infer U)[] ? U : never;
 
@@ -640,8 +682,10 @@ declare global {
 
     // Template Length - Extracts the literal length of a string type. 
     type TL<T extends S> = T["length"];
+
     // Tuple - Converts an array type into a tuple representation while preserving its element types.  
     type TUP<T extends A[] = A[]> = [...T];
+
     // Values - Produces a union of all property value types in an object.
     type VAL<T> = T[keyof T];
   
@@ -650,49 +694,63 @@ declare global {
     
     // Value Of - Produces a union of all property value types in an object. 
     type VALOF<T> = T[keyof T];
+
     // Keys - Extracts the keys of a type using `keyof`. 
     type KEYS<T> = keyof T;
+
     // Union - Distributes over a type union and retains its members. 
     type UNION<T> = T extends A ? T : never;
 
-
-
-
     // Non-empty Tuple - Creates a readonly tuple requiring at least one element.  
     type NONEMPTY<T> = readonly [T, ...T[]];
+
     // First Element - Extracts the first element type of a tuple.
     type FIRST<T extends readonly A[]> = T extends readonly [infer H, ...A[]] ? H : never;
+
     // Last Element - Extracts the last element type of a tuple.
     type LAST<T extends readonly A[]> = T extends readonly [...A[], infer L] ? L : never;
+
     // Tuple Length - Extracts the length type of a tuple, including literal lengths. 
     type LENGTH<T extends readonly A[]> = T["length"];
+
     // String Replace - Replaces the first matching substring in a string literal type.  
     type REPLACE<S0 extends S, F extends S, T extends S> = S0 extends `${infer L}${F}${infer R}` ? `${L}${T}${R}` : S0;
+
     // String Split - Recursively splits a string literal type into a tuple using a delimiter.  
     type SPLIT<S0 extends S, D extends S> = S0 extends `${infer L}${D}${infer R}` ? [L, ...SPLIT<R, D>] : [S0];
+
     // String Join - Joins a tuple of string literal types into one string literal using a delimiter. 
     type JOIN<T extends readonly S[], D extends S = ""> = T extends readonly [infer H extends S, ...infer R extends S[]] ? (R extends [] ? H : `${H}${D}${JOIN<R, D>}`) : "";
+    
     // Function Arguments - Extracts the parameter tuple of a function type. 
     type ARGS<T extends (...args: A) => A> = Parameters<T>;
+
     // Type Assertion - Requires a type to satisfy `true`, producing a compile-time constraint.
     type ASSERT<T extends true> = T;
+
     // Branded Type - Adds a readonly brand property to distinguish otherwise structurally identical types. 
     type BRAND<T, N extends S> = T & { readonly __brand: N };
+
     // Difference - Removes union members of `T` that are assignable to `U`.   
     type DIFF<T, U> = T extends U ? never : T;
+
     // Deep -  Recursively applies a type transformation to nested object properties.
     type DEEP<T> = T extends O ? { [K in keyof T]: DEEP<T[K]> } : T;
+
     // Deep Partial - Recursively makes every nested object property optional.
     type DEEPP<T> = T extends O ? { [K in keyof T]?: DEEPP<T[K]> } : T;
+
     // Type Guard - Retains `T` only when it is assignable to `U`; otherwise returns `never`. 
     type GUARD<T, U> = T extends U ? T : never;
+
     // Instance - Extracts the instance type of a constructable type.
     type INST<T> = InstanceType<T extends abstract new (...args: A) => A ? T : never>;
+
     // Lowercase - Converts a string literal type to lowercase. 
     type LOWER<T extends S> = Lowercase<T>;
+
     // Parameters - Extracts a function's parameter tuple.
     type PARAMS<T extends (...args: A) => A> = T extends (...args: infer P) => A ? P : never;
-    
     // #endregion
     //                                                                                               [OTHER]
     // #region ══════════════════════════════════════════════════════════════════════════════════════════════════════

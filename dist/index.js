@@ -24,12 +24,8 @@ globalThis.PX = Proxy;
 globalThis.AR = Array;
 globalThis.AB = ArrayBuffer;
 globalThis.B = Boolean;
-globalThis.BL = Blob;
 globalThis.D = Date;
 globalThis.E = Error;
-globalThis.EV = Event;
-globalThis.TD = new TextDecoder();
-globalThis.TE = new TextEncoder();
 globalThis.J = JSON;
 globalThis.M = Map;
 globalThis.WM = WeakMap;
@@ -42,7 +38,6 @@ globalThis.REG = RegExp;
 globalThis.S = String;
 globalThis.ST = Set;
 globalThis.WST = WeakSet;
-globalThis.WR = WeakRef;
 globalThis.I8 = Int8Array;
 globalThis.U8 = Uint8Array;
 globalThis.U8C = Uint8ClampedArray;
@@ -59,48 +54,13 @@ globalThis.UFD = UFDI;
 globalThis.UFU = UFUI;
 globalThis.UFO = UFOI;
 globalThis.UF = UFI;
-globalThis.DOMX = DOMException;
-globalThis.CE = CustomEvent;
-globalThis.KE = KeyboardEvent;
-globalThis.ME = MouseEvent;
-globalThis.PE = PointerEvent;
-globalThis.AC = AbortController;
-globalThis.AS = AbortSignal;
-globalThis.FR = FinalizationRegistry;
 globalThis.DV = DataView;
-globalThis.DF = DocumentFragment;
-globalThis.DOC = Document;
-globalThis.ND = Node;
-globalThis.NL = NodeList;
-globalThis.HE = HTMLElement;
 globalThis.SY = Symbol;
-globalThis.BI = BigInt;
-globalThis.AE = AggregateError;
 globalThis.RE = RangeError;
 globalThis.RFE = ReferenceError;
 globalThis.TYE = TypeError;
 globalThis.UE = URIError;
 globalThis.SE = SyntaxError;
-globalThis.U8C = Uint8ClampedArray;
-globalThis.DV = DataView;
-globalThis.FD = FormData;
-globalThis.FL = File;
-globalThis.FS = FileSystem;
-globalThis.FLR = FileReader;
-globalThis.MO = MutationObserver;
-globalThis.RSO = ResizeObserver;
-globalThis.ITO = IntersectionObserver;
-globalThis.PO = PerformanceObserver;
-globalThis.EL = Element;
-globalThis.RA = Range;
-globalThis.TW = TreeWalker;
-globalThis.NNM = NamedNodeMap;
-globalThis.URL = URL;
-globalThis.URLP = URLPattern;
-globalThis.WS = WebSocket;
-globalThis.W = Worker;
-globalThis.MC = MessageChannel;
-globalThis.MP = MessagePort;
 globalThis.F = Function;
 globalThis.OI = Object.is;
 globalThis.OK = Object.keys;
@@ -117,3 +77,113 @@ globalThis.MF = Math.floor;
 globalThis.MCL = Math.ceil;
 globalThis.MR = Math.round;
 globalThis.MT = Math.trunc;
+globalThis.INF = Infinity;
+globalThis.NaN = NaN;
+globalThis.dURI = decodeURI;
+globalThis.eURI = encodeURI;
+globalThis.esc = escape;
+globalThis.unesc = unescape;
+if (typeof DisposableStack !== "undefined")
+    globalThis.DS = DisposableStack;
+if (typeof AsyncDisposableStack !== "undefined")
+    globalThis.ADS = AsyncDisposableStack;
+if (typeof BigInt !== "undefined")
+    globalThis.BI = BigInt;
+if (typeof Blob !== "undefined")
+    globalThis.BL = Blob;
+if (typeof Event !== "undefined")
+    globalThis.EV = Event;
+if (typeof TextDecoder !== "undefined")
+    globalThis.TD = new TextDecoder();
+if (typeof TextEncoder !== "undefined")
+    globalThis.TE = new TextEncoder();
+if (typeof DOMException !== "undefined")
+    globalThis.DOMX = DOMException;
+if (typeof AbortController !== "undefined")
+    globalThis.AC = AbortController;
+if (typeof AbortSignal !== "undefined")
+    globalThis.AS = AbortSignal;
+if (typeof FinalizationRegistry !== "undefined")
+    globalThis.FR = FinalizationRegistry;
+if (typeof AggregateError !== "undefined")
+    globalThis.AE = AggregateError;
+if (typeof FormData !== "undefined")
+    globalThis.FD = FormData;
+if (typeof File !== "undefined")
+    globalThis.FL = File;
+if (typeof URL !== "undefined")
+    globalThis.URL = URL;
+if (typeof WebSocket !== "undefined")
+    globalThis.WS = WebSocket;
+if (typeof Worker !== "undefined")
+    globalThis.W = Worker;
+if (typeof MessageChannel !== "undefined")
+    globalThis.MC = MessageChannel;
+if (typeof MessagePort !== "undefined")
+    globalThis.MP = MessagePort;
+if (typeof WeakRef !== "undefined")
+    globalThis.WR = WeakRef;
+if (typeof CustomEvent !== "undefined")
+    globalThis.CE = CustomEvent;
+if (typeof KeyboardEvent !== "undefined")
+    globalThis.KE = KeyboardEvent;
+if (typeof MouseEvent !== "undefined")
+    globalThis.ME = MouseEvent;
+if (typeof PointerEvent !== "undefined")
+    globalThis.PE = PointerEvent;
+if (typeof HTMLElement !== "undefined")
+    globalThis.HE = HTMLElement;
+if (typeof DocumentFragment !== "undefined")
+    globalThis.DF = DocumentFragment;
+if (typeof Document !== "undefined")
+    globalThis.DOC = Document;
+if (typeof Node !== "undefined")
+    globalThis.ND = Node;
+if (typeof NodeList !== "undefined")
+    globalThis.NL = NodeList;
+if (typeof FileReader !== "undefined")
+    globalThis.FLR = FileReader;
+if (typeof MutationObserver !== "undefined")
+    globalThis.MO = MutationObserver;
+if (typeof ResizeObserver !== "undefined")
+    globalThis.RSO = ResizeObserver;
+if (typeof IntersectionObserver !== "undefined")
+    globalThis.ITO = IntersectionObserver;
+if (typeof PerformanceObserver !== "undefined")
+    globalThis.PO = PerformanceObserver;
+if (typeof Element !== "undefined")
+    globalThis.EL = Element;
+if (typeof Range !== "undefined")
+    globalThis.RA = Range;
+if (typeof TreeWalker !== "undefined")
+    globalThis.TW = TreeWalker;
+if (typeof NamedNodeMap !== "undefined")
+    globalThis.NNM = NamedNodeMap;
+if (typeof URLPattern !== "undefined")
+    globalThis.URLP = URLPattern;
+if (typeof Window !== "undefined")
+    globalThis.WIN = Window;
+if (typeof DocumentType !== "undefined")
+    globalThis.DT = DocumentType;
+if (typeof HTMLCollection !== "undefined")
+    globalThis.HC = HTMLCollection;
+if (typeof DOMParser !== "undefined")
+    globalThis.DOMP = DOMParser;
+if (typeof XMLSerializer !== "undefined")
+    globalThis.XMLS = XMLSerializer;
+if (typeof DOMMatrix !== "undefined")
+    globalThis.DM = DOMMatrix;
+if (typeof DOMPoint !== "undefined")
+    globalThis.DPT = DOMPoint;
+if (typeof DOMRect !== "undefined")
+    globalThis.DR = DOMRect;
+if (typeof CSSStyleSheet !== "undefined")
+    globalThis.CSSS = CSSStyleSheet;
+if (typeof ShadowRoot !== "undefined")
+    globalThis.SR = ShadowRoot;
+if (typeof Storage !== "undefined")
+    globalThis.STRG = Storage;
+if (typeof History !== "undefined")
+    globalThis.HIST = History;
+if (typeof Location !== "undefined")
+    globalThis.LOC = Location;
