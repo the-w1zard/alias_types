@@ -97,7 +97,6 @@ globalThis.MCL = Math.ceil;
 globalThis.MR = Math.round;
 globalThis.MT = Math.trunc;
 globalThis.INF = Infinity;
-globalThis.NaN = NaN;
 globalThis.dURI = decodeURI;
 globalThis.eURI = encodeURI;
 globalThis.esc = escape;

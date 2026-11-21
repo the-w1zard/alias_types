@@ -5,9 +5,9 @@
   "private": false,
   "sideEffects": false,
   "devDependencies": {
-    "@tsconfig/node-lts": "^24.0.0",
-    "@types/node": "^24.0.0",
-    "typescript": "^6.0.0"
+    "@tsconfig/node-lts": "^24.0.1",
+    "@types/node": "^24.19.2",
+    "typescript": "^6.0.3"
   },
   "scripts": {
     "1": "git add .",
@@ -20,7 +20,7 @@
     "8": "npm publish --access public",
     "build": "tsc",
     "prepublishOnly": "npm run build",
-    "*": "npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
+    "*": "pnpm update && pnpm run build && npm run 1 && npm run 2 && npm run 3 && npm run 4 && npm run 5 && npm run 6 && npm run 7 && npm run 8"
   },
   "license": "MIT",
   "main": "./dist/index.js",
